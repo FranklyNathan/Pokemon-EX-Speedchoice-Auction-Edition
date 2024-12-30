@@ -217,6 +217,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GiveStarterEvent:: @ 81F9DDB
 	givemon SPECIES_ZIGZAGOON_GALARIAN, 15, ITEM_NONE
 	givemon SPECIES_ZUBAT, 15, ITEM_NONE
 	setvar VAR_SCOTT_PETALBURG_ENCOUNTER, 1
+	setflag FLAG_NUZLOCKE
 	giveitem ITEM_RARE_CANDY, 1
 	giveitem ITEM_MEGA_BRACELET
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_WhyNotGiveNicknameToMon, MSGBOX_YESNO

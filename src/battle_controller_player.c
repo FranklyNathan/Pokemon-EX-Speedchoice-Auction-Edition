@@ -2902,7 +2902,8 @@ static void PlayerHandleExpUpdate(void)
 {
     u8 monId = gBattleResources->bufferA[gActiveBattler][1];
 
-    if (GetMonData(&gPlayerParty[monId], MON_DATA_LEVEL) >= MAX_LEVEL)
+    if (GetMonData(&gPlayerParty[monId], MON_DATA_LEVEL) >= MAX_LEVEL
+    || levelCappedNuzlocke(GetMonData(&gPlayerParty[monId], MON_DATA_LEVEL)))
     {
         PlayerBufferExecCompleted();
     }

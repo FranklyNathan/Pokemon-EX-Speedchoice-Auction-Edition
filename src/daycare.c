@@ -24,6 +24,7 @@
 #include "constants/moves.h"
 #include "constants/region_map_sections.h"
 #include "speedchoice.h"
+#include "battle_setup.h"
 
 // this file's functions
 static void ClearDaycareMonMail(struct DayCareMail *mail);
@@ -265,8 +266,8 @@ static u16 TakeSelectedPokemonFromDaycare(struct DaycareMon *daycareMon)
         species = newSpecies;
     }
 
-    if (GetMonData(&pokemon, MON_DATA_LEVEL) != MAX_LEVEL)
-    {
+    if (GetMonData(&pokemon, MON_DATA_LEVEL) != MAX_LEVEL 
+    && !levelCappedNuzlocke(GetMonData(&pokemon, MON_DATA_LEVEL)))    {
         experience = GetMonData(&pokemon, MON_DATA_EXP) + daycareMon->steps;
         SetMonData(&pokemon, MON_DATA_EXP, &experience);
         ApplyDaycareExperience(&pokemon);
