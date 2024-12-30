@@ -382,6 +382,7 @@ void DoWhiteOut(void)
     moneyLost = GetMoney(&gSaveBlock1Ptr->money) - moneyToKeep;
     TryAddButtonStatBy(DB_MONEY_LOST, moneyLost);
     SetMoney(&gSaveBlock1Ptr->money, GetMoney(&gSaveBlock1Ptr->money) / 2);
+    VarSet(VAR_FORCEANIM, 0);
     HealPlayerParty();
     Overworld_ResetStateAfterWhiteOut();
     SetWarpDestinationToLastHealLocation();

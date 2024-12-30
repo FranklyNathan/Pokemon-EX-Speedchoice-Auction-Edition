@@ -38,6 +38,7 @@ EverGrandeCity_GlaciasRoom_EventScript_CloseDoor:: @ 8228463
 	return
 
 EverGrandeCity_GlaciasRoom_EventScript_Glacia:: @ 8228469
+	setvar VAR_FORCEANIM, 1
 	lock
 	faceplayer
 	goto_if_set FLAG_DEFEATED_ELITE_4_GLACIA, EverGrandeCity_GlaciasRoom_EventScript_PostBattleSpeech
@@ -53,6 +54,7 @@ EverGrandeCity_GlaciasRoom_EventScript_PostBattleSpeech:: @ 8228490
 	end
 
 EverGrandeCity_GlaciasRoom_EventScript_Defeated:: @ 822849A
+	setvar VAR_FORCEANIM, 0
 	setflag FLAG_DEFEATED_ELITE_4_GLACIA
 	call PokemonLeague_EliteFour_SetAdvanceToNextRoomMetatiles
 	msgbox EverGrandeCity_GlaciasRoom_Text_PostBattleSpeech, MSGBOX_DEFAULT

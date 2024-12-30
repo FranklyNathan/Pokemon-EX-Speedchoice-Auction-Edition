@@ -42,6 +42,7 @@ EverGrandeCity_ChampionsRoom_Movement_PlayerApproachWallace: @ 8228A42
 	step_end
 
 EverGrandeCity_ChampionsRoom_EventScript_Wallace:: @ 8228A45
+	setvar VAR_FORCEANIM, 1
 	playbgm MUS_ENCOUNTER_CHAMPION, 0
 	msgbox EverGrandeCity_ChampionsRoom_Text_IntroSpeech, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_WALLACE, EverGrandeCity_ChampionsRoom_Text_Defeat
@@ -49,6 +50,7 @@ EverGrandeCity_ChampionsRoom_EventScript_Wallace:: @ 8228A45
 	end
 
 EverGrandeCity_ChampionsRoom_EventScript_Defeated:: @ 8228A61
+	setvar VAR_FORCEANIM, 0
 	playse SE_DOOR
 	setmetatile 6, 1, METATILE_EliteFour_OpenDoorChampion_Frame, 0
 	setmetatile 6, 2, METATILE_EliteFour_OpenDoorChampion_Opening, 0

@@ -38,6 +38,7 @@ EverGrandeCity_PhoebesRoom_EventScript_CloseDoor:: @ 82281C5
 	return
 
 EverGrandeCity_PhoebesRoom_EventScript_Phoebe:: @ 82281CB
+	setvar VAR_FORCEANIM, 1
 	lock
 	faceplayer
 	goto_if_set FLAG_DEFEATED_ELITE_4_PHOEBE, EverGrandeCity_PhoebesRoom_EventScript_PostBattleSpeech
@@ -53,6 +54,7 @@ EverGrandeCity_PhoebesRoom_EventScript_PostBattleSpeech:: @ 82281F2
 	end
 
 EverGrandeCity_PhoebesRoom_EventScript_Defeated:: @ 82281FC
+	setvar VAR_FORCEANIM, 0
 	setflag FLAG_DEFEATED_ELITE_4_PHOEBE
 	call PokemonLeague_EliteFour_SetAdvanceToNextRoomMetatiles
 	msgbox EverGrandeCity_PhoebesRoom_Text_PostBattleSpeech, MSGBOX_DEFAULT

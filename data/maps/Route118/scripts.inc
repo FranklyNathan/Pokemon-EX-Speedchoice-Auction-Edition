@@ -102,8 +102,6 @@ Route118_EventScript_StevenTrigger:: @ 81F3EE4
 	waitmovement 0
 	delay 30
 	msgbox Route118_Text_StevenQuestions, MSGBOX_DEFAULT
-	giveitem ITEM_MEGA_BRACELET
-	giveitem ITEM_Z_RING
 	closemessage
 	compare VAR_0x8008, 0
 	call_if_eq Route118_EventScript_StevenExit0
@@ -274,8 +272,7 @@ Route118_Text_StevenQuestions: @ 81F40BE
 	.string "what do you think?\p"
 	.string "Of course, it's not any of my business.\p"
 	.string "It would be nice if we were to meet\n"
-	.string "again somewhere.\p"
-	.string "Also, take these.$"
+	.string "again somewhere.$"
 
 Route118_Text_YouAgreeGoodRodIsGood: @ 81F427B
 	.string "Hmm!\n"

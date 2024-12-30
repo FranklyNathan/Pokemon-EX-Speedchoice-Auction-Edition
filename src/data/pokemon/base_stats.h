@@ -1007,7 +1007,7 @@ const struct BaseStats gBaseStats[] =
         #if P_UPDATED_STATS >= GEN_6
             .baseSpAttack  = 95,
         #else
-            .baseSpAttack  = 85,
+            .baseSpAttack  = 95,
         #endif
         #if P_UPDATED_TYPES >= GEN_6
             .type1 = TYPE_FAIRY,
@@ -1134,7 +1134,7 @@ const struct BaseStats gBaseStats[] =
         #if P_UPDATED_STATS >= GEN_6
             .baseSpAttack  = 85,
         #else
-            .baseSpAttack  = 75,
+            .baseSpAttack  = 85,
         #endif
         #if P_UPDATED_TYPES >= GEN_6
             .type1 = TYPE_NORMAL,
@@ -8069,13 +8069,8 @@ const struct BaseStats gBaseStats[] =
         .baseAttack    = 60,
         .baseDefense   = 62,
         .baseSpDefense = 82,
-        #if P_UPDATED_STATS >= GEN_7
-            .baseSpeed     = 80,
-            .baseSpAttack  = 100,
-        #else
-            .baseSpeed     = 60,
-            .baseSpAttack  = 80,
-        #endif
+        .baseSpeed     = 80,
+        .baseSpAttack  = 100,
         .type1 = TYPE_BUG,
         .type2 = TYPE_FLYING,
         .catchRate = 75,
@@ -11519,11 +11514,7 @@ const struct BaseStats gBaseStats[] =
         .baseSpeed     = 90,
         .baseSpAttack  = 125,
         .baseSpDefense = 105,
-        #if P_UPDATED_STATS >= GEN_6
-            .baseDefense   = 65,
-        #else
-            .baseDefense   = 55,
-        #endif
+        .baseDefense   = 65,
         .type1 = TYPE_GRASS,
         .type2 = TYPE_POISON,
         .catchRate = 75,
@@ -18502,7 +18493,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FIELD,
-        .abilities = {ABILITY_OVERGROW, ABILITY_NONE},
+        .abilities = {ABILITY_OVERGROW, ABILITY_BULLETPROOF},
         #ifdef BATTLE_ENGINE
             .abilityHidden = ABILITY_BULLETPROOF,
         #endif
@@ -18529,7 +18520,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FIELD,
-        .abilities = {ABILITY_OVERGROW, ABILITY_NONE},
+        .abilities = {ABILITY_OVERGROW, ABILITY_BULLETPROOF},
         #ifdef BATTLE_ENGINE
             .abilityHidden = ABILITY_BULLETPROOF,
         #endif
@@ -18556,7 +18547,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FIELD,
-        .abilities = {ABILITY_OVERGROW, ABILITY_NONE},
+        .abilities = {ABILITY_OVERGROW, ABILITY_BULLETPROOF},
         #ifdef BATTLE_ENGINE
             .abilityHidden = ABILITY_BULLETPROOF,
         #endif
@@ -18583,7 +18574,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FIELD,
-        .abilities = {ABILITY_BLAZE, ABILITY_NONE},
+        .abilities = {ABILITY_BLAZE, ABILITY_MAGICIAN},
         #ifdef BATTLE_ENGINE
             .abilityHidden = ABILITY_MAGICIAN,
         #endif
@@ -18610,7 +18601,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FIELD,
-        .abilities = {ABILITY_BLAZE, ABILITY_NONE},
+        .abilities = {ABILITY_BLAZE, ABILITY_MAGICIAN},
         #ifdef BATTLE_ENGINE
             .abilityHidden = ABILITY_MAGICIAN,
         #endif
@@ -18637,7 +18628,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FIELD,
-        .abilities = {ABILITY_BLAZE, ABILITY_NONE},
+        .abilities = {ABILITY_BLAZE, ABILITY_MAGICIAN},
         #ifdef BATTLE_ENGINE
             .abilityHidden = ABILITY_MAGICIAN,
         #endif
@@ -18664,7 +18655,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_WATER_1,
         .eggGroup2 = EGG_GROUP_WATER_1,
-        .abilities = {ABILITY_TORRENT, ABILITY_NONE},
+        .abilities = {ABILITY_TORRENT, ABILITY_PROTEAN},
         #ifdef BATTLE_ENGINE
             .abilityHidden = ABILITY_PROTEAN,
         #endif
@@ -18691,7 +18682,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_WATER_1,
         .eggGroup2 = EGG_GROUP_WATER_1,
-        .abilities = {ABILITY_TORRENT, ABILITY_NONE},
+        .abilities = {ABILITY_TORRENT, ABILITY_PROTEAN},
         #ifdef BATTLE_ENGINE
             .abilityHidden = ABILITY_PROTEAN,
         #endif
@@ -18718,7 +18709,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_WATER_1,
         .eggGroup2 = EGG_GROUP_WATER_1,
-        .abilities = {ABILITY_TORRENT, ABILITY_NONE},
+        .abilities = {ABILITY_TORRENT, ABILITY_PROTEAN},
         #ifdef BATTLE_ENGINE
             .abilityHidden = ABILITY_PROTEAN,
         #endif
@@ -28040,8 +28031,8 @@ const struct BaseStats gBaseStats[] =
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FIELD,
         #ifdef BATTLE_ENGINE
-            .abilities = {ABILITY_GORILLA_TACTICS, ABILITY_NONE},
-            .abilityHidden = ABILITY_ZEN_MODE,
+            .abilities = {ABILITY_ZEN_MODE, ABILITY_NONE},
+            .abilityHidden = ABILITY_GORILLA_TACTICS,
         #else
             .abilities = {ABILITY_NONE, ABILITY_NONE},
         #endif
@@ -30250,8 +30241,8 @@ const struct BaseStats gBaseStats[] =
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FIELD,
         #ifdef BATTLE_ENGINE
-            .abilities = {ABILITY_GORILLA_TACTICS, ABILITY_NONE},
-            .abilityHidden = ABILITY_ZEN_MODE,
+            .abilities = {ABILITY_ZEN_MODE, ABILITY_NONE},
+            .abilityHidden = ABILITY_GORILLA_TACTICS,
         #else
             .abilities = {ABILITY_NONE, ABILITY_NONE},
         #endif

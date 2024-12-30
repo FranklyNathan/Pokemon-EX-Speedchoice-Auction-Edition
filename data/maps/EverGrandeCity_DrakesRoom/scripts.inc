@@ -39,6 +39,7 @@ EverGrandeCity_DrakesRoom_EventScript_CloseDoor:: @ 82286ED
 	return
 
 EverGrandeCity_DrakesRoom_EventScript_Drake:: @ 82286F3
+	setvar VAR_FORCEANIM, 1
 	lock
 	faceplayer
 	goto_if_set FLAG_DEFEATED_ELITE_4_DRAKE, EverGrandeCity_DrakesRoom_EventScript_PostBattleSpeech
@@ -55,6 +56,7 @@ EverGrandeCity_DrakesRoom_EventScript_PostBattleSpeech:: @ 822871A
 
 EverGrandeCity_DrakesRoom_EventScript_Defeated:: @ 8228724
 	setvar VAR_0x8004, FANCOUNTER_DEFEATED_DRAKE
+	setvar VAR_FORCEANIM, 0
 	special Script_TryGainNewFanFromCounter
 	setflag FLAG_DEFEATED_ELITE_4_DRAKE
 	call PokemonLeague_EliteFour_SetAdvanceToNextRoomMetatiles

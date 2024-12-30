@@ -6401,6 +6401,7 @@ BattleScript_MegaEvolution::
 	handlemegaevo BS_ATTACKER, 2
 	printstring STRINGID_MEGAEVOEVOLVED
 	waitmessage 1
+	removeitem BS_ATTACKER
 	switchinabilities BS_ATTACKER
 	end2
 

@@ -44,6 +44,7 @@ EverGrandeCity_SidneysRoom_EventScript_WalkInCloseDoor:: @ 8227F57
 	end
 
 EverGrandeCity_SidneysRoom_EventScript_Sidney:: @ 8227F64
+	setvar VAR_FORCEANIM, 1
 	lock
 	faceplayer
 	goto_if_set FLAG_DEFEATED_ELITE_4_SIDNEY, EverGrandeCity_SidneysRoom_EventScript_PostBattleSpeech
@@ -59,6 +60,7 @@ EverGrandeCity_SidneysRoom_EventScript_PostBattleSpeech:: @ 8227F8B
 	end
 
 EverGrandeCity_SidneysRoom_EventScript_Defeated:: @ 8227F95
+	setvar VAR_FORCEANIM, 0
 	setflag FLAG_DEFEATED_ELITE_4_SIDNEY
 	call PokemonLeague_EliteFour_SetAdvanceToNextRoomMetatiles
 	msgbox EverGrandeCity_SidneysRoom_Text_PostBattleSpeech, MSGBOX_DEFAULT

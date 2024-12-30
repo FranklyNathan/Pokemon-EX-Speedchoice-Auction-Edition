@@ -365,9 +365,9 @@ static const u8 sCalciumDesc[] = _(
     "Pokémon.");
 
 static const u8 sRareCandyDesc[] = _(
-    "Raises the level\n"
-    "of a Pokémon by\n"
-    "one.");
+    "Yum! It's reusable.\n"
+    "Just don't go over\n"
+    "the level cap!");
 
 static const u8 sPPUpDesc[] = _(
     "Raises the maximum\n"
