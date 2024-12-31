@@ -1,3 +1,4 @@
+
 const struct MonCoords gMonFrontPicCoords[] =
 {
     [SPECIES_NONE] =
@@ -4492,6 +4493,21 @@ const struct MonCoords gMonFrontPicCoords[] =
         .y_offset = 0,
     },
     [SPECIES_CALYREX] =
+    {
+        .size = 0x68,
+        .y_offset = 2,
+    },
+    [SPECIES_WYRDEER] =
+    {
+        .size = 0x68,
+        .y_offset = 2,
+    },
+    [SPECIES_KLEAVOR] =
+    {
+        .size = 0x68,
+        .y_offset = 2,
+    },
+    [SPECIES_URSALUNA] =
     {
         .size = 0x68,
         .y_offset = 2,

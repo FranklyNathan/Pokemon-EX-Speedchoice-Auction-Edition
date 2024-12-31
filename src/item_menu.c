@@ -1473,8 +1473,8 @@ void OpenContextMenu(u8 unused)
     {
         case ITEMMENULOCATION_BATTLE:
         case ITEMMENULOCATION_WALLY:
-            if (ItemId_GetBattleUsage(gSpecialVar_ItemId))
-            {
+        if (ItemId_GetBattleUsage(gSpecialVar_ItemId) && (!FlagGet(FLAG_NUZLOCKE) 
+        || gBagPositionStruct.pocket == BALLS_POCKET || gBagPositionStruct.location != ITEMMENULOCATION_BATTLE))            {
                 gBagMenu->contextMenuItemsPtr = sContextMenuItems_BattleUse;
                 gBagMenu->contextMenuNumItems = ARRAY_COUNT(sContextMenuItems_BattleUse);
             }
@@ -1593,8 +1593,11 @@ void OpenContextMenu(u8 unused)
     else
     {
         CopyItemName(gSpecialVar_ItemId, gStringVar1);
-        StringExpandPlaceholders(gStringVar4, gText_Var1IsSelected);
-        FillWindowPixelBuffer(1, PIXEL_FILL(0));
+        if (ItemId_GetBattleUsage(gSpecialVar_ItemId) && FlagGet(FLAG_NUZLOCKE) 
+        && gBagPositionStruct.pocket != BALLS_POCKET && gBagPositionStruct.location == ITEMMENULOCATION_BATTLE)
+            StringExpandPlaceholders(gStringVar4, gText_Var1NuzlockePrevents);
+        else
+            StringExpandPlaceholders(gStringVar4, gText_Var1IsSelected);        FillWindowPixelBuffer(1, PIXEL_FILL(0));
         BagMenu_Print(1, 1, gStringVar4, 3, 1, 0, 0, 0, 0);
     }
     if (gBagMenu->contextMenuNumItems == 1)

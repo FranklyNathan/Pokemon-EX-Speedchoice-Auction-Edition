@@ -5355,3 +5355,20 @@ const u8 gCalyrexPokedexText[] = _(
     "providing healing and blessings. It\n"
     "reigned over the Galar region in times\n"
     "of yore.");
+
+const u8 gWyrdeerPokedexText[] = _(
+    "The black orbs shine with an uncanny\n"
+    "light when the Pokémon is erecting\n"
+    "invisible barriers. The fur shed from\n"
+    "its beard retains heat well.");
+
+const u8 gKleavorPokedexText[] = _(
+    "A violent creature that fells towering\n"
+    "trees with its crude axes and shields\n"
+    "itself with hard stone.");
+
+const u8 gUrsalunaPokedexText[] = _(
+    "I believe it was Hisui's swampy terrain\n"
+    "that gave Ursaluna its burly physique \n"
+    "and newfound capacity to manipulate peat\n"
+    "at will.");

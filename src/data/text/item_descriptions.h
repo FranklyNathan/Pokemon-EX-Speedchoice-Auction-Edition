@@ -366,8 +366,8 @@ static const u8 sCalciumDesc[] = _(
 
 static const u8 sRareCandyDesc[] = _(
     "Yum! It's reusable.\n"
-    "Just don't go over\n"
-    "the level cap!");
+    "Eat until the level\n"
+    "cap!");
 
 static const u8 sPPUpDesc[] = _(
     "Raises the maximum\n"
