@@ -9418,7 +9418,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_GRASS,
         .eggGroup2 = EGG_GROUP_HUMAN_LIKE,
-        .abilities = {ABILITY_SAND_VEIL, ABILITY_NONE},
+        .abilities = {ABILITY_SAND_VEIL, ABILITY_WATER_ABSORB},
         .abilityHidden = ABILITY_WATER_ABSORB,
         .bodyColor = BODY_COLOR_GREEN,
         .noFlip = FALSE,
@@ -9447,7 +9447,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_GRASS,
         .eggGroup2 = EGG_GROUP_HUMAN_LIKE,
-        .abilities = {ABILITY_SAND_VEIL, ABILITY_NONE},
+        .abilities = {ABILITY_SAND_VEIL, ABILITY_WATER_ABSORB},
         .abilityHidden = ABILITY_WATER_ABSORB,
         .bodyColor = BODY_COLOR_GREEN,
         .noFlip = FALSE,
@@ -23591,8 +23591,8 @@ const struct BaseStats gBaseStats[] =
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FIELD,
         #ifdef BATTLE_ENGINE
-            .abilities = {ABILITY_RUN_AWAY, ABILITY_UNBURDEN},
-            .abilityHidden = ABILITY_STAKEOUT,
+            .abilities = {ABILITY_STAKEOUT, ABILITY_UNBURDEN},
+            .abilityHidden = ABILITY_RUN_AWAY,
         #else
             .abilities = {ABILITY_RUN_AWAY, ABILITY_NONE},
         #endif
@@ -23620,8 +23620,8 @@ const struct BaseStats gBaseStats[] =
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FIELD,
         #ifdef BATTLE_ENGINE
-            .abilities = {ABILITY_RUN_AWAY, ABILITY_UNBURDEN},
-            .abilityHidden = ABILITY_STAKEOUT,
+            .abilities = {ABILITY_STAKEOUT, ABILITY_UNBURDEN},
+            .abilityHidden = ABILITY_RUN_AWAY,
         #else
             .abilities = {ABILITY_RUN_AWAY, ABILITY_NONE},
         #endif
