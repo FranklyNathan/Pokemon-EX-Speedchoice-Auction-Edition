@@ -6630,7 +6630,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
     [MOVE_FLING] =
     {
         .effect = EFFECT_FLING,
-        .power = 1,
+        .power = 80,
         .type = TYPE_DARK,
         .accuracy = 100,
         .pp = 10,
