@@ -115,6 +115,7 @@ EverGrandeCity_PokemonLeague_1F_Pokemart3:
 	.2byte ITEM_STEEL_GEM 
 	.2byte ITEM_BUG_GEM
     .2byte ITEM_WATER_GEM 
+    .2byte ITEM_NONE
 	release
 	end
 

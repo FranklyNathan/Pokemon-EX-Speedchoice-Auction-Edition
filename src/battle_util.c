@@ -4156,6 +4156,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
         case ABILITY_SHIELDS_DOWN:
             if (ShouldChangeFormHpBased(battler))
             {
+                gBattlerAttacker = battler;
                 BattleScriptPushCursorAndCallback(BattleScript_AttackerFormChangeEnd3);
                 effect++;
             }
@@ -4338,7 +4339,10 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
             case ABILITY_ZEN_MODE:
             case ABILITY_SHIELDS_DOWN:
                 if ((effect = ShouldChangeFormHpBased(battler)))
+                    {
+                    gBattlerAttacker = battler;
                     BattleScriptPushCursorAndCallback(BattleScript_AttackerFormChangeEnd3);
+                    }
                 break;
             case ABILITY_POWER_CONSTRUCT:
                 if ((gBattleMons[battler].species == SPECIES_ZYGARDE || gBattleMons[battler].species == SPECIES_ZYGARDE_10)

@@ -1474,7 +1474,8 @@ void OpenContextMenu(u8 unused)
         case ITEMMENULOCATION_BATTLE:
         case ITEMMENULOCATION_WALLY:
         if (ItemId_GetBattleUsage(gSpecialVar_ItemId) && (!FlagGet(FLAG_NUZLOCKE) 
-        || gBagPositionStruct.pocket == BALLS_POCKET || gBagPositionStruct.location != ITEMMENULOCATION_BATTLE))            {
+        || gBagPositionStruct.pocket == BALLS_POCKET || gBagPositionStruct.location != ITEMMENULOCATION_BATTLE))          
+            {
                 gBagMenu->contextMenuItemsPtr = sContextMenuItems_BattleUse;
                 gBagMenu->contextMenuNumItems = ARRAY_COUNT(sContextMenuItems_BattleUse);
             }

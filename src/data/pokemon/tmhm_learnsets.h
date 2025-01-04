@@ -20313,6 +20313,7 @@ const u32 gTMHMLearnsets[][2] =
                                                    | TMHM(TM44_REST)
                                                    | TMHM(HM06_ROCK_SMASH)
                                                    | TMHM(HM04_STRENGTH)
+                                                   | TMHM(HM03_SURF)
                                                    | TMHM(TM24_THUNDERBOLT)
                                                    | TMHM(TM25_THUNDER)
                                                    | TMHM(TM06_TOXIC)),
