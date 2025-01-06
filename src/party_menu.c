@@ -5024,37 +5024,68 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
     u16 *itemPtr = &gSpecialVar_ItemId;
     bool8 cannotUseEffect;
 
-    if (GetMonData(mon, MON_DATA_LEVEL) != MAX_LEVEL
-    && !levelCappedNuzlocke(GetMonData(mon, MON_DATA_LEVEL))) 
+    int i;  // Declare i before the loop
+    bool8 learnedNewMove = FALSE; // Variable to track if a new move is learned
+    bool8 canEvolve = FALSE; // Variable to track if the Pokemon can evolve
+    u16 learnMove;  // Declare learnMove before use
+    u16 targetSpecies;  // Declare targetSpecies before use
+
+    for (i = 0; i < 25 && !learnedNewMove && !canEvolve; i++) 
     {
-        BufferMonStatsToTaskData(mon, arrayPtr);
-        cannotUseEffect = ExecuteTableBasedItemEffect_(gPartyMenu.slotId, *itemPtr, 0);
-        BufferMonStatsToTaskData(mon, &ptr->data[NUM_STATS]);
-    }
-    else
-    {
-        cannotUseEffect = TRUE;
-    }
-    PlaySE(SE_SELECT);
-    if (cannotUseEffect)
-    {
-        gPartyMenuUseExitCallback = FALSE;
-        DisplayPartyMenuMessage(gText_WontHaveEffect, TRUE);
-        ScheduleBgCopyTilemapToVram(2);
-        gTasks[taskId].func = task;
-    }
-    else
-    {
-        gPartyMenuUseExitCallback = TRUE;
+        if (GetMonData(mon, MON_DATA_LEVEL) != MAX_LEVEL
+            && !levelCappedNuzlocke(GetMonData(mon, MON_DATA_LEVEL))) 
+        {
+            BufferMonStatsToTaskData(mon, arrayPtr);
+            cannotUseEffect = ExecuteTableBasedItemEffect_(gPartyMenu.slotId, *itemPtr, 0);
+            BufferMonStatsToTaskData(mon, &ptr->data[NUM_STATS]);
+
+            // Check if a new move is learned
+            learnMove = MonTryLearningNewMove(mon, TRUE);
+            if (learnMove != 0)  // If a move is learned (not 0 = no move to learn)
+            {
+                learnedNewMove = TRUE;
+            }
+
+            // Check if the Pokémon can evolve
+            targetSpecies = GetEvolutionTargetSpecies(mon, EVO_MODE_NORMAL, ITEM_NONE, SPECIES_NONE);
+            if (targetSpecies != SPECIES_NONE)  // If the Pokémon can evolve
+            {
+                canEvolve = TRUE;
+            }
+        }
+        else
+        {
+            cannotUseEffect = TRUE;
+        }
+
         PlaySE(SE_SELECT);
-        UpdateMonDisplayInfoAfterRareCandy(gPartyMenu.slotId, mon);
-        GetMonNickname(mon, gStringVar1);
-        ConvertIntToDecimalStringN(gStringVar2, GetMonData(mon, MON_DATA_LEVEL), STR_CONV_MODE_LEFT_ALIGN, 3);
-        StringExpandPlaceholders(gStringVar4, gText_PkmnElevatedToLvVar2);
-        ScheduleBgCopyTilemapToVram(2);
-        gTasks[taskId].func = Task_TryLearnNewMoves;
+        if (cannotUseEffect)
+        {
+            gPartyMenuUseExitCallback = FALSE;
+            DisplayPartyMenuMessage(gText_WontHaveEffect, TRUE);
+            ScheduleBgCopyTilemapToVram(2);
+            gTasks[taskId].func = task;
+        }
+        else
+        {
+            gPartyMenuUseExitCallback = TRUE;
+            PlaySE(SE_SELECT);
+            UpdateMonDisplayInfoAfterRareCandy(gPartyMenu.slotId, mon);
+            GetMonNickname(mon, gStringVar1);
+            ConvertIntToDecimalStringN(gStringVar2, GetMonData(mon, MON_DATA_LEVEL), STR_CONV_MODE_LEFT_ALIGN, 3);
+            StringExpandPlaceholders(gStringVar4, gText_PkmnElevatedToLvVar2);
+            ScheduleBgCopyTilemapToVram(2);
+            gTasks[taskId].func = Task_TryLearnNewMoves;
+        }
+    }
+
+    // Handle evolution if the Pokémon can evolve
+    if (canEvolve)
+    {
+        PartyMenuTryEvolution(taskId);
     }
 }
+
 
 static void UpdateMonDisplayInfoAfterRareCandy(u8 slot, struct Pokemon *mon)
 {

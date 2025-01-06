@@ -5,7 +5,7 @@ VictoryRoad_1F_MapScripts:: @ 8235D7A
 	.byte 0
 
 VictoryRoad_1F_OnTransition: @ 8235D80
-	setescapewarp MAP_EVER_GRANDE_CITY, 255, 18, 27
+	setescapewarp MAP_EVER_GRANDE_CITY, 255, 18, 28
 	compare VAR_VICTORY_ROAD_1F_STATE, 1
 	call_if_eq VictoryRoad_1F_EventScript_SetEntranceWallyPos1
 	compare VAR_VICTORY_ROAD_1F_STATE, 2

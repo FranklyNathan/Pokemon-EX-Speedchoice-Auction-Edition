@@ -20,6 +20,10 @@ EverGrandeCity_EventScript_PokemonLeagueSign:: @ 81E7D3D
 
 EverGrandeCity_EventScript_SetVisitedEverGrande:: @ 81E7D46
 	setflag FLAG_VISITED_EVER_GRANDE_CITY
+	setflag FLAG_LANDMARK_POKEMON_LEAGUE
+	setflag FLAG_VISITED_FALLARBOR_TOWN
+	setflag FLAG_VISITED_PACIFIDLOG_TOWN
+	setflag FLAG_VISITED_VERDANTURF_TOWN 
 	setvar VAR_TEMP_1, 1
 	end
 
