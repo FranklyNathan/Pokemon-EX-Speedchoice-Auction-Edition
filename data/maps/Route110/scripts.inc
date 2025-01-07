@@ -442,10 +442,7 @@ Route110_EventScript_MayBattleMudkip:: @ 81EF83A
 
 Route110_EventScript_MayDefeated:: @ 81EF84A
 	msgbox Route110_Text_MayTakeThis, MSGBOX_DEFAULT
-	checkspeedchoice EARLYFLY, FLY_YES
-	call_if TRUE, Speedchoice_GiveFly
-	checkspeedchoice EARLYFLY, FLY_NO
-	call_if TRUE, Route110_EventScript_GiveItemfinder @ im sure there's a better way to do this than a double check. i cannot be sure that the callif instructions don't modify callif conditional.
+	call Route110_EventScript_GiveItemfinder
 	msgbox Route110_Text_MayExplainItemfinder, MSGBOX_DEFAULT
 	goto Route110_EventScript_RivalExit
 	end
@@ -475,10 +472,7 @@ Route110_EventScript_BrendanBattleMudkip:: @ 81EF8B4
 
 Route110_EventScript_BrendanDefeated:: @ 81EF8C4
 	msgbox Route110_Text_BrendanTakeThis, MSGBOX_DEFAULT
-	checkspeedchoice EARLYFLY, FLY_YES
-	call_if TRUE, Speedchoice_GiveFly
-	checkspeedchoice EARLYFLY, FLY_NO
-	call_if TRUE, Route110_EventScript_GiveItemfinder @ im sure there's a better way to do this than a double check. i cannot be sure that the callif instructions don't modify callif conditional.
+	call Route110_EventScript_GiveItemfinder
 	msgbox Route110_Text_BrendanExplainItemfinder, MSGBOX_DEFAULT
 	goto Route110_EventScript_RivalExit
 	end

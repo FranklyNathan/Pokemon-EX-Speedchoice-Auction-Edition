@@ -257,11 +257,11 @@ static EWRAM_DATA int gSpeedchoiceTaskId = 0;
 static const u8 gPresetVanilla[CURRENT_OPTIONS_NUM] = {
     PRESET_VANILLA,         // PRESET
     0xFF,                   // (Reserved for trainer name)
-    EXP_KEEP,               // EXP
-    PLOT_KEEP,              // PLOTLESS
-    SPIN_KEEP,              // SPINNERS
+    EXP_NONE,               // EXP
+    PLOT_FULL,              // PLOTLESS
+    SPIN_HELL,              // SPINNERS
     MAX_OFF,                // MAXVISION
-    FLY_NO,                 // EARLYFLY
+    FLY_YES,                // EARLYFLY
     GOOD_OFF,               // GOOD_EARLY_WILDS
     SURF_OFF,               // EARLYSURF
     NICE_MENU_ORDER_OFF,    // NICE_MENU_ORDER
@@ -284,7 +284,7 @@ static const u8 gPresetBingo[CURRENT_OPTIONS_NUM] = {
     FLY_YES,                // EARLYFLY
     GOOD_OFF,               // GOOD_EARLY_WILDS
     SURF_ON,                // EARLYSURF
-    NICE_MENU_ORDER_ON,     // NICE_MENU_ORDER
+    NICE_MENU_ORDER_OFF,    // NICE_MENU_ORDER
     EASY_FALSE_SWIPE_TUTOR, // EASY_FALSE_SWIPE
     FAST_CATCH_OFF,         // FAST_CATCH
     GEN_7_X_ITEMS_ON,       // GEN_7_X_ITEMS
@@ -304,7 +304,7 @@ static const u8 gPresetCEA[CURRENT_OPTIONS_NUM] = {
     FLY_YES,                // EARLYFLY
     GOOD_OFF,               // GOOD_EARLY_WILDS
     SURF_ON,                // EARLYSURF
-    NICE_MENU_ORDER_ON,     // NICE_MENU_ORDER
+    NICE_MENU_ORDER_OFF,    // NICE_MENU_ORDER
     EASY_FALSE_SWIPE_TUTOR, // EASY_FALSE_SWIPE
     FAST_CATCH_ON,          // FAST_CATCH
     GEN_7_X_ITEMS_ON,       // GEN_7_X_ITEMS
@@ -317,17 +317,17 @@ static const u8 gPresetCEA[CURRENT_OPTIONS_NUM] = {
 static const u8 gPresetRace[CURRENT_OPTIONS_NUM] = {
     PRESET_RACE,            // PRESET
     0xFF,                   // (Reserved for trainer name)
-    EXP_BW,                 // EXP
+    EXP_NONE,               // EXP
     PLOT_FULL,              // PLOTLESS
-    SPIN_NERF,              // SPINNERS
+    SPIN_HELL,              // SPINNERS
     MAX_OFF,                // MAXVISION
     FLY_YES,                // EARLYFLY
-    GOOD_STATIC,            // GOOD_EARLY_WILDS
-    SURF_ON,                // EARLYSURF
-    NICE_MENU_ORDER_ON,     // NICE_MENU_ORDER
-    EASY_FALSE_SWIPE_TUTOR, // EASY_FALSE_SWIPE
+    GOOD_OFF,               // GOOD_EARLY_WILDS
+    SURF_OFF,               // EARLYSURF
+    NICE_MENU_ORDER_OFF,    // NICE_MENU_ORDER
+    EASY_FALSE_SWIPE_OFF,   // EASY_FALSE_SWIPE
     FAST_CATCH_OFF,         // FAST_CATCH
-    GEN_7_X_ITEMS_ON,       // GEN_7_X_ITEMS
+    EARLY_BIKE_NO,          // EARLY_BIKE
     EVO_EV_OFF,             // EVO_EVERY_LEVEL
     INV_BATTLES_OFF,        // INVERSE_BATTLES
     SHUFFLE_MUSIC_OFF,      // SHUFFLE_MUSIC

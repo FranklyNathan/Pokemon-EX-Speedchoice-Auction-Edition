@@ -14332,6 +14332,7 @@ const u32 gTMHMLearnsets[][2] =
                                             | TMHM(TM47_STEEL_WING)
                                             | TMHM(HM03_SURF)
                                             | TMHM(TM06_TOXIC)
+                                            | TMHM(HM07_WATERFALL)
                                             | TMHM(TM03_WATER_PULSE)),
 
     [SPECIES_SWANNA]      = TMHM_LEARNSET(TMHM(TM40_AERIAL_ACE)

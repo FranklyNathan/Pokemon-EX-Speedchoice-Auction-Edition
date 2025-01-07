@@ -2909,17 +2909,7 @@ static void PlayerHandleExpUpdate(void)
     }
     else
     {
-        s16 expPointsToGive;
-        u8 taskId;
-
-        LoadBattleBarGfx(1);
-        GetMonData(&gPlayerParty[monId], MON_DATA_SPECIES);  // Unused return value.
-        expPointsToGive = T1_READ_16(&gBattleResources->bufferA[gActiveBattler][2]);
-        taskId = CreateTask(Task_GiveExpToMon, 10);
-        gTasks[taskId].tExpTask_monId = monId;
-        gTasks[taskId].tExpTask_gainedExp = expPointsToGive;
-        gTasks[taskId].tExpTask_battler = gActiveBattler;
-        gBattlerControllerFuncs[gActiveBattler] = BattleControllerDummy;
+        PlayerBufferExecCompleted(); //Make it so that Pokemon never gain Exp.
     }
 }
 

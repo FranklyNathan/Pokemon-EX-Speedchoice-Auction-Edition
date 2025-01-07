@@ -508,6 +508,7 @@ u8 CycleEvolutionMonSprite(u8 preEvoSpriteId, u8 postEvoSpriteId)
     for (i = 0; i < ARRAY_COUNT(stack); i++)
         stack[i] = 0x7FFF;
 
+    // Create task for cycling evolution sprite
     taskId = CreateTask(Task_CycleEvolutionMonSprite_Init, 0);
     gTasks[taskId].tPreEvoSpriteId = preEvoSpriteId;
     gTasks[taskId].tPostEvoSpriteId = postEvoSpriteId;
@@ -518,6 +519,7 @@ u8 CycleEvolutionMonSprite(u8 preEvoSpriteId, u8 postEvoSpriteId)
     SetOamMatrix(MATRIX_PRE_EVO, MON_MAX_SCALE, 0, 0, MON_MAX_SCALE);
     SetOamMatrix(MATRIX_POST_EVO, toDiv / gTasks[taskId].tPostEvoScale, 0, 0, toDiv / gTasks[taskId].tPostEvoScale);
 
+    // Set up sprites but do not cycle them
     gSprites[preEvoSpriteId].callback = SpriteCB_EvolutionMonSprite;
     gSprites[preEvoSpriteId].oam.affineMode = ST_OAM_AFFINE_NORMAL;
     gSprites[preEvoSpriteId].oam.matrixNum = MATRIX_PRE_EVO;
@@ -530,6 +532,7 @@ u8 CycleEvolutionMonSprite(u8 preEvoSpriteId, u8 postEvoSpriteId)
     gSprites[postEvoSpriteId].invisible = FALSE;
     CpuSet(stack, &gPlttBufferFaded[0x100 + (gSprites[postEvoSpriteId].oam.paletteNum * 16)], 16);
 
+    // Set task properties but don't cycle sprites
     gTasks[taskId].tEvoStopped = FALSE;
     return taskId;
 }
@@ -541,20 +544,16 @@ static void Task_CycleEvolutionMonSprite_Init(u8 taskId)
     gTasks[taskId].func = Task_CycleEvolutionMonSprite_TryEnd;
 }
 
-// Try to end sprite cycling
-// If evo hasn't stopped or growth/shrink speed hasn't been maxed out, start another cycle
+// Try to end sprite cycling without ever cycling the sprite
+// Simply ends on the pre-evo sprite if evo hasn't stopped yet
 static void Task_CycleEvolutionMonSprite_TryEnd(u8 taskId)
 {
+    // Directly check if the evolution has been stopped and handle accordingly
     if (gTasks[taskId].tEvoStopped)
         EndOnPreEvoMon(taskId);
-    else if (gTasks[taskId].tScaleSpeed == 128)
-        EndOnPostEvoMon(taskId);
     else
-    {
-        gTasks[taskId].tScaleSpeed += 2;
-        gTasks[taskId].tShowingPostEvo ^= 1;
-        gTasks[taskId].func = Task_CycleEvolutionMonSprite_UpdateSize;
-    }
+        // Attempt to end directly, skipping the cycling of sprites
+        EndOnPostEvoMon(taskId);
 }
 
 static void Task_CycleEvolutionMonSprite_UpdateSize(u8 taskId)

@@ -106,10 +106,7 @@ Route119_EventScript_BattleMayMudkip:: @ 81F455A
 
 Route119_EventScript_DefeatedMay:: @ 81F456A
 	msgbox Route119_Text_MayPresentForYou, MSGBOX_DEFAULT
-	checkspeedchoice EARLYFLY, FLY_YES
-	call_if TRUE, Speedchoice_GiveItemfinder
-	checkspeedchoice EARLYFLY, FLY_NO
-	call_if TRUE, Route119_EventScript_GiveFlyHM @ im still not sure if there's a better way to do this than a double check. i cannot be sure that the callif instructions don't modify callif conditional.
+	call Route119_EventScript_GiveFlyHM
 	msgbox Route119_Text_MayExplainFly, MSGBOX_DEFAULT
 	goto Route119_EventScript_RivalExitScottArrive
 	end
@@ -139,10 +136,7 @@ Route119_EventScript_BattleBrendanMudkip:: @ 81F45D4
 
 Route119_EventScript_DefeatedBrendan:: @ 81F45E4
 	msgbox Route119_Text_BrendanIllGiveYouThis, MSGBOX_DEFAULT
-	checkspeedchoice EARLYFLY, FLY_YES
-	call_if TRUE, Speedchoice_GiveItemfinder
-	checkspeedchoice EARLYFLY, FLY_NO
-	call_if TRUE, Route119_EventScript_GiveFlyHM @ im still not sure if there's a better way to do this than a double check. i cannot be sure that the callif instructions don't modify callif conditional.
+	call Route119_EventScript_GiveFlyHM
 	msgbox Route119_Text_BrendanExplainFly, MSGBOX_DEFAULT
 	goto Route119_EventScript_RivalExitScottArrive
 	end

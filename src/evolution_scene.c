@@ -683,7 +683,6 @@ static void Task_EvolutionScene(u8 taskId)
     case EVOSTATE_INTRO_SOUND:
         if (EvoScene_IsMonAnimFinished(sEvoStructPtr->preEvoSpriteId))
         {
-            PlaySE(MUS_EVOLUTION_INTRO);
             gTasks[taskId].tState++;
         }
         break;
@@ -691,7 +690,6 @@ static void Task_EvolutionScene(u8 taskId)
         if (!IsSEPlaying())
         {
             // Start music, fade background to black
-            PlayNewMapMusic(MUS_EVOLUTION);
             gTasks[taskId].tState++;
             BeginNormalPaletteFade(0x1C, 4, 0, 0x10, RGB_BLACK);
         }
@@ -699,45 +697,24 @@ static void Task_EvolutionScene(u8 taskId)
     case EVOSTATE_START_BG_AND_SPARKLE_SPIRAL:
         if (!gPaletteFade.active)
         {
-            StartBgAnimation(FALSE);
-            sEvoGraphicsTaskId = EvolutionSparkles_SpiralUpward(17);
             gTasks[taskId].tState++;
         }
         break;
     case EVOSTATE_SPARKLE_ARC:
-        if (!gTasks[sEvoGraphicsTaskId].isActive)
-        {
             gTasks[taskId].tState++;
-            sEvoStructPtr->delayTimer = 1;
-            sEvoGraphicsTaskId = EvolutionSparkles_ArcDown();
-        }
+            sEvoStructPtr->delayTimer = 0;
         break;
     case EVOSTATE_CYCLE_MON_SPRITE: // launch task that flashes pre evo with post evo sprites
-        if (!gTasks[sEvoGraphicsTaskId].isActive)
-        {
             sEvoGraphicsTaskId = CycleEvolutionMonSprite(sEvoStructPtr->preEvoSpriteId, sEvoStructPtr->postEvoSpriteId);
             gTasks[taskId].tState++;
-        }
         break;
     case EVOSTATE_WAIT_CYCLE_MON_SPRITE:
-        if (--sEvoStructPtr->delayTimer == 0)
-        {
-            sEvoStructPtr->delayTimer = 3;
-            if (!gTasks[sEvoGraphicsTaskId].isActive)
-                gTasks[taskId].tState++;
-        }
+            gTasks[taskId].tState++;
         break;
     case EVOSTATE_SPARKLE_CIRCLE:
-        sEvoGraphicsTaskId = EvolutionSparkles_CircleInward();
-        gTasks[taskId].tState++;
-        break;
     case EVOSTATE_SPARKLE_SPRAY:
-        if (!gTasks[sEvoGraphicsTaskId].isActive)
-        {
             sEvoGraphicsTaskId = EvolutionSparkles_SprayAndFlash(gTasks[taskId].tPostEvoSpecies);
             gTasks[taskId].tState++;
-        }
-        break;
     case EVOSTATE_EVO_SOUND:
         if (!gTasks[sEvoGraphicsTaskId].isActive)
         {
@@ -763,12 +740,9 @@ static void Task_EvolutionScene(u8 taskId)
         }
         break;
     case EVOSTATE_SET_MON_EVOLVED:
-        if (IsCryFinished())
-        {
             TryIncrementButtonStat(DB_EVOLUTIONS_COMPLETED);
             StringExpandPlaceholders(gStringVar4, gText_CongratsPkmnEvolved);
             BattlePutTextOnWindow(gStringVar4, 0);
-            PlayBGM(MUS_EVOLVED);
             gTasks[taskId].tState++;
             SetMonData(mon, MON_DATA_SPECIES, (void*)(&gTasks[taskId].tPostEvoSpecies));
             CalculateMonStats(mon);
@@ -776,7 +750,6 @@ static void Task_EvolutionScene(u8 taskId)
             GetSetPokedexFlag(SpeciesToNationalPokedexNum(gTasks[taskId].tPostEvoSpecies), FLAG_SET_SEEN);
             GetSetPokedexFlag(SpeciesToNationalPokedexNum(gTasks[taskId].tPostEvoSpecies), FLAG_SET_CAUGHT);
             IncrementGameStat(GAME_STAT_EVOLVED_POKEMON);
-        }
         break;
     case EVOSTATE_TRY_LEARN_MOVE:
         if (!IsTextPrinterActive(0))

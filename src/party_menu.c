@@ -4896,7 +4896,7 @@ static void Task_HandleReplaceMoveYesNoInput(u8 taskId)
         PlaySE(SE_SELECT);
         // fallthrough
     case 1:
-        StopLearningMovePrompt(taskId);
+        Task_TryLearningNextMoveAfterText(taskId);
         break;
     }
 }
