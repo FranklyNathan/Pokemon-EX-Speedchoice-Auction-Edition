@@ -3621,7 +3621,7 @@ static const struct TrainerMonItemCustomMoves sParty_TateAndLiza1[] = {
     .species = SPECIES_XATU,
     .nature = NATURE_MODEST,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_PSYCHIC, MOVE_SUNNY_DAY, MOVE_CONFUSE_RAY, MOVE_CALM_MIND}
+    .moves = {MOVE_PSYCHIC, MOVE_SUNNY_DAY, MOVE_AIR_SLASH, MOVE_CALM_MIND}
     },
     {
     .iv = 255,

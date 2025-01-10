@@ -529,7 +529,7 @@ const struct MonCoords gMonFrontPicCoords[] =
     [SPECIES_MAROWAK] =
     {
         .size = 0x76,
-        .y_offset = 8,
+        .y_offset = 3,
     },
     [SPECIES_HITMONLEE] =
     {
