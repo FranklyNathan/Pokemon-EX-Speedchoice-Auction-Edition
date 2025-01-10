@@ -4410,5 +4410,32 @@ const u16 gEggMoves[] = {
         MOVE_PSYCHO_SHIFT,
         MOVE_HEAL_PULSE),
 
+    egg_moves(GROWLITHE_HISUIAN,
+        MOVE_BODY_SLAM,
+        MOVE_CRUNCH,
+        MOVE_THRASH,
+        MOVE_FIRE_SPIN,
+        MOVE_HOWL,
+        MOVE_HEAT_WAVE,
+        MOVE_DOUBLE_EDGE,
+        MOVE_FLARE_BLITZ,
+        MOVE_MORNING_SUN,
+        MOVE_COVET,
+        MOVE_IRON_TAIL,
+        MOVE_DOUBLE_KICK,
+        MOVE_CLOSE_COMBAT,
+        MOVE_BURN_UP),
+
+    egg_moves(ZORUA_HISUIAN,
+        MOVE_DETECT,
+        MOVE_CAPTIVATE,
+        MOVE_DARK_PULSE,
+        MOVE_SNATCH,
+        MOVE_MEMENTO,
+        MOVE_SUCKER_PUNCH,
+        MOVE_EXTRASENSORY,
+        MOVE_COUNTER,
+        MOVE_COPYCAT),
+
     EGG_MOVES_TERMINATOR
 };

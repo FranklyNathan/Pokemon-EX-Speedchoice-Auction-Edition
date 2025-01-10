@@ -4951,6 +4951,62 @@ const struct MonCoords gMonFrontPicCoords[] =
         .size = 0x65,
         .y_offset = 14,
     },
+    // Hisuian Forms
+    [SPECIES_GROWLITHE_HISUIAN] =
+    {
+        .size = 0x76,
+        .y_offset = 9,
+    },
+    [SPECIES_ARCANINE_HISUIAN] =
+    {
+        .size = 0x83,
+        .y_offset = 4,
+    },
+    [SPECIES_VOLTORB_HISUIAN] =
+    {
+        .size = 0x76,
+        .y_offset = 10,
+    },
+    [SPECIES_ELECTRODE_HISUIAN] =
+    {
+        .size = 0x83,
+        .y_offset = 7,
+    },
+    [SPECIES_ZORUA_HISUIAN] =
+    {
+        .size = 0x83,
+        .y_offset = 6,
+    },
+    [SPECIES_ZOROARK_HISUIAN] =
+    {
+        .size = 0x83,
+        .y_offset = 1,
+    },
+    [SPECIES_SLIGGOO_HISUIAN] =
+    {
+        .size = 0x83,
+        .y_offset = 9,
+    },
+    [SPECIES_GOODRA_HISUIAN] =
+    {
+        .size = 0x83,
+        .y_offset = 3,
+    },
+    [SPECIES_DECIDUEYE_HISUIAN] =
+    {
+        .size = 0x83,
+        .y_offset = 3,
+    },
+    [SPECIES_TYPHLOSION_HISUIAN] =
+    {
+        .size = 0x83,
+        .y_offset = 3,
+    },
+    [SPECIES_SAMUROTT_HISUIAN] =
+    {
+        .size = 0x83,
+        .y_offset = 3,
+    },
     // Misc Forms
     // Cosplay Pikachu
     [SPECIES_PIKACHU_COSPLAY] =

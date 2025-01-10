@@ -994,6 +994,18 @@ const struct CompressedSpritePalette gMonShinyPaletteTable[] =
     SPECIES_SHINY_PAL(YAMASK_GALARIAN, gMonShinyPalette_YamaskGalarian),
     SPECIES_SHINY_PAL(STUNFISK_GALARIAN, gMonShinyPalette_StunfiskGalarian),
 
+    SPECIES_SHINY_PAL(GROWLITHE_HISUIAN, gMonShinyPalette_GrowlitheHisuian),
+    SPECIES_SHINY_PAL(ARCANINE_HISUIAN, gMonShinyPalette_ArcanineHisuian),
+    SPECIES_SHINY_PAL(VOLTORB_HISUIAN, gMonShinyPalette_VoltorbHisuian),
+    SPECIES_SHINY_PAL(ELECTRODE_HISUIAN, gMonShinyPalette_ElectrodeHisuian),
+    SPECIES_SHINY_PAL(ZORUA_HISUIAN, gMonShinyPalette_ZoruaHisuian),
+    SPECIES_SHINY_PAL(ZOROARK_HISUIAN, gMonShinyPalette_ZoroarkHisuian),
+    SPECIES_SHINY_PAL(SLIGGOO_HISUIAN, gMonShinyPalette_SliggooHisuian),
+    SPECIES_SHINY_PAL(GOODRA_HISUIAN, gMonShinyPalette_GoodraHisuian),
+    SPECIES_SHINY_PAL(DECIDUEYE_HISUIAN, gMonShinyPalette_DecidueyeHisuian),
+    SPECIES_SHINY_PAL(TYPHLOSION_HISUIAN, gMonShinyPalette_TyphlosionHisuian),
+    SPECIES_SHINY_PAL(SAMUROTT_HISUIAN, gMonShinyPalette_SamurottHisuian),
+
     SPECIES_SHINY_PAL(PIKACHU_COSPLAY, gMonShinyPalette_PikachuCosplay),
     SPECIES_SHINY_PAL(PIKACHU_ROCK_STAR, gMonShinyPalette_PikachuRockStar),
     SPECIES_SHINY_PAL(PIKACHU_BELLE, gMonShinyPalette_PikachuBelle),

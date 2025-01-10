@@ -996,6 +996,19 @@ const u8 gSpeciesNames[][POKEMON_NAME_LENGTH + 1] = {
     [SPECIES_YAMASK_GALARIAN] = _("Yamask"),
     [SPECIES_STUNFISK_GALARIAN] = _("Stunfisk"),
 
+    // Hisuian Forms
+    [SPECIES_GROWLITHE_HISUIAN] = _("Growlithe"),
+    [SPECIES_ARCANINE_HISUIAN] = _("Arcanine"),
+    [SPECIES_VOLTORB_HISUIAN] = _("Voltorb"),
+    [SPECIES_ELECTRODE_HISUIAN] = _("Electrode"),
+    [SPECIES_ZORUA_HISUIAN] = _("Zorua"),
+    [SPECIES_ZOROARK_HISUIAN] = _("Zoroark"),
+    [SPECIES_SLIGGOO_HISUIAN] = _("Sliggoo"),
+    [SPECIES_GOODRA_HISUIAN] = _("Goodra"),
+    [SPECIES_DECIDUEYE_HISUIAN] = _("Decidueye"),
+    [SPECIES_TYPHLOSION_HISUIAN] = _("Typhlosion"),
+    [SPECIES_SAMUROTT_HISUIAN] = _("Samurott"),
+
     // Cosplay Pikachu
     [SPECIES_PIKACHU_COSPLAY] = _("Pikachu"),
     [SPECIES_PIKACHU_ROCK_STAR] = _("Pikachu"),

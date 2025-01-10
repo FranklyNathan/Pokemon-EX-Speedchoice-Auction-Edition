@@ -994,6 +994,18 @@ const struct CompressedSpriteSheet gMonBackPicTable[] =
     SPECIES_SPRITE(YAMASK_GALARIAN, gMonBackPic_YamaskGalarian),
     SPECIES_SPRITE(STUNFISK_GALARIAN, gMonBackPic_StunfiskGalarian),
 
+    SPECIES_SPRITE(GROWLITHE_HISUIAN, gMonBackPic_GrowlitheHisuian),
+    SPECIES_SPRITE(ARCANINE_HISUIAN, gMonBackPic_ArcanineHisuian),
+    SPECIES_SPRITE(VOLTORB_HISUIAN, gMonBackPic_VoltorbHisuian),
+    SPECIES_SPRITE(ELECTRODE_HISUIAN, gMonBackPic_ElectrodeHisuian),
+    SPECIES_SPRITE(ZORUA_HISUIAN, gMonBackPic_ZoruaHisuian),
+    SPECIES_SPRITE(ZOROARK_HISUIAN, gMonBackPic_ZoroarkHisuian),
+    SPECIES_SPRITE(SLIGGOO_HISUIAN, gMonBackPic_SliggooHisuian),
+    SPECIES_SPRITE(GOODRA_HISUIAN, gMonBackPic_GoodraHisuian),
+    SPECIES_SPRITE(DECIDUEYE_HISUIAN, gMonBackPic_DecidueyeHisuian),
+    SPECIES_SPRITE(TYPHLOSION_HISUIAN, gMonBackPic_TyphlosionHisuian),
+    SPECIES_SPRITE(SAMUROTT_HISUIAN, gMonBackPic_SamurottHisuian),
+
     SPECIES_SPRITE(PIKACHU_COSPLAY, gMonBackPic_PikachuCosplay),
     SPECIES_SPRITE(PIKACHU_ROCK_STAR, gMonBackPic_PikachuRockStar),
     SPECIES_SPRITE(PIKACHU_BELLE, gMonBackPic_PikachuBelle),

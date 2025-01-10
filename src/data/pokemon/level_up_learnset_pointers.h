@@ -993,6 +993,18 @@ const struct LevelUpMove *const gLevelUpLearnsets[NUM_SPECIES] =
     [SPECIES_DARMANITAN_GALARIAN] = sDarmanitanGalarianLevelUpLearnset,
     [SPECIES_YAMASK_GALARIAN] = sYamaskGalarianLevelUpLearnset,
     [SPECIES_STUNFISK_GALARIAN] = sStunfiskGalarianLevelUpLearnset,
+    // Hisuian Forms
+    [SPECIES_GROWLITHE_HISUIAN] = sGrowlitheHisuianLevelUpLearnset,
+    [SPECIES_ARCANINE_HISUIAN] = sArcanineHisuianLevelUpLearnset,
+    [SPECIES_VOLTORB_HISUIAN] = sVoltorbHisuianLevelUpLearnset,
+    [SPECIES_ELECTRODE_HISUIAN] = sElectrodeHisuianLevelUpLearnset,
+    [SPECIES_ZORUA_HISUIAN] = sZoruaHisuianLevelUpLearnset,
+    [SPECIES_ZOROARK_HISUIAN] = sZoroarkHisuianLevelUpLearnset,
+    [SPECIES_SLIGGOO_HISUIAN] = sSliggooHisuianLevelUpLearnset,
+    [SPECIES_GOODRA_HISUIAN] = sGoodraHisuianLevelUpLearnset,
+    [SPECIES_DECIDUEYE_HISUIAN] = sDecidueyeHisuianLevelUpLearnset,
+    [SPECIES_TYPHLOSION_HISUIAN] = sTyphlosionHisuianLevelUpLearnset,
+    [SPECIES_SAMUROTT_HISUIAN] = sSamurottHisuianLevelUpLearnset,
     // Misc Forms
     // Cosplay Pikachu
     [SPECIES_PIKACHU_COSPLAY] = sPikachuLevelUpLearnset,

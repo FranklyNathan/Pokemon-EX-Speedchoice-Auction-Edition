@@ -992,6 +992,18 @@ gCryTable::
 	cry Cry_Darmanitan
 	cry Cry_Yamask
 	cry Cry_Stunfisk
+	@ Hisuian Forms
+	cry Cry_Growlithe
+	cry Cry_Arcanine
+	cry Cry_Voltorb
+	cry Cry_Electrode
+	cry Cry_Zorua
+	cry Cry_Zoroark
+	cry Cry_Sliggoo
+	cry Cry_Goodra
+	cry Cry_Decidueye
+	cry Cry_Typhlosion
+	cry Cry_Samurott
 	@ Misc Forms
 	@ Cosplay Pikachu
 	cry Cry_Pikachu

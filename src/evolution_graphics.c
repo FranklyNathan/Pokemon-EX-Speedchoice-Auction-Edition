@@ -508,7 +508,6 @@ u8 CycleEvolutionMonSprite(u8 preEvoSpriteId, u8 postEvoSpriteId)
     for (i = 0; i < ARRAY_COUNT(stack); i++)
         stack[i] = 0x7FFF;
 
-    // Create task for cycling evolution sprite
     taskId = CreateTask(Task_CycleEvolutionMonSprite_Init, 0);
     gTasks[taskId].tPreEvoSpriteId = preEvoSpriteId;
     gTasks[taskId].tPostEvoSpriteId = postEvoSpriteId;
