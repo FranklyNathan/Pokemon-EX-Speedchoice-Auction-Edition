@@ -3358,8 +3358,8 @@ static const struct TrainerMonItemCustomMoves sParty_Drake[] = {
     .iv = 255,
     .lvl = 52,
     .species = SPECIES_GOODRA_HISUIAN,
-    .nature = NATURE_IMPISH,
-    .heldItem = ITEM_MYSTIC_WATER,
+    .nature = NATURE_HARDY,
+    .heldItem = ITEM_NONE,
     .moves = {MOVE_MUDDY_WATER, MOVE_POWER_WHIP, MOVE_RAIN_DANCE, MOVE_DRAGON_BREATH}
     },
     {
