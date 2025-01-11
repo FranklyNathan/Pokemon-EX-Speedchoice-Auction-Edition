@@ -3357,10 +3357,10 @@ static const struct TrainerMonItemCustomMoves sParty_Drake[] = {
     {
     .iv = 255,
     .lvl = 52,
-    .species = SPECIES_SLIGGOO_HISUIAN,
+    .species = SPECIES_GOODRA_HISUIAN,
     .nature = NATURE_IMPISH,
-    .heldItem = ITEM_EVIOLITE,
-    .moves = {MOVE_TOXIC, MOVE_PROTECT, MOVE_REST, MOVE_IRON_HEAD}
+    .heldItem = ITEM_MYSTIC_WATER,
+    .moves = {MOVE_MUDDY_WATER, MOVE_POWER_WHIP, MOVE_RAIN_DANCE, MOVE_DRAGON_BREATH}
     },
     {
     .iv = 255,
@@ -3473,7 +3473,7 @@ static const struct TrainerMonItemCustomMoves sParty_Wattson1[] = {
     .species = SPECIES_ELECTRODE_HISUIAN,
     .nature = NATURE_LAX,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_SHOCK_WAVE, MOVE_BULLET_SEED, MOVE_ELECTRO_BALL, MOVE_SELF_DESTRUCT}
+    .moves = {MOVE_SHOCK_WAVE, MOVE_BULLET_SEED, MOVE_STUN_SPORE, MOVE_SELF_DESTRUCT}
     },
     {
     .iv = 255,
