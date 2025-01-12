@@ -84,7 +84,7 @@ SootopolisCity_Gym_1F_Movement_FallThroughIce: @ 8224F42
 
 SootopolisCity_Gym_1F_EventScript_Juan:: @ 8224F44
 	setvar VAR_FORCEANIM, 1
-	trainerbattle_single TRAINER_JUAN_1, SootopolisCity_Gym_1F_Text_JuanIntro, SootopolisCity_Gym_1F_Text_JuanDefeat, SootopolisCity_Gym_1F_EventScript_JuanDefeated, NO_MUSIC
+	trainerbattle_double TRAINER_JUAN_1, SootopolisCity_Gym_1F_Text_JuanIntro, SootopolisCity_Gym_1F_Text_JuanDefeat, SootopolisCity_Gym_1F_Text_JuanRematchNeedTwoMons, SootopolisCity_Gym_1F_EventScript_JuanDefeated, NO_MUSIC
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	compare VAR_RESULT, TRUE
 	goto_if_eq SootopolisCity_Gym_1F_EventScript_JuanRematch
@@ -188,9 +188,9 @@ SootopolisCity_Gym_1F_EventScript_GymStatue:: @ 8225089
 SootopolisCity_Gym_1F_Text_GymGuideAdvice: @ 8225093
 	.string "Yo! How's it going, CHAMPION-\n"
 	.string "bound {PLAYER}?\p"
-	.string "SOOTOPOLIS's GYM LEADER JUAN is\n"
-	.string "a master of WATER-type POKéMON.\p"
-	.string "And, to get to JUAN, an icy floor\n"
+	.string "SOOTOPOLIS's GYM LEADERS are\n"
+	.string "masters of WATER-type POKéMON.\p"
+	.string "And, to get to them, an icy floor\n"
 	.string "will hamper your progress…\p"
 	.string "Listen, I'm sorry, but that's all the\n"
 	.string "advice that I have for you.\p"
@@ -205,23 +205,15 @@ SootopolisCity_Gym_1F_Text_GymGuidePostVictory: @ 82251AF
 	.string "set for the POKéMON LEAGUE challenge!$"
 
 SootopolisCity_Gym_1F_Text_JuanIntro: @ 8225268
-	.string "Let me ask you.\n"
-	.string "Did you know?\l"
-	.string "Ah, I should not be so coy.\p"
-	.string "It was I who taught WALLACE everything\n"
-	.string "there is to know about POKéMON.\p"
-	.string "Once, I had given up my position as\n"
-	.string "the GYM LEADER.\p"
-	.string "In my place, I had entrusted WALLACE\n"
-	.string "with the GYM.\p"
-	.string "However, a compelling reason arose for\n"
-	.string "me to make a comeback.\p"
+	.string "Well, it seems to be your lucky day!\n"
+	.string "Front row seats to the two most\l"
+	.string "magnficent trainers in all of HOENN!\p"
 	.string "Ah, but enough chatter.\n"
 	.string "Let us begin our match, shall we?\p"
 	.string "Please, you shall bear witness to\n"
 	.string "our artistry.\p"
 	.string "A grand illusion of water sculpted\n"
-	.string "by POKéMON and myself!$"
+	.string "by POKéMON and ourselves!$"
 
 @ NOTE: This defeat text actually causes a buffer overflow. It's about 50 bytes too long for
 @ the gDisplayedStringBattle buffer that it's put into, and it stomps all over the gBattleTextBuffs
@@ -232,14 +224,14 @@ SootopolisCity_Gym_1F_Text_JuanDefeat: @ 8225432
 	.string "Very well, you are the winner.\p"
 	.string "From you, I sense the brilliant shine\n"
 	.string "of skill that will overcome all.\p"
-	.string "However, compared with me or even\n"
-	.string "WALLACE, you are lacking in elegance.\p"
+	.string "However, compared with us,\n"
+	.string "you are lacking in elegance.\p"
 	.string "Perhaps I should make you a loan\n"
 	.string "of my outfit?\p"
 	.string "… … … … … …\n"
 	.string "… … … … … …\p"
 	.string "Hahaha, I merely jest!\p"
-	.string "Rather than my clothes, I shall reward\n"
+	.string "Rather than my clothes, we shall reward\n"
 	.string "you with this, the RAIN BADGE!$"
 
 SootopolisCity_Gym_1F_Text_ReceivedRainBadge: @ 8225598
@@ -293,20 +285,20 @@ SootopolisCity_Gym_1F_Text_GymStatueCertified: @ 8225916
 	.string "{PLAYER}$"
 
 SootopolisCity_Gym_1F_Text_JuanPreRematch: @ 8225950
-	.string "JUAN: Ah, this GYM had returned to its\n"
+	.string "Ah, this GYM had returned to its\n"
 	.string "usual state of serenity…\p"
 	.string "But our young typhoon has returned\n"
 	.string "to put us to the test again!\p"
 	.string "Well, my friend, most certainly!\p"
-	.string "I shall be delighted to dance with you\n"
-	.string "as often as you wish!$"
+	.string "We shall be delighted to dance with\n"
+	.string "you as often as you wish!$"
 
 SootopolisCity_Gym_1F_Text_JuanRematchDefeat: @ 8225A2E
 	.string "Ahahaha, you are the winner!\n"
 	.string "You have defeated me again!$"
 
 SootopolisCity_Gym_1F_Text_JuanPostRematch: @ 8225A67
-	.string "JUAN: If I told you to become my\n"
+	.string "If I told you to become my\n"
 	.string "apprentice, you will refuse, I am sure.\p"
 	.string "I would like to make a gift of my coat\n"
 	.string "to you.\p"
@@ -316,12 +308,8 @@ SootopolisCity_Gym_1F_Text_JuanPostRematch: @ 8225A67
 	.string "of nobility!$"
 
 SootopolisCity_Gym_1F_Text_JuanRematchNeedTwoMons: @ 8225B48
-	.string "JUAN: Ah, this GYM had returned to its\n"
-	.string "usual state of serenity…\p"
-	.string "But our young typhoon has returned\n"
-	.string "to put us to the test again!\p"
-	.string "Well, my friend, most certainly!\n"
-	.string "I shall be delighted to dance with you…\p"
+	.string "Ah, welcome, challenger!\n"
+	.string "We shall be delighted to dance with you…\p"
 	.string "Ah, no, no, no.\n"
 	.string "You have with you but one POKéMON.\p"
 	.string "I wish that you would return with\n"

@@ -3274,7 +3274,7 @@ static const struct TrainerMonItemCustomMoves sParty_Phoebe[] = {
     .species = SPECIES_DUSCLOPS,
     .nature = NATURE_ADAMANT,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_SHADOW_PUNCH, MOVE_CONFUSE_RAY, MOVE_CURSE, MOVE_PROTECT}
+    .moves = {MOVE_SHADOW_PUNCH, MOVE_CONFUSE_RAY, MOVE_WILL_O_WISP, MOVE_HAZE}
     },
     {
     .iv = 255,
@@ -3650,14 +3650,7 @@ static const struct TrainerMonItemCustomMoves sParty_TateAndLiza1[] = {
 };
 
 static const struct TrainerMonItemCustomMoves sParty_Juan1[] = {
-    {
-    .iv = 255,
-    .lvl = 41,
-    .species = SPECIES_LUVDISC,
-    .nature = NATURE_MODEST,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_WATER_PULSE, MOVE_ATTRACT, MOVE_SWEET_KISS, MOVE_FLAIL}
-    },
+
     {
     .iv = 255,
     .lvl = 41,
@@ -3669,26 +3662,26 @@ static const struct TrainerMonItemCustomMoves sParty_Juan1[] = {
     {
     .iv = 255,
     .lvl = 43,
-    .species = SPECIES_SEALEO,
-    .nature = NATURE_HARDY,
+    .species = SPECIES_WAILORD,
+    .nature = NATURE_MODEST,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_ENCORE, MOVE_BODY_SLAM, MOVE_AURORA_BEAM, MOVE_WATER_PULSE}
+    .moves = {MOVE_RAIN_DANCE, MOVE_WATER_SPOUT, MOVE_DOUBLE_EDGE, MOVE_BLIZZARD}
     },
     {
     .iv = 255,
-    .lvl = 43,
-    .species = SPECIES_CRAWDAUNT,
-    .nature = NATURE_ADAMANT,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_WATER_PULSE, MOVE_CRABHAMMER, MOVE_TAUNT, MOVE_CRUNCH}
-    },
-    {
-    .iv = 255,
-    .lvl = 43,
+    .lvl = 42,
     .species = SPECIES_SAMUROTT_HISUIAN,
     .nature = NATURE_ADAMANT,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_WATER_PULSE, MOVE_NIGHT_SLASH, MOVE_RAZOR_SHELL, MOVE_REVENGE}
+    },
+    {
+    .iv = 255,
+    .lvl = 43,
+    .species = SPECIES_GYARADOS,
+    .nature = NATURE_ADAMANT,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_DRAGON_DANCE, MOVE_EARTHQUAKE, MOVE_HYPER_BEAM, MOVE_SURF}
     },
     {
     .iv = 255,
@@ -3697,6 +3690,14 @@ static const struct TrainerMonItemCustomMoves sParty_Juan1[] = {
     .nature = NATURE_MODEST,
     .heldItem = ITEM_CHESTO_BERRY,
     .moves = {MOVE_WATER_PULSE, MOVE_DOUBLE_TEAM, MOVE_ICE_BEAM, MOVE_REST}
+    },
+    {
+    .iv = 255,
+    .lvl = 46,
+    .species = SPECIES_MILOTIC,
+    .nature = NATURE_CALM,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .moves = {MOVE_RECOVER, MOVE_SURF, MOVE_ICE_BEAM, MOVE_TOXIC}
     }
 };
 
@@ -11731,51 +11732,51 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Darius[] = {
 static const struct TrainerMonItemCustomMoves sParty_Steven[] = {
     {
     .iv = 255,
-    .lvl = 77,
+    .lvl = 57,
     .species = SPECIES_SKARMORY,
     .nature = NATURE_HARDY,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_TOXIC, MOVE_AERIAL_ACE, MOVE_SPIKES, MOVE_STEEL_WING}
+    .moves = {MOVE_TOXIC, MOVE_AERIAL_ACE, MOVE_WHIRLWIND, MOVE_STEEL_WING}
     },
     {
     .iv = 255,
-    .lvl = 75,
-    .species = SPECIES_CLAYDOL,
+    .lvl = 57,
+    .species = SPECIES_GOODRA_HISUIAN,
     .nature = NATURE_HARDY,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_REFLECT, MOVE_LIGHT_SCREEN, MOVE_ANCIENT_POWER, MOVE_EARTHQUAKE}
+    .moves = {MOVE_MUDDY_WATER, MOVE_POWER_WHIP, MOVE_RAIN_DANCE, MOVE_DRAGON_BREATH}
     },
     {
     .iv = 255,
-    .lvl = 76,
+    .lvl = 57,
     .species = SPECIES_AGGRON,
     .nature = NATURE_HARDY,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_THUNDER, MOVE_EARTHQUAKE, MOVE_SOLAR_BEAM, MOVE_DRAGON_CLAW}
+    .moves = {MOVE_THUNDER, MOVE_EARTHQUAKE, MOVE_STONE_EDGE, MOVE_IRON_TAIL}
     },
     {
     .iv = 255,
-    .lvl = 76,
+    .lvl = 57,
     .species = SPECIES_CRADILY,
     .nature = NATURE_HARDY,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_GIGA_DRAIN, MOVE_ANCIENT_POWER, MOVE_INGRAIN, MOVE_CONFUSE_RAY}
+    .moves = {MOVE_GIGA_DRAIN, MOVE_ANCIENT_POWER, MOVE_RECOVER, MOVE_CONFUSE_RAY}
     },
     {
     .iv = 255,
-    .lvl = 76,
+    .lvl = 57,
     .species = SPECIES_ARMALDO,
     .nature = NATURE_HARDY,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_WATER_PULSE, MOVE_ANCIENT_POWER, MOVE_AERIAL_ACE, MOVE_SLASH}
+    .moves = {MOVE_WATER_PULSE, MOVE_ANCIENT_POWER, MOVE_AERIAL_ACE, MOVE_CRUSH_CLAW}
     },
     {
     .iv = 255,
-    .lvl = 78,
+    .lvl = 59,
     .species = SPECIES_METAGROSS,
     .nature = NATURE_HARDY,
-    .heldItem = ITEM_SITRUS_BERRY,
-    .moves = {MOVE_EARTHQUAKE, MOVE_PSYCHIC, MOVE_METEOR_MASH, MOVE_SHADOW_BALL}
+    .heldItem = ITEM_METAGROSSITE,
+    .moves = {MOVE_HAMMER_ARM, MOVE_ZEN_HEADBUTT, MOVE_METEOR_MASH, MOVE_SHADOW_BALL}
     }
 };
 

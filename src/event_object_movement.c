@@ -32,6 +32,7 @@
 #include "constants/event_objects.h"
 #include "constants/field_effects.h"
 #include "constants/items.h"
+#include "constants/maps.h"
 #include "constants/map_types.h"
 #include "constants/mauville_old_man.h"
 #include "constants/species.h"
@@ -1271,7 +1272,11 @@ static u8 InitObjectEventStateFromTemplate(struct ObjectEventTemplate *template,
     objectEvent->triggerGroundEffectsOnMove = TRUE;
     objectEvent->graphicsId = template->graphicsId;
 
-    if((CheckSpeedchoiceOption(SPINNERS, SPIN_HELL) == TRUE || CheckSpeedchoiceOption(SPINNERS, SPIN_WHY) == TRUE) && gPlayerAvatar.objectEventId != objectEventId && (template->trainerType == 1 || template->trainerType == 3))
+    if((CheckSpeedchoiceOption(SPINNERS, SPIN_HELL) == TRUE && (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(MOSSDEEP_CITY_GYM)) && 
+(gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(LAVARIDGE_TOWN_GYM_1F)) && 
+(gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(LAVARIDGE_TOWN_GYM_B1F))     
+      
+ || CheckSpeedchoiceOption(SPINNERS, SPIN_WHY) == TRUE) && gPlayerAvatar.objectEventId != objectEventId && (template->trainerType == 1 || template->trainerType == 3))
         objectEvent->movementType = 1;
     else
         objectEvent->movementType = template->movementType;
@@ -1292,7 +1297,11 @@ static u8 InitObjectEventStateFromTemplate(struct ObjectEventTemplate *template,
     objectEvent->rangeX = template->movementRangeX;
     objectEvent->rangeY = template->movementRangeY;
 
-	if((CheckSpeedchoiceOption(SPINNERS, SPIN_HELL) == TRUE || CheckSpeedchoiceOption(SPINNERS, SPIN_WHY) == TRUE) && gPlayerAvatar.objectEventId != objectEventId && (template->trainerType == 1 || template->trainerType == 3))
+	if((CheckSpeedchoiceOption(SPINNERS, SPIN_HELL) == TRUE && (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(MOSSDEEP_CITY_GYM)) && 
+(gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(LAVARIDGE_TOWN_GYM_1F)) && 
+(gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(LAVARIDGE_TOWN_GYM_B1F))     
+      
+ || CheckSpeedchoiceOption(SPINNERS, SPIN_WHY) == TRUE) && gPlayerAvatar.objectEventId != objectEventId && (template->trainerType == 1 || template->trainerType == 3))
         objectEvent->trainerType = 1;
     else
         objectEvent->trainerType = template->trainerType;
@@ -1572,7 +1581,11 @@ static void MakeObjectTemplateFromObjectEventGraphicsInfoWithCallbackIndex(u16 g
 
 static void MakeObjectTemplateFromObjectEventTemplate(struct ObjectEventTemplate *objectEventTemplate, struct SpriteTemplate *spriteTemplate, const struct SubspriteTable **subspriteTables)
 {
-    if((CheckSpeedchoiceOption(SPINNERS, SPIN_HELL) == TRUE || CheckSpeedchoiceOption(SPINNERS, SPIN_WHY) == TRUE) && (objectEventTemplate->trainerType == 3 || objectEventTemplate->trainerType == 1))
+    if((CheckSpeedchoiceOption(SPINNERS, SPIN_HELL) == TRUE && (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(MOSSDEEP_CITY_GYM)) && 
+(gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(LAVARIDGE_TOWN_GYM_1F)) && 
+(gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(LAVARIDGE_TOWN_GYM_B1F))     
+      
+ || CheckSpeedchoiceOption(SPINNERS, SPIN_WHY) == TRUE) && (objectEventTemplate->trainerType == 3 || objectEventTemplate->trainerType == 1))
         MakeObjectTemplateFromObjectEventGraphicsInfoWithCallbackIndex(objectEventTemplate->graphicsId, 1, spriteTemplate, subspriteTables);
     else
         MakeObjectTemplateFromObjectEventGraphicsInfoWithCallbackIndex(objectEventTemplate->graphicsId, objectEventTemplate->movementType, spriteTemplate, subspriteTables);
@@ -3379,7 +3392,11 @@ bool8 MovementType_LookAround_Step4(struct ObjectEvent *objectEvent, struct Spri
     {
         u8 newDirections[4];
         memcpy(newDirections, gStandardDirections, sizeof newDirections);
-        if((CheckSpeedchoiceOption(SPINNERS, SPIN_HELL) == TRUE || CheckSpeedchoiceOption(SPINNERS, SPIN_WHY) == TRUE))
+        if((CheckSpeedchoiceOption(SPINNERS, SPIN_HELL) == TRUE && (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(MOSSDEEP_CITY_GYM)) && 
+(gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(LAVARIDGE_TOWN_GYM_1F)) && 
+(gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(LAVARIDGE_TOWN_GYM_B1F))     
+      
+ || CheckSpeedchoiceOption(SPINNERS, SPIN_WHY) == TRUE))
             direction = newDirections[Random() % 4];
         else if(CheckSpeedchoiceOption(SPINNERS, SPIN_NERF) == TRUE)
             direction = GetNextDirection(objectEvent, sprite);
@@ -3436,7 +3453,11 @@ bool8 MovementType_WanderUpAndDown_Step4(struct ObjectEvent *objectEvent, struct
     {
         u8 newDirections[4];
         memcpy(newDirections, gStandardDirections, sizeof newDirections);
-        if((CheckSpeedchoiceOption(SPINNERS, SPIN_HELL) == TRUE || CheckSpeedchoiceOption(SPINNERS, SPIN_WHY) == TRUE))
+        if((CheckSpeedchoiceOption(SPINNERS, SPIN_HELL) == TRUE && (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(MOSSDEEP_CITY_GYM)) && 
+(gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(LAVARIDGE_TOWN_GYM_1F)) && 
+(gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(LAVARIDGE_TOWN_GYM_B1F))     
+      
+ || CheckSpeedchoiceOption(SPINNERS, SPIN_WHY) == TRUE))
             direction = newDirections[Random() % 4];
         else if(CheckSpeedchoiceOption(SPINNERS, SPIN_NERF) == TRUE)
             direction = GetNextDirection(objectEvent, sprite);
@@ -3737,7 +3758,11 @@ bool8 MovementType_FaceDownAndUp_Step4(struct ObjectEvent *objectEvent, struct S
     {
         u8 newDirections[4];
         memcpy(newDirections, gStandardDirections, sizeof newDirections);
-        if((CheckSpeedchoiceOption(SPINNERS, SPIN_HELL) == TRUE || CheckSpeedchoiceOption(SPINNERS, SPIN_WHY) == TRUE))
+        if((CheckSpeedchoiceOption(SPINNERS, SPIN_HELL) == TRUE && (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(MOSSDEEP_CITY_GYM)) && 
+(gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(LAVARIDGE_TOWN_GYM_1F)) && 
+(gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(LAVARIDGE_TOWN_GYM_B1F))     
+      
+ || CheckSpeedchoiceOption(SPINNERS, SPIN_WHY) == TRUE))
             direction = newDirections[Random() % 4];
         else if(CheckSpeedchoiceOption(SPINNERS, SPIN_NERF) == TRUE)
             direction = GetNextDirection(objectEvent, sprite);
@@ -3796,7 +3821,11 @@ bool8 MovementType_FaceLeftAndRight_Step4(struct ObjectEvent *objectEvent, struc
     {
         u8 newDirections[4];
         memcpy(newDirections, gStandardDirections, sizeof newDirections);
-        if((CheckSpeedchoiceOption(SPINNERS, SPIN_HELL) == TRUE || CheckSpeedchoiceOption(SPINNERS, SPIN_WHY) == TRUE))
+        if((CheckSpeedchoiceOption(SPINNERS, SPIN_HELL) == TRUE && (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(MOSSDEEP_CITY_GYM)) && 
+(gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(LAVARIDGE_TOWN_GYM_1F)) && 
+(gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(LAVARIDGE_TOWN_GYM_B1F))     
+      
+ || CheckSpeedchoiceOption(SPINNERS, SPIN_WHY) == TRUE))
             direction = newDirections[Random() % 4];
         else if(CheckSpeedchoiceOption(SPINNERS, SPIN_NERF) == TRUE)
             direction = GetNextDirection(objectEvent, sprite);
@@ -3855,7 +3884,11 @@ bool8 MovementType_FaceUpAndLeft_Step4(struct ObjectEvent *objectEvent, struct S
     {
         u8 newDirections[4];
         memcpy(newDirections, gStandardDirections, sizeof newDirections);
-        if((CheckSpeedchoiceOption(SPINNERS, SPIN_HELL) == TRUE || CheckSpeedchoiceOption(SPINNERS, SPIN_WHY) == TRUE))
+        if((CheckSpeedchoiceOption(SPINNERS, SPIN_HELL) == TRUE && (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(MOSSDEEP_CITY_GYM)) && 
+(gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(LAVARIDGE_TOWN_GYM_1F)) && 
+(gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(LAVARIDGE_TOWN_GYM_B1F))     
+      
+ || CheckSpeedchoiceOption(SPINNERS, SPIN_WHY) == TRUE))
             direction = newDirections[Random() % 4];
         else if(CheckSpeedchoiceOption(SPINNERS, SPIN_NERF) == TRUE)
             direction = GetNextDirection(objectEvent, sprite);
@@ -3914,7 +3947,11 @@ bool8 MovementType_FaceUpAndRight_Step4(struct ObjectEvent *objectEvent, struct 
     {
         u8 newDirections[4];
         memcpy(newDirections, gStandardDirections, sizeof newDirections);
-        if((CheckSpeedchoiceOption(SPINNERS, SPIN_HELL) == TRUE || CheckSpeedchoiceOption(SPINNERS, SPIN_WHY) == TRUE))
+        if((CheckSpeedchoiceOption(SPINNERS, SPIN_HELL) == TRUE && (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(MOSSDEEP_CITY_GYM)) && 
+(gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(LAVARIDGE_TOWN_GYM_1F)) && 
+(gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(LAVARIDGE_TOWN_GYM_B1F))     
+      
+ || CheckSpeedchoiceOption(SPINNERS, SPIN_WHY) == TRUE))
             direction = newDirections[Random() % 4];
         else if(CheckSpeedchoiceOption(SPINNERS, SPIN_NERF) == TRUE)
             direction = GetNextDirection(objectEvent, sprite);
@@ -3973,7 +4010,11 @@ bool8 MovementType_FaceDownAndLeft_Step4(struct ObjectEvent *objectEvent, struct
     {
         u8 newDirections[4];
         memcpy(newDirections, gStandardDirections, sizeof newDirections);
-        if((CheckSpeedchoiceOption(SPINNERS, SPIN_HELL) == TRUE || CheckSpeedchoiceOption(SPINNERS, SPIN_WHY) == TRUE))
+        if((CheckSpeedchoiceOption(SPINNERS, SPIN_HELL) == TRUE && (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(MOSSDEEP_CITY_GYM)) && 
+(gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(LAVARIDGE_TOWN_GYM_1F)) && 
+(gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(LAVARIDGE_TOWN_GYM_B1F))     
+      
+ || CheckSpeedchoiceOption(SPINNERS, SPIN_WHY) == TRUE))
             direction = newDirections[Random() % 4];
         else if(CheckSpeedchoiceOption(SPINNERS, SPIN_NERF) == TRUE)
             direction = GetNextDirection(objectEvent, sprite);
@@ -4032,7 +4073,11 @@ bool8 MovementType_FaceDownAndRight_Step4(struct ObjectEvent *objectEvent, struc
     {
         u8 newDirections[4];
         memcpy(newDirections, gStandardDirections, sizeof newDirections);
-        if((CheckSpeedchoiceOption(SPINNERS, SPIN_HELL) == TRUE || CheckSpeedchoiceOption(SPINNERS, SPIN_WHY) == TRUE))
+        if((CheckSpeedchoiceOption(SPINNERS, SPIN_HELL) == TRUE && (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(MOSSDEEP_CITY_GYM)) && 
+(gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(LAVARIDGE_TOWN_GYM_1F)) && 
+(gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(LAVARIDGE_TOWN_GYM_B1F))     
+      
+ || CheckSpeedchoiceOption(SPINNERS, SPIN_WHY) == TRUE))
             direction = newDirections[Random() % 4];
         else if(CheckSpeedchoiceOption(SPINNERS, SPIN_NERF) == TRUE)
             direction = GetNextDirection(objectEvent, sprite);
@@ -4091,7 +4136,11 @@ bool8 MovementType_FaceDownUpAndLeft_Step4(struct ObjectEvent *objectEvent, stru
     {
         u8 newDirections[4];
         memcpy(newDirections, gStandardDirections, sizeof newDirections);
-        if((CheckSpeedchoiceOption(SPINNERS, SPIN_HELL) == TRUE || CheckSpeedchoiceOption(SPINNERS, SPIN_WHY) == TRUE))
+        if((CheckSpeedchoiceOption(SPINNERS, SPIN_HELL) == TRUE && (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(MOSSDEEP_CITY_GYM)) && 
+(gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(LAVARIDGE_TOWN_GYM_1F)) && 
+(gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(LAVARIDGE_TOWN_GYM_B1F))     
+      
+ || CheckSpeedchoiceOption(SPINNERS, SPIN_WHY) == TRUE))
             direction = newDirections[Random() % 4];
         else if(CheckSpeedchoiceOption(SPINNERS, SPIN_NERF) == TRUE)
             direction = GetNextDirection(objectEvent, sprite);
@@ -4150,7 +4199,11 @@ bool8 MovementType_FaceDownUpAndRight_Step4(struct ObjectEvent *objectEvent, str
     {
         u8 newDirections[4];
         memcpy(newDirections, gStandardDirections, sizeof newDirections);
-        if((CheckSpeedchoiceOption(SPINNERS, SPIN_HELL) == TRUE || CheckSpeedchoiceOption(SPINNERS, SPIN_WHY) == TRUE))
+        if((CheckSpeedchoiceOption(SPINNERS, SPIN_HELL) == TRUE && (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(MOSSDEEP_CITY_GYM)) && 
+(gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(LAVARIDGE_TOWN_GYM_1F)) && 
+(gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(LAVARIDGE_TOWN_GYM_B1F))     
+      
+ || CheckSpeedchoiceOption(SPINNERS, SPIN_WHY) == TRUE))
             direction = newDirections[Random() % 4];
         else if(CheckSpeedchoiceOption(SPINNERS, SPIN_NERF) == TRUE)
             direction = GetNextDirection(objectEvent, sprite);
@@ -4209,7 +4262,11 @@ bool8 MovementType_FaceUpLeftAndRight_Step4(struct ObjectEvent *objectEvent, str
     {
         u8 newDirections[4];
         memcpy(newDirections, gStandardDirections, sizeof newDirections);
-        if((CheckSpeedchoiceOption(SPINNERS, SPIN_HELL) == TRUE || CheckSpeedchoiceOption(SPINNERS, SPIN_WHY) == TRUE))
+        if((CheckSpeedchoiceOption(SPINNERS, SPIN_HELL) == TRUE && (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(MOSSDEEP_CITY_GYM)) && 
+(gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(LAVARIDGE_TOWN_GYM_1F)) && 
+(gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(LAVARIDGE_TOWN_GYM_B1F))     
+      
+ || CheckSpeedchoiceOption(SPINNERS, SPIN_WHY) == TRUE))
             direction = newDirections[Random() % 4];
         else if(CheckSpeedchoiceOption(SPINNERS, SPIN_NERF) == TRUE)
             direction = GetNextDirection(objectEvent, sprite);
@@ -9444,7 +9501,11 @@ void TryRestoringSpinnerTimerBackup(struct Sprite *sprite)
     u8 i;
 
     // if the first entry is backed up, the whole array is. sort of a hack so I dont need to decompile submenu calls.
-    if(gMapObjectTimerBackup[0].backedUp == TRUE && (CheckSpeedchoiceOption(SPINNERS, SPIN_HELL) == TRUE || CheckSpeedchoiceOption(SPINNERS, SPIN_WHY) == TRUE)) // only fix bag manip if HELL is enabled.
+    if(gMapObjectTimerBackup[0].backedUp == TRUE && (CheckSpeedchoiceOption(SPINNERS, SPIN_HELL) == TRUE && (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(MOSSDEEP_CITY_GYM)) && 
+(gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(LAVARIDGE_TOWN_GYM_1F)) && 
+(gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(LAVARIDGE_TOWN_GYM_B1F))     
+      
+ || CheckSpeedchoiceOption(SPINNERS, SPIN_WHY) == TRUE)) // only fix bag manip if HELL is enabled.
     {
         for(i = 0; i < MAX_SPRITES; i++)
         {
@@ -9466,7 +9527,11 @@ void TryRestoringSpinnerTimerBackup(struct Sprite *sprite)
 static void SetMovementDelay(struct Sprite *sprite, s16 timer)
 {
     TryRestoringSpinnerTimerBackup(sprite);
-    if(CheckSpeedchoiceOption(SPINNERS, SPIN_HELL) == TRUE && (gObjectEvents[sprite->data[0]].trainerType == 1 || gObjectEvents[sprite->data[0]].trainerType == 3))
+    if(CheckSpeedchoiceOption(SPINNERS, SPIN_HELL) == TRUE && (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(MOSSDEEP_CITY_GYM)) && 
+(gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(LAVARIDGE_TOWN_GYM_1F)) && 
+(gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(LAVARIDGE_TOWN_GYM_B1F))     
+      
+ && (gObjectEvents[sprite->data[0]].trainerType == 1 || gObjectEvents[sprite->data[0]].trainerType == 3))
     {
         sprite->data[3] = (Random() % 16) * 2 + 2;
     }

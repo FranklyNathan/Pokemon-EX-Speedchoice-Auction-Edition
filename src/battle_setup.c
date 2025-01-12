@@ -1954,7 +1954,7 @@ static u8 getLevelCap(void){
     u16 nextLeader, i;
     const struct TrainerMonItemCustomMoves *partyData;
     if (!FlagGet(FLAG_NUZLOCKE) || FlagGet(FLAG_IS_CHAMPION))
-        return 55;
+        return 59;
     if (!FlagGet(FLAG_BADGE01_GET))
         nextLeader = TRAINER_ROXANNE_1;
     else if (!FlagGet(FLAG_BADGE02_GET))
@@ -1971,8 +1971,10 @@ static u8 getLevelCap(void){
         nextLeader = TRAINER_TATE_AND_LIZA_1;
     else if (!FlagGet(FLAG_BADGE08_GET))
         nextLeader = TRAINER_JUAN_1;
-    else if (!FlagGet(FLAG_IS_CHAMPION))
+    else if (!FlagGet(FLAG_DEFEATED_ELITE_4_DRAKE))
         nextLeader = TRAINER_DRAKE;
+    else if (!FlagGet(FLAG_IS_CHAMPION))
+        nextLeader = TRAINER_STEVEN;
 
     partyData = gTrainers[nextLeader].party.ItemCustomMoves;
     for (i = 0; i < gTrainers[nextLeader].partySize; i++){
