@@ -227,7 +227,6 @@ void NewGameInitData(void)
     ResetContestLinkResults();
 
     // ADD DONE BUTTON
-    AddBagItem(ITEM_DONE_BUTTON, 1);
     AddBagItem(ITEM_SLEEPING_BAG, 1);
     //if(CheckSpeedchoiceOption(EARLY_BIKE, EARLY_BIKE_YES) == TRUE) {
         AddBagItem(ITEM_ACRO_BIKE, 1);

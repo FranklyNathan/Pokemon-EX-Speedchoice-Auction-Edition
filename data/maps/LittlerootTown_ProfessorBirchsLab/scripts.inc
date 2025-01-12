@@ -136,7 +136,8 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GiveStarterEvent:: @ 81F9DDB
 	givemon SPECIES_CHESPIN, 15, ITEM_SITRUS_BERRY
 	givemon SPECIES_CHIMCHAR, 15, ITEM_PERSIM_BERRY
 	givemon SPECIES_CHINCHOU, 15, ITEM_NONE
-	givemon SPECIES_CORPHISH, 15, ITEM_NONE
+	givemon SPECIES_COMBEE, 15, ITEM_NONE
+	givemon SPECIES_CORPHISH, 15, ITEM_ROCKY_HELMET
 	givemon SPECIES_COSMOG, 15, ITEM_NONE
 	givemon SPECIES_CUBONE, 15, ITEM_NONE
 	givemon SPECIES_CUTIEFLY, 15, ITEM_NONE
@@ -144,6 +145,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GiveStarterEvent:: @ 81F9DDB
 	givemon SPECIES_DEERLING_AUTUMN, 15, ITEM_NONE
 	givemon SPECIES_DEWPIDER, 15, ITEM_EJECT_BUTTON
 	givemon SPECIES_DIGLETT_ALOLAN, 15, ITEM_BLACK_BELT
+	givemon SPECIES_DRIFLOON, 15, ITEM_NONE
 	givemon SPECIES_DRILBUR, 15, ITEM_HARD_STONE
 	givemon SPECIES_EEVEE, 15, ITEM_SHINY_STONE
 	givemon SPECIES_ELECTRIKE, 15, ITEM_NONE
@@ -156,6 +158,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GiveStarterEvent:: @ 81F9DDB
 	givemon SPECIES_GASTLY, 15, ITEM_NONE
 	givemon SPECIES_GEODUDE, 15, ITEM_NONE
 	givemon SPECIES_GOOMY, 15, ITEM_NONE
+	givemon SPECIES_GLIGAR, 15, ITEM_NONE
 	givemon SPECIES_GROWLITHE_HISUIAN, 15, ITEM_NONE
 	givemon SPECIES_GRUBBIN, 15, ITEM_NONE
 	givemon SPECIES_HONEDGE, 15, ITEM_NONE
@@ -183,6 +186,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GiveStarterEvent:: @ 81F9DDB
 	givemon SPECIES_PICHU, 15, ITEM_NONE
 	givemon SPECIES_PIDGEY, 15, ITEM_PIDGEOTITE
 	givemon SPECIES_PIKIPEK, 15, ITEM_LEPPA_BERRY
+	givemon SPECIES_POLIWAG, 15, ITEM_NONE
 	givemon SPECIES_POPPLIO, 15, ITEM_NEVER_MELT_ICE
 	givemon SPECIES_PORYGON, 15, ITEM_TM13
 	givemon SPECIES_RALTS, 15, ITEM_GALLADITE
@@ -195,17 +199,19 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GiveStarterEvent:: @ 81F9DDB
 	givemon SPECIES_SABLEYE, 15, ITEM_SABLENITE
 	givemon SPECIES_SALANDIT, 15, ITEM_SHINY_STONE
 	givemon SPECIES_SCYTHER, 15, ITEM_SCIZORITE
+	givemon SPECIES_SEEDOT, 15, ITEM_NONE
 	givemon SPECIES_SHINX, 15, ITEM_NONE
 	givemon SPECIES_SHROOMISH, 15, ITEM_ABILITY_CAPSULE
 	givemon SPECIES_SLOWPOKE_GALARIAN, 15, ITEM_NONE
-	givemon SPECIES_SNORUNT, 15, ITEM_NONE
+	givemon SPECIES_SNORUNT, 15, ITEM_GLALITITE
+	givemon SPECIES_SOLOSIS, 15, ITEM_NONE
 	givemon SPECIES_SPHEAL, 15, ITEM_NONE
 	givemon SPECIES_SPOINK, 15, ITEM_FLAME_ORB
 	givemon SPECIES_STANTLER, 15, ITEM_NONE
 	givemon SPECIES_SURSKIT, 15, ITEM_NONE
 	givemon SPECIES_SWINUB, 15, ITEM_NONE
 	givemon SPECIES_TOGEPI, 15, ITEM_SHINY_STONE
-	givemon SPECIES_TOTODILE, 15, ITEM_NONE
+	givemon SPECIES_TOTODILE, 15, ITEM_WATER_STONE
 	givemon SPECIES_TEDDIURSA, 15, ITEM_NONE
 	givemon SPECIES_TRAPINCH, 15, ITEM_NONE
 	givemon SPECIES_TREECKO, 15, ITEM_NONE
@@ -225,11 +231,8 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GiveStarterEvent:: @ 81F9DDB
 	giveitem ITEM_RARE_CANDY, 1
 	giveitem ITEM_REPEL, 1
 	giveitem ITEM_MEGA_BRACELET
-	msgbox LittlerootTown_ProfessorBirchsLab_Text_WhyNotGiveNicknameToMon, MSGBOX_YESNO
-	compare VAR_RESULT, YES
-	goto_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_NicknameStarter
-	compare VAR_RESULT, NO
-	goto_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_GoSeeRival
+	setflag FLAG_RECEIVED_RUNNING_SHOES
+	goto LittlerootTown_ProfessorBirchsLab_EventScript_GoSeeRival
 	end
 
 LittlerootTown_ProfessorBirchsLab_EventScript_NicknameStarter:: @ 81F9E07
@@ -667,7 +670,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GivePokedex:: @ 81FA2F8
 	setflag FLAG_ADVENTURE_STARTED
 	setvar VAR_OLDALE_TOWN_STATE, 1
 	setvar VAR_LITTLEROOT_RIVAL_STATE, 4
-	setvar VAR_LITTLEROOT_TOWN_STATE, 3
+	setvar VAR_LITTLEROOT_TOWN_STATE, 4
 	releaseall
 	end
 
@@ -854,10 +857,10 @@ LittlerootTown_ProfessorBirchsLab_Text_LikeYouToHavePokemon: @ 81FA74D
 	.string "you pulled it off with aplomb!\p"
 	.string "I guess you have your father's blood\n"
 	.string "in your veins after all!\p"
-	.string "Oh, yes. As thanks for rescuing me,\n"
-	.string "I'd like you to have the POKéMON you\l"
-	.string "used earlier.\p"
-	.string "{PLAYER} received the {STR_VAR_1}!$"
+	.string "As thanks for rescuing me,\n"
+	.string "I'd like you to have your POKéMON.\p"
+	.string "Currently loading all POKéMON into\n"
+	.string "your PC. Please wait…$"
 
 LittlerootTown_ProfessorBirchsLab_Text_WhyNotGiveNicknameToMon: @ 81FA8B1
 	.string "PROF. BIRCH: While you're at it, why not\n"

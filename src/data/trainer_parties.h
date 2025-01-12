@@ -3357,10 +3357,10 @@ static const struct TrainerMonItemCustomMoves sParty_Drake[] = {
     {
     .iv = 255,
     .lvl = 52,
-    .species = SPECIES_GOODRA_HISUIAN,
-    .nature = NATURE_HARDY,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_MUDDY_WATER, MOVE_POWER_WHIP, MOVE_RAIN_DANCE, MOVE_DRAGON_BREATH}
+    .species = SPECIES_EXEGGUTOR_ALOLAN,
+    .nature = NATURE_SASSY,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .moves = {MOVE_DRAGON_HAMMER, MOVE_SUNNY_DAY, MOVE_LEAF_STORM, MOVE_SLUDGE_BOMB}
     },
     {
     .iv = 255,
@@ -3410,7 +3410,7 @@ static const struct TrainerMonItemCustomMoves sParty_Roxanne1[] = {
     .lvl = 13,
     .species = SPECIES_GROWLITHE_HISUIAN,
     .nature = NATURE_IMPISH,
-    .heldItem = ITEM_NONE,
+    .heldItem = ITEM_ROCKY_HELMET,
     .moves = {MOVE_FLAME_WHEEL, MOVE_HOWL, MOVE_ROCK_TOMB, MOVE_NONE}
     },
     {
@@ -3445,7 +3445,7 @@ static const struct TrainerMonItemCustomMoves sParty_Brawly1[] = {
     .lvl = 17,
     .species = SPECIES_FARFETCHD_GALARIAN,
     .nature = NATURE_ADAMANT,
-    .heldItem = ITEM_STICK,
+    .heldItem = ITEM_NONE,
     .moves = {MOVE_BRUTAL_SWING, MOVE_ROCK_SMASH, MOVE_PECK, MOVE_SAND_ATTACK}
     },
     {
@@ -3489,7 +3489,7 @@ static const struct TrainerMonItemCustomMoves sParty_Wattson1[] = {
     .species = SPECIES_MANECTRIC,
     .nature = NATURE_RASH,
     .heldItem = ITEM_SITRUS_BERRY,
-    .moves = {MOVE_QUICK_ATTACK, MOVE_THUNDER_WAVE, MOVE_SHOCK_WAVE, MOVE_HOWL}
+    .moves = {MOVE_FIRE_FANG, MOVE_THUNDER_WAVE, MOVE_SHOCK_WAVE, MOVE_HOWL}
     }
 };
 
@@ -3578,15 +3578,15 @@ static const struct TrainerMonItemCustomMoves sParty_Winona1[] = {
     .species = SPECIES_PELIPPER,
     .nature = NATURE_HARDY,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_WATER_GUN, MOVE_SUPERSONIC, MOVE_PROTECT, MOVE_AERIAL_ACE}
+    .moves = {MOVE_SURF, MOVE_SUPERSONIC, MOVE_PROTECT, MOVE_AERIAL_ACE}
     },
     {
     .iv = 255,
     .lvl = 31,
     .species = SPECIES_DECIDUEYE_HISUIAN,
     .nature = NATURE_ADAMANT,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_BULK_UP, MOVE_LEAF_BLADE, MOVE_SHADOW_SNEAK, MOVE_SYNTHESIS}
+    .heldItem = ITEM_KINGS_ROCK,
+    .moves = {MOVE_BULK_UP, MOVE_LEAF_BLADE, MOVE_PLUCK, MOVE_SYNTHESIS}
     },
     {
     .iv = 255,
@@ -3594,7 +3594,7 @@ static const struct TrainerMonItemCustomMoves sParty_Winona1[] = {
     .species = SPECIES_SKARMORY,
     .nature = NATURE_ADAMANT,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_SAND_ATTACK, MOVE_FURY_ATTACK, MOVE_STEEL_WING, MOVE_AERIAL_ACE}
+    .moves = {MOVE_SAND_ATTACK, MOVE_FLY, MOVE_STEEL_WING, MOVE_AERIAL_ACE}
     },
     {
     .iv = 255,
@@ -3665,7 +3665,7 @@ static const struct TrainerMonItemCustomMoves sParty_Juan1[] = {
     .species = SPECIES_WAILORD,
     .nature = NATURE_MODEST,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_RAIN_DANCE, MOVE_WATER_SPOUT, MOVE_DOUBLE_EDGE, MOVE_BLIZZARD}
+    .moves = {MOVE_RAIN_DANCE, MOVE_WATER_SPOUT, MOVE_HEAVY_SLAM, MOVE_BLIZZARD}
     },
     {
     .iv = 255,
@@ -3681,7 +3681,7 @@ static const struct TrainerMonItemCustomMoves sParty_Juan1[] = {
     .species = SPECIES_GYARADOS,
     .nature = NATURE_ADAMANT,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_DRAGON_DANCE, MOVE_EARTHQUAKE, MOVE_HYPER_BEAM, MOVE_SURF}
+    .moves = {MOVE_DRAGON_DANCE, MOVE_EARTHQUAKE, MOVE_AERIAL_ACE, MOVE_WATERFALL}
     },
     {
     .iv = 255,
@@ -11734,7 +11734,7 @@ static const struct TrainerMonItemCustomMoves sParty_Steven[] = {
     .iv = 255,
     .lvl = 57,
     .species = SPECIES_SKARMORY,
-    .nature = NATURE_HARDY,
+    .nature = NATURE_ADAMANT,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_TOXIC, MOVE_AERIAL_ACE, MOVE_WHIRLWIND, MOVE_STEEL_WING}
     },
@@ -11758,7 +11758,7 @@ static const struct TrainerMonItemCustomMoves sParty_Steven[] = {
     .iv = 255,
     .lvl = 57,
     .species = SPECIES_CRADILY,
-    .nature = NATURE_HARDY,
+    .nature = NATURE_SASSY,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_GIGA_DRAIN, MOVE_ANCIENT_POWER, MOVE_RECOVER, MOVE_CONFUSE_RAY}
     },
@@ -11766,17 +11766,17 @@ static const struct TrainerMonItemCustomMoves sParty_Steven[] = {
     .iv = 255,
     .lvl = 57,
     .species = SPECIES_ARMALDO,
-    .nature = NATURE_HARDY,
+    .nature = NATURE_ADAMANT,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_WATER_PULSE, MOVE_ANCIENT_POWER, MOVE_AERIAL_ACE, MOVE_CRUSH_CLAW}
+    .moves = {MOVE_X_SCISSOR, MOVE_ANCIENT_POWER, MOVE_AERIAL_ACE, MOVE_CRUSH_CLAW}
     },
     {
     .iv = 255,
     .lvl = 59,
     .species = SPECIES_METAGROSS,
-    .nature = NATURE_HARDY,
+    .nature = NATURE_ADAMANT,
     .heldItem = ITEM_METAGROSSITE,
-    .moves = {MOVE_HAMMER_ARM, MOVE_ZEN_HEADBUTT, MOVE_METEOR_MASH, MOVE_SHADOW_BALL}
+    .moves = {MOVE_HAMMER_ARM, MOVE_ZEN_HEADBUTT, MOVE_METEOR_MASH, MOVE_MAGNET_RISE}
     }
 };
 
