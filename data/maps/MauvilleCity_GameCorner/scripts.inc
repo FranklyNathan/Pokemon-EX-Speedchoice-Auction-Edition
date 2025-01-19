@@ -2,15 +2,15 @@ MauvilleCity_GameCorner_MapScripts:: @ 820FBB8
 	.byte 0
 
     @ Game Corner prices
-	.set TM32_COINS,  1500
-	.set TM29_COINS,  3500
-	.set TM35_COINS,  4000
-	.set TM24_COINS,  4000
-	.set TM13_COINS,  4000
+	.set TM32_COINS,  500
+	.set TM29_COINS,  1500
+	.set TM35_COINS,  1500
+	.set TM24_COINS,  1500
+	.set TM13_COINS,  1500
 	.set DOLL_COINS,  1000
 
-	.set COINS_PRICE_50,  1000
-	.set COINS_PRICE_500, 10000
+	.set COINS_PRICE_500,  10000
+	.set COINS_PRICE_1500, 30000
 
 MauvilleCity_GameCorner_EventScript_CoinsClerk:: @ 820FBB9
 	lock
@@ -44,13 +44,13 @@ MauvilleCity_GameCorner_EventScript_ChooseCoinsDefault500:: @ 820FC0C
 
 MauvilleCity_GameCorner_EventScript_Buy50Coins:: @ 820FC33
 	checkcoins VAR_TEMP_1
-	compare VAR_TEMP_1, (MAX_COINS + 1 - 50)
+	compare VAR_TEMP_1, (MAX_COINS + 1 - 500)
 	goto_if_ge MauvilleCity_GameCorner_EventScript_NoRoomForCoins
-	checkmoney COINS_PRICE_50, 0
+	checkmoney COINS_PRICE_500, 0
 	compare VAR_RESULT, FALSE
 	goto_if_eq MauvilleCity_GameCorner_EventScript_NotEnoughMoney
-	addcoins 50
-	removemoney COINS_PRICE_50, 0
+	addcoins 500
+	removemoney COINS_PRICE_500, 0
 	updatemoneybox 0, 0
 	updatecoinsbox 1, 6
 	playse SE_SHOP
@@ -62,13 +62,13 @@ MauvilleCity_GameCorner_EventScript_Buy50Coins:: @ 820FC33
 
 MauvilleCity_GameCorner_EventScript_Buy500Coins:: @ 820FC75
 	checkcoins VAR_TEMP_1
-	compare VAR_TEMP_1, (MAX_COINS + 1 - 500)
+	compare VAR_TEMP_1, (MAX_COINS + 1 - 1500)
 	goto_if_ge MauvilleCity_GameCorner_EventScript_NoRoomForCoins
-	checkmoney COINS_PRICE_500, 0
+	checkmoney COINS_PRICE_1500, 0
 	compare VAR_RESULT, FALSE
 	goto_if_eq MauvilleCity_GameCorner_EventScript_NotEnoughMoney
-	addcoins 500
-	removemoney COINS_PRICE_500, 0
+	addcoins 1500
+	removemoney COINS_PRICE_1500, 0
 	updatemoneybox 0, 0
 	updatecoinsbox 1, 6
 	playse SE_SHOP
@@ -680,7 +680,7 @@ MauvilleCity_GameCorner_Text_NeedCoinCaseForCoins: @ 821047E
 
 MauvilleCity_GameCorner_Text_WereYouLookingForCoins: @ 82104DF
 	.string "Were you looking for COINS?\p"
-	.string "It's ¥1000 for 50 COINS.\n"
+	.string "It's ¥10000 for 500 COINS.\n"
 	.string "Would you like some?$"
 
 MauvilleCity_GameCorner_Text_ThankYouHereAreYourCoins: @ 8210529

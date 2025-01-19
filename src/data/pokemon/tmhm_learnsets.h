@@ -20893,7 +20893,8 @@ const u32 gTMHMLearnsets[][2] =
                                             | TMHM(TM46_THIEF)
                                             | TMHM(TM06_TOXIC)),
 
-    [SPECIES_VOLTORB_HISUIAN]     = TMHM_LEARNSET(TMHM(TM32_DOUBLE_TEAM)
+    [SPECIES_VOLTORB_HISUIAN]     = TMHM_LEARNSET(TMHM(TM09_BULLET_SEED)
+                                            | TMHM(TM32_DOUBLE_TEAM)
                                             | TMHM(TM42_FACADE)
                                             | TMHM(HM05_FLASH)
                                             | TMHM(TM21_FRUSTRATION)

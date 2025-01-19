@@ -3550,7 +3550,7 @@ static const struct TrainerMonItemCustomMoves sParty_Norman1[] = {
     .lvl = 29,
     .species = SPECIES_LINOONE_GALARIAN,
     .nature = NATURE_ADAMANT,
-    .heldItem = ITEM_NONE,
+    .heldItem = ITEM_EVIOLITE,
     .moves = {MOVE_NIGHT_SLASH, MOVE_SNARL, MOVE_FACADE, MOVE_HEADBUTT}
     },
     {
@@ -3650,7 +3650,6 @@ static const struct TrainerMonItemCustomMoves sParty_TateAndLiza1[] = {
 };
 
 static const struct TrainerMonItemCustomMoves sParty_Juan1[] = {
-
     {
     .iv = 255,
     .lvl = 41,
