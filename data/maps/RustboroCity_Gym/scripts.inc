@@ -34,6 +34,7 @@ RustboroCity_Gym_EventScript_GiveRockTomb:: @ 8212FA4
 	goto_if TRUE, RoxanneNoAqualess
 	checkspeedchoice PLOTLESS, PLOT_SEMI
 	goto_if TRUE, RoxanneNoAqualess
+	giveitem ITEM_MEGA_BRACELET
 	giveitem ITEM_LETTER
 	@ give pokenav
 	message RustboroCity_DevonCorp_3F_Text_ReceivedPokenav

@@ -20237,6 +20237,8 @@ const u32 gTMHMLearnsets[][2] =
                                             | TMHM(TM44_REST)
                                             | TMHM(TM27_RETURN)
                                             | TMHM(HM06_ROCK_SMASH)
+                                            | TMHM(TM39_ROCK_TOMB)
+                                            | TMHM(TM37_SANDSTORM)
                                             | TMHM(TM20_SAFEGUARD)
                                             | TMHM(TM43_SECRET_POWER)
                                             | TMHM(TM47_STEEL_WING)

@@ -3282,7 +3282,7 @@ static const struct TrainerMonItemCustomMoves sParty_Phoebe[] = {
     .species = SPECIES_BANETTE,
     .nature = NATURE_MODEST,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_SHADOW_BALL, MOVE_GRUDGE, MOVE_WILL_O_WISP, MOVE_FEINT_ATTACK}
+    .moves = {MOVE_SHADOW_BALL, MOVE_GRUDGE, MOVE_WILL_O_WISP, MOVE_SUCKER_PUNCH}
     },
     {
     .iv = 255,
@@ -3376,7 +3376,7 @@ static const struct TrainerMonItemCustomMoves sParty_Drake[] = {
     .species = SPECIES_KINGDRA,
     .nature = NATURE_HARDY,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_SMOKESCREEN, MOVE_DRAGON_DANCE, MOVE_SURF, MOVE_BODY_SLAM}
+    .moves = {MOVE_SMOKESCREEN, MOVE_ICE_BEAM, MOVE_OCTAZOOKA, MOVE_DRAGON_PULSE}
     },
     {
     .iv = 255,
@@ -3472,7 +3472,7 @@ static const struct TrainerMonItemCustomMoves sParty_Wattson1[] = {
     .lvl = 23,
     .species = SPECIES_ELECTRODE_HISUIAN,
     .nature = NATURE_LAX,
-    .heldItem = ITEM_NONE,
+    .heldItem = ITEM_THUNDER_STONE,
     .moves = {MOVE_SHOCK_WAVE, MOVE_BULLET_SEED, MOVE_STUN_SPORE, MOVE_SELF_DESTRUCT}
     },
     {
@@ -3516,7 +3516,7 @@ static const struct TrainerMonItemCustomMoves sParty_Flannery1[] = {
     .species = SPECIES_CAMERUPT,
     .nature = NATURE_SASSY,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_OVERHEAT, MOVE_TACKLE, MOVE_SUNNY_DAY, MOVE_ATTRACT}
+    .moves = {MOVE_OVERHEAT, MOVE_EARTH_POWER, MOVE_SUNNY_DAY, MOVE_ATTRACT}
     },
     {
     .iv = 255,
@@ -3585,7 +3585,7 @@ static const struct TrainerMonItemCustomMoves sParty_Winona1[] = {
     .lvl = 31,
     .species = SPECIES_DECIDUEYE_HISUIAN,
     .nature = NATURE_ADAMANT,
-    .heldItem = ITEM_KINGS_ROCK,
+    .heldItem = ITEM_NONE,
     .moves = {MOVE_BULK_UP, MOVE_LEAF_BLADE, MOVE_PLUCK, MOVE_SYNTHESIS}
     },
     {
@@ -3641,7 +3641,7 @@ static const struct TrainerMonItemCustomMoves sParty_TateAndLiza1[] = {
     },
     {
     .iv = 255,
-    .lvl = 41,
+    .lvl = 39,
     .species = SPECIES_RAICHU_ALOLAN,
     .nature = NATURE_MODEST,
     .heldItem = ITEM_NONE,
@@ -3660,15 +3660,15 @@ static const struct TrainerMonItemCustomMoves sParty_Juan1[] = {
     },
     {
     .iv = 255,
-    .lvl = 43,
+    .lvl = 42,
     .species = SPECIES_WAILORD,
     .nature = NATURE_MODEST,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_RAIN_DANCE, MOVE_WATER_SPOUT, MOVE_HEAVY_SLAM, MOVE_BLIZZARD}
+    .moves = {MOVE_RAIN_DANCE, MOVE_WATER_SPOUT, MOVE_BOUNCE, MOVE_DIVE}
     },
     {
     .iv = 255,
-    .lvl = 42,
+    .lvl = 41,
     .species = SPECIES_SAMUROTT_HISUIAN,
     .nature = NATURE_ADAMANT,
     .heldItem = ITEM_NONE,
@@ -3676,11 +3676,11 @@ static const struct TrainerMonItemCustomMoves sParty_Juan1[] = {
     },
     {
     .iv = 255,
-    .lvl = 43,
-    .species = SPECIES_GYARADOS,
-    .nature = NATURE_ADAMANT,
+    .lvl = 44,
+    .species = SPECIES_LUDICOLO,
+    .nature = NATURE_HARDY,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_DRAGON_DANCE, MOVE_EARTHQUAKE, MOVE_AERIAL_ACE, MOVE_WATERFALL}
+    .moves = {MOVE_GIGA_DRAIN, MOVE_SURF, MOVE_FAKE_OUT, MOVE_LEECH_SEED}
     },
     {
     .iv = 255,
@@ -3688,7 +3688,7 @@ static const struct TrainerMonItemCustomMoves sParty_Juan1[] = {
     .species = SPECIES_KINGDRA,
     .nature = NATURE_MODEST,
     .heldItem = ITEM_CHESTO_BERRY,
-    .moves = {MOVE_WATER_PULSE, MOVE_DOUBLE_TEAM, MOVE_ICE_BEAM, MOVE_REST}
+    .moves = {MOVE_WATER_PULSE, MOVE_DOUBLE_TEAM, MOVE_DRAGON_PULSE, MOVE_REST}
     },
     {
     .iv = 255,
@@ -3696,7 +3696,7 @@ static const struct TrainerMonItemCustomMoves sParty_Juan1[] = {
     .species = SPECIES_MILOTIC,
     .nature = NATURE_CALM,
     .heldItem = ITEM_SITRUS_BERRY,
-    .moves = {MOVE_RECOVER, MOVE_SURF, MOVE_ICE_BEAM, MOVE_TOXIC}
+    .moves = {MOVE_RECOVER, MOVE_WATER_PULSE, MOVE_DRAGON_TAIL, MOVE_ICY_WIND}
     }
 };
 
@@ -11735,7 +11735,7 @@ static const struct TrainerMonItemCustomMoves sParty_Steven[] = {
     .species = SPECIES_SKARMORY,
     .nature = NATURE_ADAMANT,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_TOXIC, MOVE_AERIAL_ACE, MOVE_WHIRLWIND, MOVE_STEEL_WING}
+    .moves = {MOVE_STEALTH_ROCK, MOVE_AERIAL_ACE, MOVE_WHIRLWIND, MOVE_STEEL_WING}
     },
     {
     .iv = 255,
