@@ -1,5 +1,5 @@
 <!-- title -->
-# Pokémon Emerald EX Speedchoice (Auction Version)
+# Pokémon Emerald EX Speedchoice (Auction Edition)
 A Pokémon Emerald EX Speedchoice branch optimized for draft auction races
 
 <!-- CONTENT -->
