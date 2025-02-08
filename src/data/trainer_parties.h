@@ -3473,7 +3473,7 @@ static const struct TrainerMonItemCustomMoves sParty_Wattson1[] = {
     .species = SPECIES_ELECTRODE_HISUIAN,
     .nature = NATURE_LAX,
     .heldItem = ITEM_THUNDER_STONE,
-    .moves = {MOVE_SHOCK_WAVE, MOVE_BULLET_SEED, MOVE_STUN_SPORE, MOVE_SELF_DESTRUCT}
+    .moves = {MOVE_SHOCK_WAVE, MOVE_BULLET_SEED, MOVE_STUN_SPORE, MOVE_ROLLOUT}
     },
     {
     .iv = 255,
@@ -3533,9 +3533,9 @@ static const struct TrainerMonItemCustomMoves sParty_Norman1[] = {
     .iv = 255,
     .lvl = 27,
     .species = SPECIES_SPINDA,
-    .nature = NATURE_NAUGHTY,
+    .nature = NATURE_ADAMANT,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_TEETER_DANCE, MOVE_PSYBEAM, MOVE_FACADE, MOVE_ENCORE}
+    .moves = {MOVE_TEETER_DANCE, MOVE_SUCKER_PUNCH, MOVE_FACADE, MOVE_ENCORE}
     },
     {
     .iv = 255,
@@ -3680,7 +3680,7 @@ static const struct TrainerMonItemCustomMoves sParty_Juan1[] = {
     .species = SPECIES_LUDICOLO,
     .nature = NATURE_HARDY,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_GIGA_DRAIN, MOVE_SURF, MOVE_FAKE_OUT, MOVE_LEECH_SEED}
+    .moves = {MOVE_GIGA_DRAIN, MOVE_SURF, MOVE_FAKE_OUT, MOVE_ASTONISH}
     },
     {
     .iv = 255,

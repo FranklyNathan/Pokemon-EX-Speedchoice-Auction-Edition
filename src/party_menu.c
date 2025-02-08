@@ -5024,16 +5024,16 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
     u16 *itemPtr = &gSpecialVar_ItemId;
     bool8 cannotUseEffect;
 
-    int i;  // Declare i before the loop
+    int i;
     bool8 learnedNewMove = FALSE; // Variable to track if a new move is learned
     bool8 canEvolve = FALSE; // Variable to track if the Pokemon can evolve
     u16 learnMove;  // Declare learnMove before use
     u16 targetSpecies;  // Declare targetSpecies before use
 
-    for (i = 0; i < 25 && !learnedNewMove && !canEvolve; i++) 
+    for (i = 0; i < 25 && !learnedNewMove && !canEvolve; i++)
     {
         if (GetMonData(mon, MON_DATA_LEVEL) != MAX_LEVEL
-            && !levelCappedNuzlocke(GetMonData(mon, MON_DATA_LEVEL))) 
+            && !levelCappedNuzlocke(GetMonData(mon, MON_DATA_LEVEL)))
         {
             BufferMonStatsToTaskData(mon, arrayPtr);
             cannotUseEffect = ExecuteTableBasedItemEffect_(gPartyMenu.slotId, *itemPtr, 0);
@@ -5052,13 +5052,18 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
             {
                 canEvolve = TRUE;
             }
+
+            // Update display info after Rare Candy use
+            UpdateMonDisplayInfoAfterRareCandy(gPartyMenu.slotId, mon);
+
+            // Schedule background tilemap copy after display update
+            ScheduleBgCopyTilemapToVram(2);
         }
         else
         {
             cannotUseEffect = TRUE;
         }
 
-        PlaySE(SE_SELECT);
         if (cannotUseEffect)
         {
             gPartyMenuUseExitCallback = FALSE;
@@ -5070,70 +5075,45 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
         {
             gPartyMenuUseExitCallback = TRUE;
             PlaySE(SE_SELECT);
-            UpdateMonDisplayInfoAfterRareCandy(gPartyMenu.slotId, mon);
-            GetMonNickname(mon, gStringVar1);
-            ConvertIntToDecimalStringN(gStringVar2, GetMonData(mon, MON_DATA_LEVEL), STR_CONV_MODE_LEFT_ALIGN, 3);
-            StringExpandPlaceholders(gStringVar4, gText_PkmnElevatedToLvVar2);
-            ScheduleBgCopyTilemapToVram(2);
-            gTasks[taskId].func = Task_TryLearnNewMoves;
+
+            // If a move was learned or evolution can happen, handle it
+            if (learnedNewMove)
+            {
+                gTasks[taskId].func = Task_TryLearnNewMoves;
+            }
+            else if (canEvolve)
+            {
+                gTasks[taskId].func = PartyMenuTryEvolution;
+            }
+            else
+            {
+                gTasks[taskId].func = Task_ClosePartyMenuAfterText;
+            }
         }
     }
 
-    // Handle evolution if the Pokémon can evolve
     if (canEvolve)
     {
         PartyMenuTryEvolution(taskId);
     }
 }
 
-
 static void UpdateMonDisplayInfoAfterRareCandy(u8 slot, struct Pokemon *mon)
 {
     SetPartyMonAilmentGfx(mon, &sPartyMenuBoxes[slot]);
+
     if (gSprites[sPartyMenuBoxes[slot].statusSpriteId].invisible)
+    {
         DisplayPartyPokemonLevelCheck(mon, &sPartyMenuBoxes[slot], 1);
+    }
     DisplayPartyPokemonHPCheck(mon, &sPartyMenuBoxes[slot], 1);
     DisplayPartyPokemonMaxHPCheck(mon, &sPartyMenuBoxes[slot], 1);
     DisplayPartyPokemonHPBarCheck(mon, &sPartyMenuBoxes[slot]);
     UpdatePartyMonHPBar(sPartyMenuBoxes[slot].monSpriteId, mon);
     AnimatePartySlot(slot, 1);
-    ScheduleBgCopyTilemapToVram(0);
-}
 
-static void Task_DisplayLevelUpStatsPg1(u8 taskId)
-{
-    if (WaitFanfare(FALSE) && IsPartyMenuTextPrinterActive() != TRUE && ((JOY_NEW(A_BUTTON)) || (JOY_NEW(B_BUTTON))))
-    {
-        PlaySE(SE_SELECT);
-        DisplayLevelUpStatsPg1(taskId);
-        gTasks[taskId].func = Task_DisplayLevelUpStatsPg2;
-    }
-}
-
-static void Task_DisplayLevelUpStatsPg2(u8 taskId)
-{
-        PlaySE(SE_SELECT);
-        DisplayLevelUpStatsPg2(taskId);
-        gTasks[taskId].func = Task_TryLearnNewMoves;
-}
-
-static void DisplayLevelUpStatsPg1(u8 taskId)
-{
-    s16 *arrayPtr = sPartyMenuInternal->data;
-
-    arrayPtr[12] = CreateLevelUpStatsWindow();
-    DrawLevelUpWindowPg1(arrayPtr[12], arrayPtr, &arrayPtr[6], TEXT_COLOR_WHITE, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_LIGHT_GRAY);
-    CopyWindowToVram(arrayPtr[12], 2);
-    ScheduleBgCopyTilemapToVram(2);
-}
-
-static void DisplayLevelUpStatsPg2(u8 taskId)
-{
-    s16 *arrayPtr = sPartyMenuInternal->data;
-
-    DrawLevelUpWindowPg2(arrayPtr[12], &arrayPtr[6], TEXT_COLOR_WHITE, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_LIGHT_GRAY);
-    CopyWindowToVram(arrayPtr[12], 2);
-    ScheduleBgCopyTilemapToVram(2);
+    // Schedule background update only after display info update
+    ScheduleBgCopyTilemapToVram(0);  // Update background layer 0
 }
 
 static void Task_TryLearnNewMoves(u8 taskId)
@@ -5190,7 +5170,7 @@ static void PartyMenuTryEvolution(u8 taskId)
     if (targetSpecies != SPECIES_NONE)
     {
         // handle forcing evo for speedchoice.
-        if(CheckSpeedchoiceOption(EVO_EVERY_LEVEL, EVO_EV_OFF) == FALSE)
+        if (CheckSpeedchoiceOption(EVO_EVERY_LEVEL, EVO_EV_OFF) == FALSE)
             canStopEvo = FALSE;
         else
             canStopEvo = TRUE;

@@ -1748,7 +1748,6 @@ static const struct LevelUpMove sShellderLevelUpLearnset[] = {
 
 static const struct LevelUpMove sCloysterLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_HYDRO_PUMP),
-    LEVEL_UP_MOVE( 1, MOVE_SHELL_SMASH),
     LEVEL_UP_MOVE( 1, MOVE_TOXIC_SPIKES),
     LEVEL_UP_MOVE( 1, MOVE_WITHDRAW),
     LEVEL_UP_MOVE( 1, MOVE_SUPERSONIC),
