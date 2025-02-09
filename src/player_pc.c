@@ -175,10 +175,6 @@ static const struct ItemSlot gNewGamePCItems[] =
     { ITEM_WATER_STONE, 3 },
     { ITEM_SHINY_STONE, 3 },
 
-    { ITEM_METAL_COAT, 3 },
-    { ITEM_KINGS_ROCK, 3 },
-    { ITEM_RAZOR_FANG, 3 },
-
     { ITEM_ABILITY_CAPSULE, 5 },
     { ITEM_ABSORB_BULB, 3 },
     { ITEM_AIR_BALLOON, 3 },
@@ -194,8 +190,10 @@ static const struct ItemSlot gNewGamePCItems[] =
     { ITEM_STICK, 3 },
     { ITEM_LEFTOVERS, 3 },
     { ITEM_MAGNET, 3 },
+    { ITEM_METAL_COAT, 3 },
     { ITEM_NEVER_MELT_ICE, 3 },
     { ITEM_POISON_BARB, 3 },
+    { ITEM_RAZOR_FANG, 3 },
     { ITEM_SHARP_BEAK, 3 },
     { ITEM_SHELL_BELL, 3 },
     { ITEM_SILVER_POWDER, 3 },

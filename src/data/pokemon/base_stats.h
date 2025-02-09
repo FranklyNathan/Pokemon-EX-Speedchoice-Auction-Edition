@@ -382,7 +382,7 @@ const struct BaseStats gBaseStats[] =
         #if P_UPDATED_STATS >= GEN_6
             .baseAttack    = 90,
         #else
-            .baseAttack    = 80,
+            .baseAttack    = 90,
         #endif
         .type1 = TYPE_BUG,
         .type2 = TYPE_POISON,
@@ -13554,7 +13554,7 @@ const struct BaseStats gBaseStats[] =
         .eggGroup1 = EGG_GROUP_FAIRY,
         .eggGroup2 = EGG_GROUP_MINERAL,
         #ifdef BATTLE_ENGINE
-            .abilities = {ABILITY_SNOW_CLOAK, ABILITY_NONE},
+            .abilities = {ABILITY_SNOW_CLOAK, ABILITY_SNOW_CLOAK},
             .abilityHidden = ABILITY_CURSED_BODY,
         #else
             .abilities = {ABILITY_NONE, ABILITY_NONE},

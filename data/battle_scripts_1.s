@@ -434,12 +434,7 @@ BattleScript_EffectCourtChange::
 	goto BattleScript_MoveEnd
 
 BattleScript_EffectBeakBlast::
-	attackcanceler
-	jumpifnodamage BattleScript_HitFromAccCheck
-	ppreduce
-	printstring STRINGID_PKMNLOSTFOCUS
-	waitmessage 0x40
-	goto BattleScript_MoveEnd
+	goto BattleScript_EffectHit
 
 BattleScript_BeakBlastSetUp::
 	setbeakblast BS_ATTACKER
