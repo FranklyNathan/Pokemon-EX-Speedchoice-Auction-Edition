@@ -79,6 +79,7 @@ PlayersHouse_2F_EventScript_WallClock:: @ 8292799
 	end
 
 PlayersHouse_2F_EventScript_MomComesUpstairsMale:: @ 82927DF
+	setrespawn HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F
 	setvar VAR_0x8008, LOCALID_MOM_2F
 	addobject VAR_0x8008
 	applymovement VAR_0x8008, PlayersHouse_2F_Movement_MomEntersMale
@@ -92,6 +93,7 @@ PlayersHouse_2F_EventScript_MomComesUpstairsMale:: @ 82927DF
 	return
 
 PlayersHouse_2F_EventScript_MomComesUpstairsFemale:: @ 829280F
+	setrespawn HEAL_LOCATION_LITTLEROOT_TOWN_MAYS_HOUSE_2F
 	setvar VAR_0x8008, LOCALID_MOM_2F
 	addobject VAR_0x8008
 	applymovement VAR_0x8008, PlayersHouse_2F_Movement_MomEntersFemale
