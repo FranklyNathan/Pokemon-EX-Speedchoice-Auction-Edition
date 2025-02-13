@@ -1931,7 +1931,7 @@ void ResetPokemonStorageSystem(void)
     }
     for (boxId = 0; boxId < TOTAL_BOXES_COUNT; boxId++)
     {
-        SetBoxWallpaper(boxId, boxId % 4);
+        SetBoxWallpaper(boxId, Random() % 17);
     }
     ResetWaldaWallpaper();
 }
@@ -9614,9 +9614,9 @@ bool32 AnyStorageMonWithMove(u16 moveId)
 
 void ResetWaldaWallpaper(void)
 {
-    gSaveBlock1Ptr->waldaPhrase.iconId = 0;
-    gSaveBlock1Ptr->waldaPhrase.patternId = 0;
-    gSaveBlock1Ptr->waldaPhrase.patternUnlocked = FALSE;
+    gSaveBlock1Ptr->waldaPhrase.iconId = 22;
+    gSaveBlock1Ptr->waldaPhrase.patternId = 15;
+    gSaveBlock1Ptr->waldaPhrase.patternUnlocked = TRUE;
     gSaveBlock1Ptr->waldaPhrase.colors[0] = RGB(21, 25, 30);
     gSaveBlock1Ptr->waldaPhrase.colors[1] = RGB(6, 12, 24);
     gSaveBlock1Ptr->waldaPhrase.text[0] = EOS;

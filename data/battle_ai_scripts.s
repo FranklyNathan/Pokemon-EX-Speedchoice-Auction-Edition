@@ -97,7 +97,7 @@ CheckIfFlashFireCancelsFire: @ 82DBFD7
 CheckIfWonderGuardCancelsMove: @ 82DBFE4
 	if_type_effectiveness AI_EFFECTIVENESS_x2, AI_CheckBadMove_CheckEffect
 	if_type_effectiveness AI_EFFECTIVENESS_x4, AI_CheckBadMove_CheckEffect
-	goto Score_Minus10
+	goto Score_Minus30
 
 CheckIfLevitateCancelsGroundMove: @ 82DBFEF
 	get_curr_move_type
@@ -269,6 +269,7 @@ AI_CheckBadMove_CheckEffect: @ 82DC045
 	if_effect EFFECT_WONDER_ROOM, AI_CBM_WonderRoom
 	if_effect EFFECT_MAGIC_ROOM, AI_CBM_MagicRoom
 	if_effect EFFECT_SOAK, AI_CBM_Soak
+	if_effect EFFECT_ROLLOUT, AI_CBM_Soak
 	if_effect EFFECT_LOCK_ON, AI_CBM_LockOn
 	end
 	
@@ -280,6 +281,7 @@ AI_CBM_LockOn:
 	
 AI_CBM_Soak:
 	if_type AI_TARGET, TYPE_WATER, Score_Minus10
+	if_type AI_TARGET, TYPE_GROUND, Score_Minus10
 	end
 	
 AI_CBM_TrickRoom:
@@ -723,11 +725,11 @@ AI_CBM_Reflect: @ 82DC53A
 	end
 
 AI_CBM_Paralyze: @ 82DC545
-	if_type_effectiveness AI_EFFECTIVENESS_x0, Score_Minus10
+	if_type_effectiveness AI_EFFECTIVENESS_x0, Score_Minus30
 	get_ability AI_TARGET
-	if_equal ABILITY_LIMBER, Score_Minus10
-	if_status AI_TARGET, STATUS1_ANY, Score_Minus10
-	if_side_affecting AI_TARGET, SIDE_STATUS_SAFEGUARD, Score_Minus10
+	if_equal ABILITY_LIMBER, Score_Minus30
+	if_status AI_TARGET, STATUS1_ANY, Score_Minus30
+	if_side_affecting AI_TARGET, SIDE_STATUS_SAFEGUARD, Score_Minus30
 	end
 
 AI_CBM_Substitute: @ 82DC568
@@ -737,7 +739,7 @@ AI_CBM_Substitute: @ 82DC568
 
 AI_CBM_LeechSeed: @ 82DC57A
 	if_status3 AI_TARGET, STATUS3_LEECHSEED, Score_Minus10
-	if_type AI_TARGET, TYPE_GRASS, Score_Minus10
+	if_type AI_TARGET, TYPE_GRASS, Score_Minus30
 	end
 
 AI_CBM_Disable: @ 82DC595
@@ -989,7 +991,6 @@ Score_Plus10:
 	score +10
 	end
 	
-@ omae wa mou shindeiru
 @ Basically a scenario where the players mon is faster, able to hit and able to OHKO
 @ In which, it would be best to use a priority move to deal any damage
 AI_CheckIfAlreadyDead:
@@ -1010,7 +1011,7 @@ AI_CV_DmgMove:
 	if_equal MOVE_POWER_WEAK, Score_Minus1
 	end
 	
-@ If move deals shit damage, and there are other mons to switch in, use support moves instead
+@ If move deals poor damage, and there are other mons to switch in, use support moves instead
 AI_WeakDmg:
 	get_considered_move_power
 	if_equal 0, AI_Ret
