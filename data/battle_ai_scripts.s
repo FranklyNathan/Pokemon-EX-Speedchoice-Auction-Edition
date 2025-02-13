@@ -282,6 +282,7 @@ AI_CBM_LockOn:
 AI_CBM_Soak:
 	if_type AI_TARGET, TYPE_WATER, Score_Minus10
 	if_type AI_TARGET, TYPE_GROUND, Score_Minus10
+	if_type AI_TARGET, TYPE_ROCK, Score_Minus10
 	end
 	
 AI_CBM_TrickRoom:
