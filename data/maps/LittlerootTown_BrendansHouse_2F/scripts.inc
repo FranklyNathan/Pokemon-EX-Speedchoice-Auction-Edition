@@ -395,8 +395,6 @@ PlayersHouse_2F_EventScript_GameCube:: @ 81F865F
 	givemon SPECIES_WOOPER, 15, ITEM_NONE
 	givemon SPECIES_ZIGZAGOON_GALARIAN, 15, ITEM_NONE
 	givemon SPECIES_ZUBAT, 15, ITEM_NONE
-	givemon SPECIES_DITTO, 15, ITEM_NONE
-	givemon SPECIES_DITTO, 15, ITEM_NONE
     releaseall
     applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
     waitmovement 0

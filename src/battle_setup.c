@@ -859,7 +859,7 @@ u8 GetTrainerBattleTransition(void)
     u8 playerLevel;
 
     if (gTrainerBattleOpponent_A == TRAINER_SECRET_BASE)
-        return B_TRANSITION_CHAMPION;
+        return B_TRANSITION_RECTANGULAR_SPIRAL;
 
     if (gTrainers[gTrainerBattleOpponent_A].trainerClass == TRAINER_CLASS_ELITE_FOUR)
     {
@@ -871,11 +871,11 @@ u8 GetTrainerBattleTransition(void)
             return B_TRANSITION_GLACIA;
         if (gTrainerBattleOpponent_A == TRAINER_DRAKE)
             return B_TRANSITION_DRAKE;
-        return B_TRANSITION_CHAMPION;
+        return B_TRANSITION_RECTANGULAR_SPIRAL;
     }
 
     if (gTrainers[gTrainerBattleOpponent_A].trainerClass == TRAINER_CLASS_CHAMPION)
-        return B_TRANSITION_CHAMPION;
+        return B_TRANSITION_RECTANGULAR_SPIRAL;
 
     if (gTrainers[gTrainerBattleOpponent_A].trainerClass == TRAINER_CLASS_TEAM_MAGMA
         || gTrainers[gTrainerBattleOpponent_A].trainerClass == TRAINER_CLASS_MAGMA_LEADER

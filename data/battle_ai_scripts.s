@@ -1208,7 +1208,7 @@ AI_CV_Hazards:
 	if_ability AI_TARGET, ABILITY_MAGIC_BOUNCE, AI_CV_HzardsEnd
 	is_first_turn_for AI_USER
 	if_equal 0, AI_CV_HzardsEnd
-	score +2
+	score +3
 AI_CV_HzardsEnd:
 	end
 AI_CV_StealthRock2:
@@ -1813,7 +1813,6 @@ AI_CV_Haze3:
 	goto AI_CV_Haze_End
 
 AI_CV_Haze4:
-	if_random_less_than 50, AI_CV_Haze_End
 	score +3
 
 AI_CV_Haze_End:
@@ -1827,17 +1826,16 @@ AI_CV_Bide_End:
 	end
 
 AI_CV_Roar:
-	if_stat_level_more_than AI_TARGET, STAT_ATK, 8, AI_CV_Roar2
-	if_stat_level_more_than AI_TARGET, STAT_DEF, 8, AI_CV_Roar2
-	if_stat_level_more_than AI_TARGET, STAT_SPATK, 8, AI_CV_Roar2
-	if_stat_level_more_than AI_TARGET, STAT_SPDEF, 8, AI_CV_Roar2
-	if_stat_level_more_than AI_TARGET, STAT_EVASION, 8, AI_CV_Roar2
+	if_stat_level_more_than AI_TARGET, STAT_ATK, DEFAULT_STAT_STAGE, AI_CV_Roar2
+	if_stat_level_more_than AI_TARGET, STAT_DEF, DEFAULT_STAT_STAGE, AI_CV_Roar2
+	if_stat_level_more_than AI_TARGET, STAT_SPATK, DEFAULT_STAT_STAGE, AI_CV_Roar2
+	if_stat_level_more_than AI_TARGET, STAT_SPDEF, DEFAULT_STAT_STAGE, AI_CV_Roar2
+	if_stat_level_more_than AI_TARGET, STAT_EVASION, DEFAULT_STAT_STAGE, AI_CV_Roar2
 	score -3
 	goto AI_CV_Roar_End
 
 AI_CV_Roar2:
-	if_random_less_than 128, AI_CV_Roar_End
-	score +2
+	score +4
 
 AI_CV_Roar_End:
 	end
@@ -2815,19 +2813,16 @@ AI_CV_BellyDrum_End:
 	end
 
 AI_CV_PsychUp:
-	if_stat_level_more_than AI_TARGET, STAT_ATK, 8, AI_CV_PsychUp2
-	if_stat_level_more_than AI_TARGET, STAT_DEF, 8, AI_CV_PsychUp2
-	if_stat_level_more_than AI_TARGET, STAT_SPATK, 8, AI_CV_PsychUp2
-	if_stat_level_more_than AI_TARGET, STAT_SPDEF, 8, AI_CV_PsychUp2
-	if_stat_level_more_than AI_TARGET, STAT_EVASION, 8, AI_CV_PsychUp2
+	if_stat_level_more_than AI_TARGET, STAT_ATK, DEFAULT_STAT_STAGE, AI_CV_PsychUp2
+	if_stat_level_more_than AI_TARGET, STAT_DEF, DEFAULT_STAT_STAGE, AI_CV_PsychUp2
+	if_stat_level_more_than AI_TARGET, STAT_SPATK, DEFAULT_STAT_STAGE, AI_CV_PsychUp2
+	if_stat_level_more_than AI_TARGET, STAT_SPDEF, DEFAULT_STAT_STAGE, AI_CV_PsychUp2
+	if_stat_level_more_than AI_TARGET, STAT_EVASION, DEFAULT_STAT_STAGE, AI_CV_PsychUp2
 	goto AI_CV_PsychUp_ScoreDown2
 
 AI_CV_PsychUp2:
-	if_stat_level_less_than AI_USER, STAT_ATK, 7, AI_CV_PsychUp3
-	if_stat_level_less_than AI_USER, STAT_DEF, 7, AI_CV_PsychUp3
-	if_stat_level_less_than AI_USER, STAT_SPATK, 7, AI_CV_PsychUp3
-	if_stat_level_less_than AI_USER, STAT_SPDEF, 7, AI_CV_PsychUp3
-	if_stat_level_less_than AI_USER, STAT_EVASION, 7, AI_CV_PsychUp_ScoreUp1
+	if_stat_level_less_than AI_USER, STAT_ATK, 8, AI_CV_PsychUp3
+	if_stat_level_less_than AI_USER, STAT_SPATK, 8, AI_CV_PsychUp3
 	if_random_less_than 50, AI_CV_PsychUp_End
 	goto AI_CV_PsychUp_ScoreDown2
 
