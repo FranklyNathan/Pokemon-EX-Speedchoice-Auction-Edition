@@ -5091,11 +5091,6 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
             }
         }
     }
-
-    if (canEvolve)
-    {
-        PartyMenuTryEvolution(taskId);
-    }
 }
 
 static void UpdateMonDisplayInfoAfterRareCandy(u8 slot, struct Pokemon *mon)
@@ -5120,7 +5115,6 @@ static void Task_TryLearnNewMoves(u8 taskId)
 {
     u16 learnMove;
     {
-        RemoveLevelUpStatsWindow();
         learnMove = MonTryLearningNewMove(&gPlayerParty[gPartyMenu.slotId], TRUE);
         gPartyMenu.learnMoveState = 1;
         switch (learnMove)
