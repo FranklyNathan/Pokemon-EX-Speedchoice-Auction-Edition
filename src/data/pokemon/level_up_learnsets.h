@@ -1760,9 +1760,9 @@ static const struct LevelUpMove sCloysterLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sGastlyLevelUpLearnset[] = {
-    LEVEL_UP_MOVE( 1, MOVE_HYPNOSIS),
     LEVEL_UP_MOVE( 1, MOVE_LICK),
     LEVEL_UP_MOVE( 5, MOVE_SPITE),
+    LEVEL_UP_MOVE( 5, MOVE_HYPNOSIS),
     LEVEL_UP_MOVE( 8, MOVE_MEAN_LOOK),
     LEVEL_UP_MOVE(12, MOVE_CURSE),
     LEVEL_UP_MOVE(15, MOVE_NIGHT_SHADE),
@@ -12781,6 +12781,7 @@ static const struct LevelUpMove sGoodraHisuianLevelUpLearnset[] = {
     LEVEL_UP_MOVE(30, MOVE_RAIN_DANCE),
     LEVEL_UP_MOVE(43, MOVE_CURSE),
     LEVEL_UP_MOVE(49, MOVE_BODY_SLAM),
+    LEVEL_UP_MOVE(49, MOVE_IRON_HEAD),
     LEVEL_UP_MOVE(50, MOVE_AQUA_TAIL),
     LEVEL_UP_MOVE(58, MOVE_MUDDY_WATER),
     LEVEL_UP_MOVE(67, MOVE_POWER_WHIP),
@@ -19467,7 +19468,7 @@ static const struct LevelUpMove sLycanrocMidnightLevelUpLearnset[] = {
     LEVEL_UP_MOVE(15, MOVE_ROCK_THROW),
     LEVEL_UP_MOVE(18, MOVE_ODOR_SLEUTH),
     LEVEL_UP_MOVE(23, MOVE_ROCK_TOMB),
-    LEVEL_UP_MOVE( 1, MOVE_COUNTER),
+    LEVEL_UP_MOVE(25, MOVE_COUNTER),
     LEVEL_UP_MOVE(26, MOVE_ROAR),
     LEVEL_UP_MOVE(29, MOVE_STEALTH_ROCK),
     LEVEL_UP_MOVE(34, MOVE_ROCK_SLIDE),

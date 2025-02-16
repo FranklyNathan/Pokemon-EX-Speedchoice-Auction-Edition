@@ -1794,15 +1794,15 @@ AI_CV_Haze:
 	goto AI_CV_Haze3
 
 AI_CV_Haze2:
-	if_random_less_than 50, AI_CV_Haze3
+	if_random_less_than 160, AI_CV_Haze3
 	score -3
 
 AI_CV_Haze3:
-	if_stat_level_more_than AI_TARGET, STAT_ATK, 8, AI_CV_Haze4
-	if_stat_level_more_than AI_TARGET, STAT_DEF, 8, AI_CV_Haze4
-	if_stat_level_more_than AI_TARGET, STAT_SPATK, 8, AI_CV_Haze4
-	if_stat_level_more_than AI_TARGET, STAT_SPDEF, 8, AI_CV_Haze4
-	if_stat_level_more_than AI_TARGET, STAT_EVASION, 8, AI_CV_Haze4
+	if_stat_level_more_than AI_TARGET, STAT_ATK, DEFAULT_STAT_STAGE, AI_CV_Haze4
+	if_stat_level_more_than AI_TARGET, STAT_DEF, DEFAULT_STAT_STAGE, AI_CV_Haze4
+	if_stat_level_more_than AI_TARGET, STAT_SPATK, DEFAULT_STAT_STAGE, AI_CV_Haze4
+	if_stat_level_more_than AI_TARGET, STAT_SPDEF, DEFAULT_STAT_STAGE, AI_CV_Haze4
+	if_stat_level_more_than AI_TARGET, STAT_EVASION, DEFAULT_STAT_STAGE, AI_CV_Haze4
 	if_stat_level_less_than AI_USER, STAT_ATK, 4, AI_CV_Haze4
 	if_stat_level_less_than AI_USER, STAT_DEF, 4, AI_CV_Haze4
 	if_stat_level_less_than AI_USER, STAT_SPATK, 4, AI_CV_Haze4
@@ -1813,7 +1813,7 @@ AI_CV_Haze3:
 	goto AI_CV_Haze_End
 
 AI_CV_Haze4:
-	score +3
+	score +4
 
 AI_CV_Haze_End:
 	end
