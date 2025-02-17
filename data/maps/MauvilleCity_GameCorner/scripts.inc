@@ -2,7 +2,7 @@ MauvilleCity_GameCorner_MapScripts:: @ 820FBB8
 	.byte 0
 
     @ Game Corner prices
-	.set TM32_COINS,  500
+	.set TM30_COINS,  1500
 	.set TM29_COINS,  1500
 	.set TM35_COINS,  1500
 	.set TM24_COINS,  1500
@@ -261,8 +261,8 @@ MauvilleCity_GameCorner_EventScript_ChooseTMPrize:: @ 820FED9
 
 MauvilleCity_GameCorner_EventScript_TM32:: @ 820FF2B
 	setvar VAR_TEMP_1, 1
-	bufferitemname 0, ITEM_TM32
-	setvar VAR_0x8004, ITEM_TM32
+	bufferitemname 0, ITEM_TM30
+	setvar VAR_0x8004, ITEM_TM30
 	goto MauvilleCity_GameCorner_EventScript_ConfirmTMPrize
 
 MauvilleCity_GameCorner_EventScript_TM29:: @ 820FF3E
@@ -304,13 +304,13 @@ MauvilleCity_GameCorner_EventScript_ConfirmTMPrize:: @ 820FF8A
 
 MauvilleCity_GameCorner_EventScript_BuyTM32:: @ 820FFDD
 	checkcoins VAR_TEMP_2
-	compare VAR_TEMP_2, TM32_COINS
+	compare VAR_TEMP_2, TM30_COINS
 	goto_if_lt MauvilleCity_GameCorner_EventScript_NotEnoughCoinsForTM
-	checkitem ITEM_TM32, 1
+	checkitem ITEM_TM30, 1
 	compare VAR_RESULT, TRUE
 	goto_if_eq MauvilleCity_GameCorner_EventScript_YouAlreadyHaveThis
-	removecoins TM32_COINS
-	additem ITEM_TM32
+	removecoins TM30_COINS
+	additem ITEM_TM30
 	updatecoinsbox 1, 1
 	playse SE_SHOP
 	msgbox MauvilleCity_GameCorner_Text_HereYouGo, MSGBOX_DEFAULT

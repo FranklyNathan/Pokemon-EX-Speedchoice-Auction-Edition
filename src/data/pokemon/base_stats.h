@@ -18737,11 +18737,11 @@ const struct BaseStats gBaseStats[] =
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FIELD,
         #ifdef BATTLE_ENGINE
-            .abilities = {ABILITY_PICKUP, ABILITY_CHEEK_POUCH},
+            .abilities = {ABILITY_HUGE_POWER, ABILITY_CHEEK_POUCH},
         #else
-            .abilities = {ABILITY_PICKUP, ABILITY_NONE},
+            .abilities = {ABILITY_HUGE_POWER, ABILITY_NONE},
         #endif
-        .abilityHidden = ABILITY_HUGE_POWER,
+        .abilityHidden = ABILITY_PICKUP,
         .bodyColor = BODY_COLOR_BROWN,
         .noFlip = FALSE,
     },
@@ -18766,11 +18766,11 @@ const struct BaseStats gBaseStats[] =
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FIELD,
         #ifdef BATTLE_ENGINE
-            .abilities = {ABILITY_PICKUP, ABILITY_CHEEK_POUCH},
+            .abilities = {ABILITY_HUGE_POWER, ABILITY_CHEEK_POUCH},
         #else
-            .abilities = {ABILITY_PICKUP, ABILITY_NONE},
+            .abilities = {ABILITY_HUGE_POWER, ABILITY_NONE},
         #endif
-        .abilityHidden = ABILITY_HUGE_POWER,
+        .abilityHidden = ABILITY_PICKUP,
         .bodyColor = BODY_COLOR_BROWN,
         .noFlip = FALSE,
     },

@@ -49,6 +49,7 @@ LilycoveCity_DepartmentStore_4F_Pokemart_DefenseTMs: @ 821FE44
 	.2byte ITEM_TM20  @ Safeguard
 	.2byte ITEM_TM33  @ Reflect
 	.2byte ITEM_TM16  @ Light Screen
+	.2byte ITEM_TM32  @ Double Team
 	.2byte ITEM_NONE
 	release
 	end

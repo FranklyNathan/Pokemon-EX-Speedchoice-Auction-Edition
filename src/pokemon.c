@@ -2712,11 +2712,6 @@ const u8 gStatStageRatios[MAX_STAT_STAGE + 1][2] =
     {10, 15}, // -1
     {10, 10}, //  0, DEFAULT_STAT_STAGE
     {15, 10}, // +1
-    {20, 10}, // +2
-    {25, 10}, // +3
-    {30, 10}, // +4
-    {35, 10}, // +5
-    {40, 10}, // +6, MAX_STAT_STAGE
 };
 
 const u16 gLinkPlayerFacilityClasses[NUM_MALE_LINK_FACILITY_CLASSES + NUM_FEMALE_LINK_FACILITY_CLASSES] =
@@ -3788,6 +3783,45 @@ u16 MonTryLearningNewMove(struct Pokemon *mon, bool8 firstMove)
 
     return retVal;
 }
+
+u16 MonTryLearningNewMoveEvolution(struct Pokemon *mon, bool8 firstMove)
+{
+    u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
+    u8 level = GetMonData(mon, MON_DATA_LEVEL, NULL);
+    u32 retVal = MOVE_NONE;
+
+    // If it's the first move, reset sLearningMoveTableID
+    if (firstMove)
+    {
+        sLearningMoveTableID = 0;
+    }
+
+    // Loop through the level-up learnset for the given species
+    while (gLevelUpLearnsets[species][sLearningMoveTableID].move != LEVEL_UP_END)
+    {
+        u16 moveLevel = gLevelUpLearnsets[species][sLearningMoveTableID].level;
+        u16 move = gLevelUpLearnsets[species][sLearningMoveTableID].move;
+
+        // Special check for level 0 moves (evolution moves)
+        if (moveLevel == 0)
+        {
+            // Learn the level 0 move on evolution
+            gMoveToLearn = move;
+            retVal = GiveMoveToMon(mon, gMoveToLearn);
+        }
+
+        else if (moveLevel == level)
+        {
+            gMoveToLearn = move;
+            retVal = GiveMoveToMon(mon, gMoveToLearn);
+        }
+
+        sLearningMoveTableID++;
+    }
+
+    return retVal;
+}
+
 
 void DeleteFirstMoveAndGiveMoveToMon(struct Pokemon *mon, u16 move)
 {

@@ -20493,6 +20493,7 @@ const u32 gTMHMLearnsets[][2] =
                                                    | TMHM(TM42_FACADE)
                                                    | TMHM(TM35_FLAMETHROWER)
                                                    | TMHM(HM05_FLASH)
+                                                   | TMHM(TM19_GIGA_DRAIN)
                                                    | TMHM(TM15_HYPER_BEAM)
                                                    | TMHM(TM23_IRON_TAIL)
                                                    | TMHM(TM16_LIGHT_SCREEN)

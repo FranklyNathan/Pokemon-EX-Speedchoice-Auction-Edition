@@ -169,20 +169,15 @@ static const struct MenuAction gPCText_ItemPCOptionsText[] =
 
 static const struct ItemSlot gNewGamePCItems[] =
 {
-    { ITEM_DAWN_STONE, 3 },
-    { ITEM_DUSK_STONE, 3 },
-    { ITEM_FIRE_STONE, 3 },
-    { ITEM_WATER_STONE, 3 },
-    { ITEM_SHINY_STONE, 3 },
-
     { ITEM_ABILITY_CAPSULE, 5 },
-    { ITEM_ABSORB_BULB, 3 },
     { ITEM_AIR_BALLOON, 3 },
     { ITEM_BERRY_JUICE, 3 },
     { ITEM_BLACK_BELT, 3 },
     { ITEM_BRIGHT_POWDER, 3 },
     { ITEM_CHOICE_SCARF, 3 },
+    { ITEM_DAWN_STONE, 3 },
     { ITEM_DRAGON_FANG, 3 },
+    { ITEM_FIRE_STONE, 3 },
     { ITEM_FLAME_ORB, 3 },
     { ITEM_FOCUS_SASH, 3 },
     { ITEM_EJECT_BUTTON, 3 },
@@ -196,11 +191,13 @@ static const struct ItemSlot gNewGamePCItems[] =
     { ITEM_RAZOR_FANG, 3 },
     { ITEM_SHARP_BEAK, 3 },
     { ITEM_SHELL_BELL, 3 },
+    { ITEM_SHINY_STONE, 3 },
     { ITEM_SILVER_POWDER, 3 },
     { ITEM_TOXIC_ORB, 3 },
     { ITEM_THICK_CLUB, 3 },
     { ITEM_TWISTED_SPOON, 3 },
     { ITEM_SPELL_TAG, 3 },
+    { ITEM_WATER_STONE, 3 },
     { ITEM_NONE, 0 }
 };
 
