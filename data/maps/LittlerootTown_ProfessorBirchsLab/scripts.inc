@@ -124,8 +124,6 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GiveStarterEvent:: @ 81F9DDB
 	waitfanfare
 	setvar VAR_SCOTT_PETALBURG_ENCOUNTER, 1
 	setflag FLAG_NUZLOCKE
-	giveitem ITEM_RARE_CANDY, 1
-	giveitem ITEM_REPEL, 1
 	setflag FLAG_RECEIVED_RUNNING_SHOES
 	goto LittlerootTown_ProfessorBirchsLab_EventScript_GoSeeRival
 	end

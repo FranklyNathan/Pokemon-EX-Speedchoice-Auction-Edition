@@ -2711,7 +2711,7 @@ const struct Item gItems[] =
         .description = sCleanseTagDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .fieldUseFunc = ItemUseOutOfBattle_CleanseTag,
     },
 
     [ITEM_SOUL_DEW] =

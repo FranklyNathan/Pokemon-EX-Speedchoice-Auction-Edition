@@ -744,6 +744,29 @@ static void ItemUseOnFieldCB_WailmerPailSudowoodo(u8 taskId)
     DestroyTask(taskId);
 }
 
+void ItemUseOutOfBattle_CleanseTag(u8 taskId)
+{
+    bool8  cleanseTagOn = FlagGet(FLAG_CLEANSE_TAG);
+    if (!cleanseTagOn)
+    {
+        FlagSet(FLAG_CLEANSE_TAG);
+        PlaySE(SE_EXP_MAX);
+        if (!InBattlePyramid())
+            DisplayItemMessage(taskId, 1, gText_CleanseTagTurnOn, BagMenu_InitListsMenu);
+        else
+            DisplayItemMessageInBattlePyramid(taskId, gText_CleanseTagTurnOn, Task_CloseBattlePyramidBagMessage);
+    }
+    else
+    {
+        FlagClear(FLAG_CLEANSE_TAG);
+        PlaySE(SE_PC_OFF);
+        if (!InBattlePyramid())
+            DisplayItemMessage(taskId, 1, gText_CleanseTagTurnOff, BagMenu_InitListsMenu);
+        else
+            DisplayItemMessageInBattlePyramid(taskId, gText_CleanseTagTurnOff, Task_CloseBattlePyramidBagMessage);
+    }
+}
+
 void ItemUseOutOfBattle_Medicine(u8 taskId)
 {
     gItemUseCB = ItemUseCB_Medicine;

@@ -520,10 +520,8 @@ SlateportCity_EventScript_DollClerk:: @ 81DD16A
 
 	.align 2
 SlateportCity_PokemartDecor_Dolls: @ 81DD184
-	.2byte ITEM_BEEDRILLITE
 	.2byte ITEM_MAWILITE
 	.2byte ITEM_SABLENITE
-	.2byte ITEM_SCIZORITE
 	.2byte ITEM_NONE
 	release
 	end

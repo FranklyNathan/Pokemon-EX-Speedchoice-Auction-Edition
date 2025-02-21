@@ -3415,7 +3415,7 @@ static const struct TrainerMonItemCustomMoves sParty_Roxanne1[] = {
     },
     {
     .iv = 255,
-    .lvl = 85,
+    .lvl = 15,
     .species = SPECIES_NOSEPASS,
     .nature = NATURE_IMPISH,
     .heldItem = ITEM_ORAN_BERRY,
@@ -3454,7 +3454,7 @@ static const struct TrainerMonItemCustomMoves sParty_Brawly1[] = {
     .species = SPECIES_MAKUHITA,
     .nature = NATURE_ADAMANT,
     .heldItem = ITEM_SITRUS_BERRY,
-    .moves = {MOVE_KNOCK_OFF, MOVE_VITAL_THROW, MOVE_REVERSAL, MOVE_BULK_UP}
+    .moves = {MOVE_STRENGTH, MOVE_VITAL_THROW, MOVE_REVERSAL, MOVE_BULK_UP}
     }
 };
 
@@ -9026,7 +9026,7 @@ static const struct TrainerMonNoItemCustomMoves sParty_BrendanLilycoveTreecko[] 
     .iv = 255,
     .lvl = 37,
     .species = SPECIES_SWELLOW,
-    .moves = {MOVE_AERIAL_ACE, MOVE_DOUBLE_TEAM, MOVE_AGILITY, MOVE_QUICK_ATTACK}
+    .moves = {MOVE_AERIAL_ACE, MOVE_DOUBLE_TEAM, MOVE_FLY, MOVE_QUICK_ATTACK}
     },
     {
     .iv = 255,

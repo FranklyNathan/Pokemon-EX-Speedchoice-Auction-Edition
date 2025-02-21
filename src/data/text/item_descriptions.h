@@ -1067,8 +1067,8 @@ static const u8 sAmuletCoinDesc[] = _(
     "holder takes part.");
 
 static const u8 sCleanseTagDesc[] = _(
-    "A hold item that\n"
-    "helps repel wild\n"
+    "An item that\n"
+    "repels all wild\n"
     "Pokémon.");
 
 static const u8 sSoulDewDesc[] = _(
@@ -2046,8 +2046,8 @@ static const u8 sFlameOrbDesc[] = _(
 
 static const u8 sQuickPowderDesc[] = _(
     "An item to be held\n"
-    "by Ditto. This odd\n"
-    "powder boosts Speed.");
+    "by Ditto. It\n"
+    "boosts Speed.");
 
 static const u8 sFocusSashDesc[] = _(
     "If the holder has\n"

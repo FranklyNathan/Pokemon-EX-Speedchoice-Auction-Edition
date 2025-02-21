@@ -971,6 +971,10 @@ bool8 IsBikingDisallowedByPlayer(void)
     s16 x, y;
     u8 tileBehavior;
 
+    if (!(gMapHeader.flags & MAP_ALLOW_CYCLING))
+    {
+        return TRUE;
+    }
     if (!(gPlayerAvatar.flags & (PLAYER_AVATAR_FLAG_SURFING | PLAYER_AVATAR_FLAG_UNDERWATER)))
     {
         PlayerGetDestCoords(&x, &y);

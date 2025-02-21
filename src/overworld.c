@@ -981,14 +981,10 @@ static u16 GetCenterScreenMetatileBehavior(void)
 
 bool32 Overworld_IsBikingAllowed(void)
 {
-    //if(CheckSpeedchoiceOption(RUN_EVERYWHERE, RUN_ON) == TRUE)
-        return TRUE;
-    /*
     if (!(gMapHeader.flags & MAP_ALLOW_CYCLING))
         return FALSE;
     else
         return TRUE;
-    */
 }
 
 void SetDefaultFlashLevel(void)

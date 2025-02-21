@@ -559,6 +559,8 @@ static bool8 TryStartStepBasedScript(struct MapPosition *position, u16 metatileB
         return TRUE;
     if (TryStartStepCountScript(metatileBehavior) == TRUE)
         return TRUE;
+    if (UpdateRepelCounter() == TRUE)
+        return TRUE;
     return FALSE;
 }
 

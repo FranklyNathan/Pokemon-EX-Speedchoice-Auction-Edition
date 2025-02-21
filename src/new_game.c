@@ -257,6 +257,8 @@ void NewGameInitData(void)
     AddBagItem(ITEM_SLEEPING_BAG, 1);
     //if(CheckSpeedchoiceOption(EARLY_BIKE, EARLY_BIKE_YES) == TRUE) {
         AddBagItem(ITEM_ACRO_BIKE, 1);
+        AddBagItem(ITEM_RARE_CANDY, 1);
+        AddBagItem(ITEM_CLEANSE_TAG, 1);
         FlagSet(FLAG_RECEIVED_BIKE); // put the flag here for making sure you got the bicycle
         FlagSet(FLAG_SYS_B_DASH);
         FlagSet(FLAG_HIDE_LITTLEROOT_TOWN_MOM_OUTSIDE);
@@ -265,6 +267,7 @@ void NewGameInitData(void)
         FlagClear(FLAG_HIDE_LITTLEROOT_TOWN_FAT_MAN);
         FlagClear(FLAG_HIDE_MAP_NAME_POPUP);
         FlagSet(FLAG_SYS_POKEMON_GET);
+        FlagSet(FLAG_SYS_PC_LANETTE); 
     //}
     gSaveBlock2Ptr->lastUsedBall = ITEM_POKE_BALL;
 }
