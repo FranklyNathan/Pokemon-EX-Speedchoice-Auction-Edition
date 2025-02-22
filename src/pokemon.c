@@ -3784,44 +3784,36 @@ u16 MonTryLearningNewMove(struct Pokemon *mon, bool8 firstMove)
     return retVal;
 }
 
+
 u16 MonTryLearningNewMoveEvolution(struct Pokemon *mon, bool8 firstMove)
 {
     u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
     u8 level = GetMonData(mon, MON_DATA_LEVEL, NULL);
-    u32 retVal = MOVE_NONE;
 
-    // If it's the first move, reset sLearningMoveTableID
+    // Reset learning index if it's the first time checking for moves
     if (firstMove)
     {
         sLearningMoveTableID = 0;
     }
 
-    // Loop through the level-up learnset for the given species
-    while (gLevelUpLearnsets[species][sLearningMoveTableID].move != LEVEL_UP_END)
+    while(gLevelUpLearnsets[species][sLearningMoveTableID].move != LEVEL_UP_END)
     {
-        u16 moveLevel = gLevelUpLearnsets[species][sLearningMoveTableID].level;
-        u16 move = gLevelUpLearnsets[species][sLearningMoveTableID].move;
+        u16 moveLevel = gLevelUpLearnsets[species][sLearningMoveTableID].level;  
+        u16 moveID = gLevelUpLearnsets[species][sLearningMoveTableID].move; 
 
-        // Special check for level 0 moves (evolution moves)
-        if (moveLevel == 0)
+        // If it's an evolution move (moveLevel == 0) or if it's the current level
+        if (moveLevel == 0 || moveLevel == level)
         {
-            // Learn the level 0 move on evolution
-            gMoveToLearn = move;
-            retVal = GiveMoveToMon(mon, gMoveToLearn);
-        }
-
-        else if (moveLevel == level)
-        {
-            gMoveToLearn = move;
-            retVal = GiveMoveToMon(mon, gMoveToLearn);
+            gMoveToLearn = moveID;  // Set the move to learn
+            sLearningMoveTableID++; // Move to the next entry in the learnset
+            return GiveMoveToMon(mon, gMoveToLearn);  // Give the move to the Pokémon
         }
 
         sLearningMoveTableID++;
     }
 
-    return retVal;
+    return 0;
 }
-
 
 void DeleteFirstMoveAndGiveMoveToMon(struct Pokemon *mon, u16 move)
 {
