@@ -12026,8 +12026,8 @@ const struct BaseStats gBaseStats[] =
         .eggGroup1 = EGG_GROUP_AMORPHOUS,
         .eggGroup2 = EGG_GROUP_AMORPHOUS,
         #ifdef BATTLE_ENGINE
-            .abilities = {ABILITY_AFTERMATH, ABILITY_UNBURDEN},
-            .abilityHidden = ABILITY_FLARE_BOOST,
+            .abilities = {ABILITY_FLARE_BOOST, ABILITY_UNBURDEN},
+            .abilityHidden = ABILITY_AFTERMATH,
         #else
             .abilities = {ABILITY_NONE, ABILITY_NONE},
         #endif
@@ -12055,8 +12055,8 @@ const struct BaseStats gBaseStats[] =
         .eggGroup1 = EGG_GROUP_AMORPHOUS,
         .eggGroup2 = EGG_GROUP_AMORPHOUS,
         #ifdef BATTLE_ENGINE
-            .abilities = {ABILITY_AFTERMATH, ABILITY_UNBURDEN},
-            .abilityHidden = ABILITY_FLARE_BOOST,
+            .abilities = {ABILITY_FLARE_BOOST, ABILITY_UNBURDEN},
+            .abilityHidden = ABILITY_AFTERMATH,
         #else
             .abilities = {ABILITY_NONE, ABILITY_NONE},
         #endif
@@ -27241,7 +27241,7 @@ const struct BaseStats gBaseStats[] =
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FIELD,
         #ifdef BATTLE_ENGINE
-            .abilities = {ABILITY_SNOW_CLOAK, ABILITY_NONE},
+            .abilities = {ABILITY_SNOW_CLOAK, ABILITY_SNOW_WARNING},
             .abilityHidden = ABILITY_SNOW_WARNING,
         #else
             .abilities = {ABILITY_NONE, ABILITY_NONE},
@@ -27272,7 +27272,7 @@ const struct BaseStats gBaseStats[] =
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FIELD,
         #ifdef BATTLE_ENGINE
-            .abilities = {ABILITY_SNOW_CLOAK, ABILITY_NONE},
+            .abilities = {ABILITY_SNOW_CLOAK, ABILITY_SNOW_WARNING},
             .abilityHidden = ABILITY_SNOW_WARNING,
         #else
             .abilities = {ABILITY_NONE, ABILITY_NONE},
@@ -28032,8 +28032,8 @@ const struct BaseStats gBaseStats[] =
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FIELD,
         #ifdef BATTLE_ENGINE
-            .abilities = {ABILITY_PICKUP, ABILITY_GLUTTONY},
-            .abilityHidden = ABILITY_QUICK_FEET,
+            .abilities = {ABILITY_QUICK_FEET, ABILITY_GLUTTONY},
+            .abilityHidden = ABILITY_PICKUP,
         #else
             .abilities = {ABILITY_PICKUP, ABILITY_NONE},
         #endif
@@ -28062,8 +28062,8 @@ const struct BaseStats gBaseStats[] =
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FIELD,
         #ifdef BATTLE_ENGINE
-            .abilities = {ABILITY_PICKUP, ABILITY_GLUTTONY},
-            .abilityHidden = ABILITY_QUICK_FEET,
+            .abilities = {ABILITY_QUICK_FEET, ABILITY_GLUTTONY},
+            .abilityHidden = ABILITY_PICKUP,
         #else
             .abilities = {ABILITY_PICKUP, ABILITY_NONE},
         #endif

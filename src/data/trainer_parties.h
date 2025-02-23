@@ -3325,7 +3325,7 @@ static const struct TrainerMonItemCustomMoves sParty_Glacia[] = {
     .species = SPECIES_NINETALES_ALOLAN,
     .nature = NATURE_MODEST,
     .heldItem = ITEM_SNOWBALL,
-    .moves = {MOVE_DAZZLING_GLEAM, MOVE_ICE_BEAM, MOVE_HAIL, MOVE_NASTY_PLOT}
+    .moves = {MOVE_DAZZLING_GLEAM, MOVE_ICE_BEAM, MOVE_HAIL, MOVE_CALM_MIND}
     },
     {
     .iv = 255,
@@ -3349,7 +3349,7 @@ static const struct TrainerMonItemCustomMoves sParty_Glacia[] = {
     .species = SPECIES_WALREIN,
     .nature = NATURE_MODEST,
     .heldItem = ITEM_SITRUS_BERRY,
-    .moves = {MOVE_SURF, MOVE_BODY_SLAM, MOVE_ICE_BEAM, MOVE_SHEER_COLD}
+    .moves = {MOVE_SURF, MOVE_BODY_SLAM, MOVE_ICE_BEAM, MOVE_FREEZE_DRY}
     }
 };
 
@@ -3358,7 +3358,7 @@ static const struct TrainerMonItemCustomMoves sParty_Drake[] = {
     .iv = 255,
     .lvl = 52,
     .species = SPECIES_EXEGGUTOR_ALOLAN,
-    .nature = NATURE_SASSY,
+    .nature = NATURE_RELAXED,
     .heldItem = ITEM_SITRUS_BERRY,
     .moves = {MOVE_DRAGON_HAMMER, MOVE_LEAF_STORM, MOVE_SLUDGE_BOMB, MOVE_FLAMETHROWER}
     },
@@ -3415,7 +3415,7 @@ static const struct TrainerMonItemCustomMoves sParty_Roxanne1[] = {
     },
     {
     .iv = 255,
-    .lvl = 19,
+    .lvl = 15,
     .species = SPECIES_NOSEPASS,
     .nature = NATURE_IMPISH,
     .heldItem = ITEM_ORAN_BERRY,
