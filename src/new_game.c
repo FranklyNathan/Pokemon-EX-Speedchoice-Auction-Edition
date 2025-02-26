@@ -266,7 +266,6 @@ void NewGameInitData(void)
         VarSet(VAR_0x8005, 8);
         FlagClear(FLAG_HIDE_LITTLEROOT_TOWN_FAT_MAN);
         FlagClear(FLAG_HIDE_MAP_NAME_POPUP);
-        FlagSet(FLAG_SYS_POKEMON_GET);
         FlagSet(FLAG_SYS_PC_LANETTE); 
     //}
     gSaveBlock2Ptr->lastUsedBall = ITEM_POKE_BALL;

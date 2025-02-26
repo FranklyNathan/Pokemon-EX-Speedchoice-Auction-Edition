@@ -10,6 +10,9 @@ EverGrandeCity_PokemonLeague_1F_MapScripts:: @ 82295D2
 EverGrandeCity_PokemonLeague_1F_OnTransition: @ 82295DD
 	setrespawn HEAL_LOCATION_EVER_GRANDE_CITY_POKEMON_LEAGUE
 	setflag FLAG_LANDMARK_POKEMON_LEAGUE
+	setflag FLAG_VISITED_FALLARBOR_TOWN
+	setflag FLAG_VISITED_PACIFIDLOG_TOWN
+	setflag FLAG_VISITED_VERDANTURF_TOWN 
 	call_if_unset FLAG_ENTERED_ELITE_FOUR, EverGrandeCity_PokemonLeague_1F_EventScript_GuardsBlockDoor
 	end
 

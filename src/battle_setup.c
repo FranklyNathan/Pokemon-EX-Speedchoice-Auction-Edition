@@ -1971,6 +1971,8 @@ static u8 getLevelCap(void){
         nextLeader = TRAINER_TATE_AND_LIZA_1;
     else if (!FlagGet(FLAG_BADGE08_GET))
         nextLeader = TRAINER_JUAN_1;
+    else if (!FlagGet(FLAG_DEFEATED_WALLY_VICTORY_ROAD))
+        nextLeader = TRAINER_WALLY_VR_1;
     else if (!FlagGet(FLAG_DEFEATED_ELITE_4_DRAKE))
         nextLeader = TRAINER_DRAKE;
     else if (!FlagGet(FLAG_IS_CHAMPION))

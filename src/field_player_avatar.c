@@ -72,7 +72,15 @@ static void PlayerNotOnBikeMoving(u8, u16);
 static u8 CheckForPlayerAvatarCollision(u8);
 static u8 sub_808B028(u8);
 static u8 sub_808B164(struct ObjectEvent *, s16, s16, u8, u8);
+
+static void Task_WaitStopSurfing(u8 taskId);
+static void CreateStartSurfingTask(u8);
+static void Task_StartSurfingInit(u8 taskId);
+static void Task_WaitStartSurfing(u8 taskId);
 static bool8 CanStopSurfing(s16, s16, u8);
+
+static bool8 CanStartSurfing(s16, s16, u8);
+
 static bool8 ShouldJumpLedge(s16, s16, u8);
 static bool8 TryPushBoulder(s16, s16, u8);
 static void CheckAcroBikeCollision(s16, s16, u8, u8 *);
@@ -678,6 +686,9 @@ u8 CheckForObjectEventCollision(struct ObjectEvent *objectEvent, s16 x, s16 y, u
     if (collision == COLLISION_ELEVATION_MISMATCH && CanStopSurfing(x, y, direction))
         return COLLISION_STOP_SURFING;
 
+    if (collision == COLLISION_ELEVATION_MISMATCH && CanStartSurfing(x, y, direction))
+        return COLLISION_START_SURFING;
+
     if (ShouldJumpLedge(x, y, direction))
     {
         IncrementGameStat(GAME_STAT_JUMPED_DOWN_LEDGES);
@@ -708,6 +719,41 @@ static u8 sub_808B164(struct ObjectEvent *objectEvent, s16 x, s16 y, u8 directio
     return collision;
 }
 
+static bool8 CanStartSurfing(s16 x, s16 y, u8 direction)
+{
+    if (CheckBagHasItem(ITEM_HM03_SURF, 1) == FALSE)
+    {
+        return FALSE;
+    }
+
+    if ((gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_ON_FOOT)        //also remove to jump from bike, side effects unknown
+     && MapGridGetZCoordAt(x, y) == 1
+     && IsPlayerFacingSurfableFishableWater()
+     && GetObjectEventIdByXYZ(x, y, 1) == OBJECT_EVENTS_COUNT)
+    {
+        CreateStartSurfingTask(direction);
+        return TRUE;
+    }
+    else
+    {
+        return FALSE;
+    }
+}
+
+static void CreateStartSurfingTask(u8 direction)
+{
+    u8 taskId;
+
+    ScriptContext2_Enable();
+    Overworld_ClearSavedMusic();
+    gPlayerAvatar.flags ^= PLAYER_AVATAR_FLAG_ON_FOOT;
+    gPlayerAvatar.flags |= PLAYER_AVATAR_FLAG_SURFING;
+    gPlayerAvatar.preventStep = TRUE;
+    taskId = CreateTask(Task_StartSurfingInit, 0xFF);
+    gTasks[taskId].data[0] = direction;
+    Task_StartSurfingInit(taskId);
+}
+
 static bool8 CanStopSurfing(s16 x, s16 y, u8 direction)
 {
     if ((gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_SURFING)
@@ -720,6 +766,36 @@ static bool8 CanStopSurfing(s16 x, s16 y, u8 direction)
     else
     {
         return FALSE;
+    }
+}
+
+static void Task_StartSurfingInit(u8 taskId)
+{
+    struct ObjectEvent *playerObjEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
+
+    if (ObjectEventIsMovementOverridden(playerObjEvent))
+    {
+        if (!ObjectEventClearHeldMovementIfFinished(playerObjEvent))
+            return;
+    }
+    SetPlayerAvatarStateMask(8);
+    ObjectEventSetGraphicsId(playerObjEvent, GetPlayerAvatarGraphicsIdByStateId(3));
+    ObjectEventClearHeldMovementIfFinished(playerObjEvent);
+    ObjectEventSetHeldMovement(playerObjEvent, GetJumpSpecialMovementAction((u8)gTasks[taskId].data[0]));
+    gTasks[taskId].func = Task_WaitStartSurfing;
+}
+
+static void Task_WaitStartSurfing(u8 taskId)
+{
+    struct ObjectEvent *playerObjEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
+
+    if (ObjectEventClearHeldMovementIfFinished(playerObjEvent))
+    {
+        ObjectEventSetHeldMovement(playerObjEvent, GetFaceDirectionMovementAction(playerObjEvent->facingDirection));
+        PlayerAvatarTransition_Surfing(playerObjEvent);
+        gPlayerAvatar.preventStep = FALSE;
+        ScriptContext2_Disable();
+        DestroyTask(taskId);
     }
 }
 

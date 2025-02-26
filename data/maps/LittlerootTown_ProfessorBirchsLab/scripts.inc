@@ -120,8 +120,6 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GiveStarterEvent:: @ 81F9DDB
 	bufferleadmonspeciesname 0
 	message LittlerootTown_ProfessorBirchsLab_Text_LikeYouToHavePokemon
 	waitmessage
-	playfanfare MUS_OBTAIN_ITEM
-	waitfanfare
 	setvar VAR_SCOTT_PETALBURG_ENCOUNTER, 1
 	setflag FLAG_NUZLOCKE
 	setflag FLAG_RECEIVED_RUNNING_SHOES
@@ -135,17 +133,15 @@ LittlerootTown_ProfessorBirchsLab_EventScript_NicknameStarter:: @ 81F9E07
 	end
 
 LittlerootTown_ProfessorBirchsLab_EventScript_GoSeeRival:: @ 81F9E17
-	msgbox LittlerootTown_ProfessorBirchsLab_Text_MightBeGoodIdeaToGoSeeRival, MSGBOX_YESNO
-	compare VAR_RESULT, YES
-	goto_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_AgreeToSeeRival
-	compare VAR_RESULT, NO
-	goto_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_DeclineSeeingRival
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_MightBeGoodIdeaToGoSeeRival
+	goto LittlerootTown_ProfessorBirchsLab_EventScript_AgreeToSeeRival
 	end
 
 LittlerootTown_ProfessorBirchsLab_EventScript_AgreeToSeeRival:: @ 81F9E36
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_GetRivalToTeachYou, MSGBOX_DEFAULT
 	clearflag FLAG_HIDE_ROUTE_101_BOY
 	setvar VAR_BIRCH_LAB_STATE, 3
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_SOUTH
 	releaseall
 	end
 
@@ -744,14 +740,10 @@ LittlerootTown_ProfessorBirchsLab_Text_LikeYouToHavePokemon: @ 81FA74D
 	.string "PROF. BIRCH: So, {PLAYER}{KUN}.\p"
 	.string "I've heard so much about you from\n"
 	.string "your father.\p"
-	.string "I've heard that you don't have your\n"
-	.string "own POKéMON yet.\p"
-	.string "But the way you battled earlier,\n"
+	.string "The way you battled earlier,\n"
 	.string "you pulled it off with aplomb!\p"
 	.string "I guess you have your father's blood\n"
-	.string "in your veins after all!\p"
-	.string "As thanks for rescuing me,\n"
-	.string "I'd like you to have your POKéMON.$"
+	.string "in your veins after all!$"
 
 LittlerootTown_ProfessorBirchsLab_Text_WhyNotGiveNicknameToMon: @ 81FA8B1
 	.string "PROF. BIRCH: While you're at it, why not\n"
@@ -763,8 +755,8 @@ LittlerootTown_ProfessorBirchsLab_Text_MightBeGoodIdeaToGoSeeRival: @ 81FA8F6
 	.string "an extremely good TRAINER.\p"
 	.string "My kid, {RIVAL}, is also studying\n"
 	.string "POKéMON while helping me out.\p"
-	.string "{PLAYER}{KUN}, don't you think it might be\n"
-	.string "a good idea to go see {RIVAL}?$"
+	.string "{PLAYER}{KUN}, I think it might be\n"
+	.string "a good idea to go see {RIVAL}!$"
 
 LittlerootTown_ProfessorBirchsLab_Text_GetRivalToTeachYou: @ 81FA9D5
 	.string "PROF. BIRCH: Great!\n"

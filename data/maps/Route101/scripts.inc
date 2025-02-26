@@ -228,8 +228,7 @@ Route101_EventScript_BirchsBag:: @ 81EBE16
 	setobjectxy OBJ_EVENT_ID_PLAYER, 6, 13
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestLeft
 	waitmovement 0
-	special ChooseStarter
-	waitstate
+	fadescreen FADE_FROM_BLACK  
 	applymovement LOCALID_BIRCH, Route101_Movement_BirchApproachPlayer
 	waitmovement 0
 	msgbox Route101_Text_YouSavedMe, MSGBOX_DEFAULT

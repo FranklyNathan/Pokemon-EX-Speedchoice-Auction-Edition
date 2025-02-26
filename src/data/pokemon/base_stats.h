@@ -18795,7 +18795,7 @@ const struct BaseStats gBaseStats[] =
         .eggGroup1 = EGG_GROUP_FLYING,
         .eggGroup2 = EGG_GROUP_FLYING,
         #ifdef BATTLE_ENGINE
-            .abilities = {ABILITY_BIG_PECKS, ABILITY_NONE},
+            .abilities = {ABILITY_BIG_PECKS, ABILITY_GALE_WINGS},
             .abilityHidden = ABILITY_GALE_WINGS,
         #else
             .abilities = {ABILITY_NONE, ABILITY_NONE},
@@ -18823,7 +18823,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_FLYING,
         .eggGroup2 = EGG_GROUP_FLYING,
-        .abilities = {ABILITY_FLAME_BODY, ABILITY_NONE},
+        .abilities = {ABILITY_FLAME_BODY, ABILITY_GALE_WINGS},
         #ifdef BATTLE_ENGINE
             .abilityHidden = ABILITY_GALE_WINGS,
         #endif
@@ -18850,7 +18850,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_FLYING,
         .eggGroup2 = EGG_GROUP_FLYING,
-        .abilities = {ABILITY_FLAME_BODY, ABILITY_NONE},
+        .abilities = {ABILITY_FLAME_BODY, ABILITY_GALE_WINGS},
         #ifdef BATTLE_ENGINE
             .abilityHidden = ABILITY_GALE_WINGS,
         #endif

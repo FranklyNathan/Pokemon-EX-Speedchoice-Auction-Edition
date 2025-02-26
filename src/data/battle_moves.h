@@ -12526,7 +12526,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
 
     [MOVE_SHELL_SIDE_ARM] =
     {
-        .effect = EFFECT_PLACEHOLDER,   //TODO
+        .effect = EFFECT_POISON_HIT,   //TODO
         .power = 90,
         .type = TYPE_POISON,
         .accuracy = 100,

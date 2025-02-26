@@ -6857,36 +6857,46 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Edwin5[] = {
     }
 };
 
-static const struct TrainerMonNoItemCustomMoves sParty_WallyVR1[] = {
+static const struct TrainerMonItemCustomMoves sParty_WallyVR1[] = {
     {
     .iv = 255,
     .lvl = 46,
     .species = SPECIES_ALTARIA,
-    .moves = {MOVE_AERIAL_ACE, MOVE_SAFEGUARD, MOVE_DRAGON_BREATH, MOVE_DRAGON_DANCE}
+    .nature = NATURE_SASSY,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_AERIAL_ACE, MOVE_PERISH_SONG, MOVE_DRAGON_PULSE, MOVE_MOONBLAST}
     },
     {
     .iv = 255,
     .lvl = 46,
     .species = SPECIES_DELCATTY,
-    .moves = {MOVE_SING, MOVE_ASSIST, MOVE_CHARM, MOVE_FEINT_ATTACK}
+    .nature = NATURE_ADAMANT,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_SING, MOVE_ASSIST, MOVE_CHARM, MOVE_PLAY_ROUGH}
     },
     {
     .iv = 255,
     .lvl = 46,
-    .species = SPECIES_ROSELIA,
-    .moves = {MOVE_MAGICAL_LEAF, MOVE_LEECH_SEED, MOVE_GIGA_DRAIN, MOVE_TOXIC}
+    .species = SPECIES_ROSERADE,
+    .nature = NATURE_MODEST,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_SLUDGE_BOMB, MOVE_LEECH_SEED, MOVE_PETAL_BLIZZARD, MOVE_TOXIC}
     },
     {
     .iv = 255,
     .lvl = 46,
-    .species = SPECIES_MAGNETON,
-    .moves = {MOVE_SUPERSONIC, MOVE_THUNDERBOLT, MOVE_TRI_ATTACK, MOVE_SCREECH}
+    .species = SPECIES_MAGNEZONE,
+    .nature = NATURE_MODEST,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_SUPERSONIC, MOVE_DISCHARGE, MOVE_TRI_ATTACK, MOVE_FLASH_CANNON}
     },
     {
     .iv = 255,
     .lvl = 48,
     .species = SPECIES_GALLADE,
-    .moves = {MOVE_PSYCHO_CUT, MOVE_CLOSE_COMBAT, MOVE_SLASH, MOVE_SWORDS_DANCE}
+    .nature = NATURE_ADAMANT,
+    .heldItem = ITEM_GALLADITE,
+    .moves = {MOVE_PSYCHO_CUT, MOVE_CLOSE_COMBAT, MOVE_AERIAL_ACE, MOVE_BULK_UP}
     }
 };
 
@@ -8857,7 +8867,7 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Ashley[] = {
 static const struct TrainerMonNoItemDefaultMoves sParty_WallyMauville[] = {
     {
     .iv = 255,
-    .lvl = 16,
+    .lvl = 17,
     .species = SPECIES_RALTS,
     }
 };

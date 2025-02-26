@@ -11759,9 +11759,6 @@ static const struct LevelUpMove sReuniclusLevelUpLearnset[] = {
 static const struct LevelUpMove sDucklettLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_WATER_GUN),
     LEVEL_UP_MOVE( 3, MOVE_WATER_SPORT),
-    LEVEL_UP_MOVE( 5, MOVE_SURF),
-    LEVEL_UP_MOVE( 5, MOVE_ROCK_SMASH),
-    LEVEL_UP_MOVE( 5, MOVE_DIVE),
     LEVEL_UP_MOVE( 6, MOVE_DEFOG),
     LEVEL_UP_MOVE( 9, MOVE_WING_ATTACK),
     LEVEL_UP_MOVE(13, MOVE_WATER_PULSE),
@@ -18839,8 +18836,8 @@ static const struct LevelUpMove sSlowpokeGalarianLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sSlowbroGalarianLevelUpLearnset[] = {
-    LEVEL_UP_MOVE( 0, MOVE_SHELL_SIDE_ARM),
-    LEVEL_UP_MOVE( 1, MOVE_SHELL_SIDE_ARM),
+//    LEVEL_UP_MOVE( 0, MOVE_SHELL_SIDE_ARM),
+//    LEVEL_UP_MOVE( 1, MOVE_SHELL_SIDE_ARM),
     LEVEL_UP_MOVE( 1, MOVE_WITHDRAW),
     LEVEL_UP_MOVE( 1, MOVE_TACKLE),
     LEVEL_UP_MOVE( 1, MOVE_CURSE),
