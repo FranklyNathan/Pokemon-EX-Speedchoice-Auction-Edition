@@ -3415,7 +3415,7 @@ static const struct TrainerMonItemCustomMoves sParty_Roxanne1[] = {
     },
     {
     .iv = 255,
-    .lvl = 15,
+    .lvl = 17,
     .species = SPECIES_NOSEPASS,
     .nature = NATURE_IMPISH,
     .heldItem = ITEM_ORAN_BERRY,
