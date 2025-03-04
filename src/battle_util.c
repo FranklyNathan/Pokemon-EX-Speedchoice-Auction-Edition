@@ -4250,7 +4250,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
                 }
                 break;
             case ABILITY_SPEED_BOOST:
-                if (gBattleMons[battler].statStages[STAT_SPEED] < 0xC && gDisableStructs[battler].isFirstTurn != 2)
+                if (gBattleMons[battler].statStages[STAT_SPEED] < MAX_STAT_STAGE && gDisableStructs[battler].isFirstTurn != 2)
                 {
                     gBattleMons[battler].statStages[STAT_SPEED]++;
                     gBattleScripting.animArg1 = 0x11;
@@ -4270,7 +4270,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
                     {
                         if (gBattleMons[battler].statStages[i] != 0)
                             validToLower |= gBitTable[i];
-                        if (gBattleMons[battler].statStages[i] != 12)
+                        if (gBattleMons[battler].statStages[i] != MAX_STAT_STAGE)
                             validToRaise |= gBitTable[i];
                     }
 

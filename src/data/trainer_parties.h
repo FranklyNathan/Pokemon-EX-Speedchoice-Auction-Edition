@@ -3680,7 +3680,7 @@ static const struct TrainerMonItemCustomMoves sParty_Juan1[] = {
     .species = SPECIES_LUDICOLO,
     .nature = NATURE_HARDY,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_GIGA_DRAIN, MOVE_SURF, MOVE_FAKE_OUT, MOVE_DOUBLE_TEAM}
+    .moves = {MOVE_GIGA_DRAIN, MOVE_SURF, MOVE_FAKE_OUT, MOVE_ASTONISH}
     },
     {
     .iv = 255,
@@ -9027,7 +9027,7 @@ static const struct TrainerMonNoItemCustomMoves sParty_BrendanLilycoveMudkip[] =
     .iv = 255,
     .lvl = 39,
     .species = SPECIES_SCEPTILE,
-    .moves = {MOVE_DUAL_CHOP, MOVE_LEAF_BLADE, MOVE_NIGHT_SLASH, MOVE_AGILITY}
+    .moves = {MOVE_DUAL_CHOP, MOVE_LEAF_BLADE, MOVE_NIGHT_SLASH, MOVE_HONE_CLAWS}
     }
 };
 
@@ -9054,7 +9054,7 @@ static const struct TrainerMonNoItemCustomMoves sParty_BrendanLilycoveTreecko[] 
     .iv = 255,
     .lvl = 39,
     .species = SPECIES_SCEPTILE,
-    .moves = {MOVE_DUAL_CHOP, MOVE_LEAF_BLADE, MOVE_NIGHT_SLASH, MOVE_AGILITY}
+    .moves = {MOVE_DUAL_CHOP, MOVE_LEAF_BLADE, MOVE_NIGHT_SLASH, MOVE_HONE_CLAWS}
     }
 };
 
@@ -9081,7 +9081,7 @@ static const struct TrainerMonNoItemCustomMoves sParty_BrendanLilycoveTorchic[] 
     .iv = 255,
     .lvl = 39,
     .species = SPECIES_SCEPTILE,
-    .moves = {MOVE_DUAL_CHOP, MOVE_LEAF_BLADE, MOVE_NIGHT_SLASH, MOVE_AGILITY}
+    .moves = {MOVE_DUAL_CHOP, MOVE_LEAF_BLADE, MOVE_NIGHT_SLASH, MOVE_HONE_CLAWS}
     }
 };
 
@@ -9108,7 +9108,7 @@ static const struct TrainerMonNoItemCustomMoves sParty_MayLilycoveMudkip[] = {
     .iv = 255,
     .lvl = 39,
     .species = SPECIES_SCEPTILE,
-    .moves = {MOVE_DUAL_CHOP, MOVE_LEAF_BLADE, MOVE_NIGHT_SLASH, MOVE_AGILITY}
+    .moves = {MOVE_DUAL_CHOP, MOVE_LEAF_BLADE, MOVE_NIGHT_SLASH, MOVE_HONE_CLAWS}
     }
 };
 
@@ -9135,7 +9135,7 @@ static const struct TrainerMonNoItemCustomMoves sParty_MayLilycoveTreecko[] = {
     .iv = 255,
     .lvl = 39,
     .species = SPECIES_SCEPTILE,
-    .moves = {MOVE_DUAL_CHOP, MOVE_LEAF_BLADE, MOVE_NIGHT_SLASH, MOVE_AGILITY}
+    .moves = {MOVE_DUAL_CHOP, MOVE_LEAF_BLADE, MOVE_NIGHT_SLASH, MOVE_HONE_CLAWS}
     }
 };
 
@@ -9162,7 +9162,7 @@ static const struct TrainerMonNoItemCustomMoves sParty_MayLilycoveTorchic[] = {
     .iv = 255,
     .lvl = 39,
     .species = SPECIES_SCEPTILE,
-    .moves = {MOVE_DUAL_CHOP, MOVE_LEAF_BLADE, MOVE_NIGHT_SLASH, MOVE_AGILITY}
+    .moves = {MOVE_DUAL_CHOP, MOVE_LEAF_BLADE, MOVE_NIGHT_SLASH, MOVE_HONE_CLAWS}
     }
 };
 

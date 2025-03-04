@@ -1536,9 +1536,9 @@ static const u8 sDevonScopeDesc[] = _(
 
 // TMs/HMs
 static const u8 sTM01Desc[] = _(
-    "Powerful, but makes\n"
-    "the user flinch if\n"
-    "hit by the foe.");
+    "The user sharpens\n"
+    "its claws to boost\n"
+    "its stats.");
 
 static const u8 sTM02Desc[] = _(
     "Hooks and slashes\n"
@@ -2750,9 +2750,9 @@ static const u8 sProtectPadsDesc[] = _(
     "effects.");
 
 static const u8 sTerrainExtenderDesc[] = _(
-    "Extends the length\n"
-    "of the active\n"
-    "battle terrain.");
+    "A hold item that\n"
+    "raises the power of\n"
+    "Fairy-type moves.");
 
 static const u8 sElectricSeedDesc[] = _(
     "Boosts Defense on\n"

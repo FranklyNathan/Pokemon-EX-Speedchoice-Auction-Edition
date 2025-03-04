@@ -177,8 +177,8 @@ static const struct ItemSlot gNewGamePCItems[] =
     { ITEM_CHOICE_SCARF, 3 },
     { ITEM_DAWN_STONE, 3 },
     { ITEM_DRAGON_FANG, 3 },
+    { ITEM_FAIRY_FEATHER, 3 },
     { ITEM_FIRE_STONE, 3 },
-    { ITEM_FLAME_ORB, 3 },
     { ITEM_FOCUS_SASH, 3 },
     { ITEM_EJECT_BUTTON, 3 },
     { ITEM_HARD_STONE, 3 },
@@ -193,10 +193,9 @@ static const struct ItemSlot gNewGamePCItems[] =
     { ITEM_SHELL_BELL, 3 },
     { ITEM_SHINY_STONE, 3 },
     { ITEM_SILVER_POWDER, 3 },
-    { ITEM_TOXIC_ORB, 3 },
+    { ITEM_SPELL_TAG, 3 },
     { ITEM_THICK_CLUB, 3 },
     { ITEM_TWISTED_SPOON, 3 },
-    { ITEM_SPELL_TAG, 3 },
     { ITEM_WATER_STONE, 3 },
     { ITEM_NONE, 0 }
 };

@@ -561,7 +561,7 @@ const u32 *const gItemIconTable[][2] =
     [ITEM_SAIL_FOSSIL] = {gItemIcon_SailFossil, gItemIconPalette_SailFossil},
 	// Gen 7 Items
     [ITEM_PROTECTIVE_PADS] = {gItemIcon_ProtectivePads, gItemIconPalette_ProtectivePads},
-    [ITEM_TERRAIN_EXTENDER] = {gItemIcon_TerrainExtender, gItemIconPalette_TerrainExtender},
+    [ITEM_FAIRY_FEATHER] = {gItemIcon_TerrainExtender, gItemIconPalette_TerrainExtender},
     [ITEM_ELECTRIC_SEED] = {gItemIcon_ElectricSeed, gItemIconPalette_ElectricSeed},
     [ITEM_GRASSY_SEED] = {gItemIcon_GrassySeed, gItemIconPalette_GrassySeed},
     [ITEM_MISTY_SEED] = {gItemIcon_MistySeed, gItemIconPalette_MistySeed},

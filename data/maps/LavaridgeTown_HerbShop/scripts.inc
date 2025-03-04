@@ -20,6 +20,8 @@ LavaridgeTown_HerbShop_Pokemart: @ 81FE4F0
 	.2byte ITEM_KINGS_ROCK
 	.2byte ITEM_METAL_COAT
 	.2byte ITEM_RAZOR_FANG
+	.2byte ITEM_FLAME_ORB
+	.2byte ITEM_TOXIC_ORB
 	.2byte ITEM_NONE
 	release
 	end

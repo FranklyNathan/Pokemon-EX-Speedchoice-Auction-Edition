@@ -975,7 +975,7 @@ const struct Item gItems[] =
     {
         .name = _("Rarest Candy"),
         .itemId = ITEM_RARE_CANDY,
-        .price = 100,
+        .price = 10000,
         .description = sRareCandyDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -3850,11 +3850,11 @@ const struct Item gItems[] =
 
 // TMs/HMs
 
-    [ITEM_TM01_FOCUS_PUNCH] =
+    [ITEM_TM01_HONE_CLAWS] =
     {
         .name = _("TM01"),
-        .itemId = ITEM_TM01_FOCUS_PUNCH,
-        .price = 3000,
+        .itemId = ITEM_TM01_HONE_CLAWS,
+        .price = 5000,
         .description = sTM01Desc,
         .importance = 1,
         .pocket = POCKET_TM_HM,
@@ -6970,12 +6970,13 @@ const struct Item gItems[] =
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
 
-    [ITEM_TERRAIN_EXTENDER] =
+    [ITEM_FAIRY_FEATHER] =
     {
-        .name = _("TerainExtendr"),
-        .itemId = ITEM_TERRAIN_EXTENDER,
-        .price = 4000,
-        .holdEffect = HOLD_EFFECT_TERRAIN_EXTENDER,
+        .name = _("Fairy Feather"),
+        .itemId = ITEM_FAIRY_FEATHER,
+        .price = 1000,
+        .holdEffect = HOLD_EFFECT_FAIRY_POWER,
+        .holdEffectParam = 20,
         .description = sTerrainExtenderDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,

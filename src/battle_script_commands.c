@@ -1072,7 +1072,7 @@ static const u16 sRarePickupItems[] =
     ITEM_WHITE_HERB,
     ITEM_TM44_REST,
     ITEM_ELIXIR,
-    ITEM_TM01_FOCUS_PUNCH,
+    ITEM_TM01_HONE_CLAWS,
     ITEM_LEFTOVERS,
     ITEM_TM26_EARTHQUAKE,
 };
@@ -3258,7 +3258,7 @@ void SetMoveEffect(bool32 primary, u32 certain)
                 gBattleScripting.animArg1 = 0;
                 for (i = STAT_ATK; i < NUM_BATTLE_STATS; i++)
                 {
-                    if (gBattleMons[gBattlerTarget].statStages[i] > 6 && gBattleMons[gBattlerAttacker].statStages[i] != 12)
+                    if (gBattleMons[gBattlerTarget].statStages[i] > 6 && gBattleMons[gBattlerAttacker].statStages[i] != MAX_STAT_STAGE)
                     {
                         gBattleStruct->stolenStats[0] |= gBitTable[i];
                         // Store by how many stages to raise the stat.
@@ -7571,7 +7571,7 @@ static void Cmd_various(void)
         bits = 0;
         for (i = STAT_ATK; i < NUM_BATTLE_STATS; i++)
         {
-            if (gBattleMons[gActiveBattler].statStages[i] != 12)
+            if (gBattleMons[gActiveBattler].statStages[i] != MAX_STAT_STAGE)
                 bits |= gBitTable[i];
         }
         if (bits)
@@ -7808,7 +7808,7 @@ static void Cmd_various(void)
          || GetBattlerAbility(gActiveBattler) == ABILITY_AS_ONE_ICE_RIDER)
           && HasAttackerFaintedTarget()
           && !NoAliveMonsForEitherParty()
-          && gBattleMons[gBattlerAttacker].statStages[STAT_ATK] != 12)
+          && gBattleMons[gBattlerAttacker].statStages[STAT_ATK] != MAX_STAT_STAGE)
         {
             gBattleMons[gBattlerAttacker].statStages[STAT_ATK]++;
             SET_STATCHANGER(STAT_ATK, 1, FALSE);
@@ -7826,7 +7826,7 @@ static void Cmd_various(void)
          || GetBattlerAbility(gActiveBattler) == ABILITY_AS_ONE_SHADOW_RIDER)
           && HasAttackerFaintedTarget()
           && !NoAliveMonsForEitherParty()
-          && gBattleMons[gBattlerAttacker].statStages[STAT_SPATK] != 12)
+          && gBattleMons[gBattlerAttacker].statStages[STAT_SPATK] != MAX_STAT_STAGE)
         {
             gBattleMons[gBattlerAttacker].statStages[STAT_SPATK]++;
             SET_STATCHANGER(STAT_SPATK, 1, FALSE);
@@ -7871,7 +7871,7 @@ static void Cmd_various(void)
         if (GetBattlerAbility(gActiveBattler) == ABILITY_BEAST_BOOST
             && HasAttackerFaintedTarget()
             && !NoAliveMonsForEitherParty()
-            && gBattleMons[gBattlerAttacker].statStages[i] != 12)
+            && gBattleMons[gBattlerAttacker].statStages[i] != MAX_STAT_STAGE)
         {
             gBattleMons[gBattlerAttacker].statStages[i]++;
             SET_STATCHANGER(i, 1, FALSE);
@@ -7888,7 +7888,7 @@ static void Cmd_various(void)
             if (GetBattlerAbility(gBattleScripting.battler) == ABILITY_SOUL_HEART
                 && IsBattlerAlive(gBattleScripting.battler)
                 && !NoAliveMonsForEitherParty()
-                && gBattleMons[gBattleScripting.battler].statStages[STAT_SPATK] != 12)
+                && gBattleMons[gBattleScripting.battler].statStages[STAT_SPATK] != MAX_STAT_STAGE)
             {
                 gBattleMons[gBattleScripting.battler].statStages[STAT_SPATK]++;
                 SET_STATCHANGER(STAT_SPATK, 1, FALSE);
@@ -7904,7 +7904,7 @@ static void Cmd_various(void)
         if (gBattleMoves[gCurrentMove].effect == EFFECT_FELL_STINGER
             && HasAttackerFaintedTarget()
             && !NoAliveMonsForEitherParty()
-            && gBattleMons[gBattlerAttacker].statStages[STAT_ATK] != 12)
+            && gBattleMons[gBattlerAttacker].statStages[STAT_ATK] != MAX_STAT_STAGE)
         {
             if (B_FELL_STINGER_STAT_RAISE >= GEN_7)
                 SET_STATCHANGER(STAT_ATK, 3, FALSE);

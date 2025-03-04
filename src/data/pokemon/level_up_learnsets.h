@@ -608,13 +608,13 @@ static const struct LevelUpMove sNidokingLevelUpLearnset[] = {
 
 static const struct LevelUpMove sClefairyLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_SPOTLIGHT),
-    LEVEL_UP_MOVE( 1, MOVE_DISARMING_VOICE),
+    LEVEL_UP_MOVE( 1, MOVE_DEFENSE_CURL),
     LEVEL_UP_MOVE( 1, MOVE_POUND),
     LEVEL_UP_MOVE( 1, MOVE_GROWL),
+    LEVEL_UP_MOVE( 1, MOVE_DISARMING_VOICE),
     LEVEL_UP_MOVE( 1, MOVE_ENCORE),
     LEVEL_UP_MOVE( 7, MOVE_SING),
     LEVEL_UP_MOVE(10, MOVE_DOUBLE_SLAP),
-    LEVEL_UP_MOVE(13, MOVE_DEFENSE_CURL),
     LEVEL_UP_MOVE(16, MOVE_FOLLOW_ME),
     LEVEL_UP_MOVE(19, MOVE_BESTOW),
     LEVEL_UP_MOVE(22, MOVE_WAKE_UP_SLAP),
@@ -3426,9 +3426,9 @@ static const struct LevelUpMove sLanturnLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sPichuLevelUpLearnset[] = {
-    LEVEL_UP_MOVE( 1, MOVE_CHARM),
     LEVEL_UP_MOVE( 5, MOVE_TAIL_WHIP),
-    LEVEL_UP_MOVE( 1, MOVE_THUNDER_SHOCK),
+    LEVEL_UP_MOVE( 5, MOVE_CHARM),
+    LEVEL_UP_MOVE( 5, MOVE_THUNDER_SHOCK),
     LEVEL_UP_MOVE(10, MOVE_SWEET_KISS),
     LEVEL_UP_MOVE(13, MOVE_NASTY_PLOT),
     LEVEL_UP_MOVE(18, MOVE_THUNDER_WAVE),
@@ -14127,7 +14127,8 @@ static const struct LevelUpMove sDoubladeLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sAegislashLevelUpLearnset[] = {
-    LEVEL_UP_MOVE( 0, MOVE_SACRED_SWORD),
+    LEVEL_UP_MOVE( 0, MOVE_KINGS_SHIELD),
+    LEVEL_UP_MOVE( 1, MOVE_SACRED_SWORD),
     LEVEL_UP_MOVE( 1, MOVE_FURY_CUTTER),
     LEVEL_UP_MOVE( 1, MOVE_PURSUIT),
     LEVEL_UP_MOVE( 1, MOVE_AUTOTOMIZE),
