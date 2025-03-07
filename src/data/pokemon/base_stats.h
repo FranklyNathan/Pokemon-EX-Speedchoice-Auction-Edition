@@ -13377,9 +13377,9 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_BUG,
         .eggGroup2 = EGG_GROUP_BUG,
-        .abilities = {ABILITY_HYPER_CUTTER, ABILITY_POISON_HEAL},
+        .abilities = {ABILITY_HYPER_CUTTER, ABILITY_SAND_VEIL},
         #ifdef BATTLE_ENGINE
-            .abilityHidden = ABILITY_SAND_VEIL,
+            .abilityHidden = ABILITY_POISON_HEAL,
         #endif
         .bodyColor = BODY_COLOR_PURPLE,
         .noFlip = FALSE,

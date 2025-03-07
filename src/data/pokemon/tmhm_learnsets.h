@@ -19159,7 +19159,8 @@ const u32 gTMHMLearnsets[][2] =
                                             | TMHM(TM44_REST)
                                             | TMHM(TM46_THIEF)),
 
-    [SPECIES_ROOKIDEE]    = TMHM_LEARNSET(TMHM(TM45_ATTRACT)
+    [SPECIES_ROOKIDEE]    = TMHM_LEARNSET(TMHM(TM40_AERIAL_ACE)
+                                            | TMHM(TM45_ATTRACT)
                                             | TMHM(TM42_FACADE)
                                             | TMHM(HM02_FLY)
                                             | TMHM(TM10_HIDDEN_POWER)
@@ -19170,7 +19171,8 @@ const u32 gTMHMLearnsets[][2] =
                                             | TMHM(TM12_TAUNT)
                                             | TMHM(TM46_THIEF)),
 
-    [SPECIES_CORVISQUIRE] = TMHM_LEARNSET(TMHM(TM45_ATTRACT)
+    [SPECIES_CORVISQUIRE] = TMHM_LEARNSET(TMHM(TM40_AERIAL_ACE)
+                                            | TMHM(TM45_ATTRACT)
                                             | TMHM(TM42_FACADE)
                                             | TMHM(HM02_FLY)
                                             | TMHM(TM10_HIDDEN_POWER)
@@ -19180,7 +19182,8 @@ const u32 gTMHMLearnsets[][2] =
                                             | TMHM(TM12_TAUNT)
                                             | TMHM(TM46_THIEF)),
 
-    [SPECIES_CORVIKNIGHT] = TMHM_LEARNSET(TMHM(TM45_ATTRACT)
+    [SPECIES_CORVIKNIGHT] = TMHM_LEARNSET(TMHM(TM40_AERIAL_ACE)
+                                            | TMHM(TM45_ATTRACT)
                                             | TMHM(TM08_BULK_UP)
                                             | TMHM(TM42_FACADE)
                                             | TMHM(HM02_FLY)
@@ -19362,7 +19365,8 @@ const u32 gTMHMLearnsets[][2] =
 
     [SPECIES_APPLIN]      = TMHM_LEARNSET(TMHM(TM45_ATTRACT)),
 
-    [SPECIES_FLAPPLE]     = TMHM_LEARNSET(TMHM(TM45_ATTRACT)
+    [SPECIES_FLAPPLE]     = TMHM_LEARNSET(TMHM(TM40_AERIAL_ACE)
+                                            | TMHM(TM45_ATTRACT)
                                             | TMHM(TM09_BULLET_SEED)
                                             | TMHM(TM42_FACADE)
                                             | TMHM(HM02_FLY)

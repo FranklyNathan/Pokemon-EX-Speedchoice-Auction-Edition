@@ -1900,6 +1900,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
                 CreateMonWithNature(&party[i], partyData[i].species, partyData[i].lvl, fixedIV, partyData[i].nature);
 
                 SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[i].heldItem);
+                SetMonData(&party[i], MON_DATA_ABILITY_NUM, &partyData[i].abilityNums);
 
                 for (j = 0; j < MAX_MON_MOVES; j++)
                 {

@@ -183,6 +183,7 @@ static const struct ItemSlot gNewGamePCItems[] =
     { ITEM_EJECT_BUTTON, 3 },
     { ITEM_HARD_STONE, 3 },
     { ITEM_STICK, 3 },
+    { ITEM_LEAF_STONE, 3 },
     { ITEM_LEFTOVERS, 3 },
     { ITEM_MAGNET, 3 },
     { ITEM_METAL_COAT, 3 },

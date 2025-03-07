@@ -11285,30 +11285,30 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_TUCKER] =
     {
-        .partyFlags = 0,
-        .trainerClass = TRAINER_CLASS_DOME_ACE,
+        .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
+        .trainerClass = TRAINER_CLASS_ELITE_FOUR,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
         .trainerPic = TRAINER_PIC_DOME_ACE_TUCKER,
         .trainerName = _("TUCKER"),
-        .items = {},
+        .items = {ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,
         .partySize = ARRAY_COUNT(sParty_Tucker),
-        .party = {.NoItemDefaultMoves = sParty_Tucker},
+        .party = {.ItemCustomMoves = sParty_Tucker},
     },
 
     [TRAINER_SPENSER] =
     {
-        .partyFlags = 0,
-        .trainerClass = TRAINER_CLASS_PALACE_MAVEN,
+        .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
+        .trainerClass = TRAINER_CLASS_ELITE_FOUR,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
         .trainerPic = TRAINER_PIC_PALACE_MAVEN_SPENSER,
         .trainerName = _("SPENSER"),
-        .items = {},
+        .items = {ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,
         .partySize = ARRAY_COUNT(sParty_Spenser),
-        .party = {.NoItemDefaultMoves = sParty_Spenser},
+        .party = {.ItemCustomMoves = sParty_Spenser},
     },
 
     [TRAINER_GRETA] =
@@ -11341,30 +11341,30 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_LUCY] =
     {
-        .partyFlags = 0,
-        .trainerClass = TRAINER_CLASS_PIKE_QUEEN,
+        .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
+        .trainerClass = TRAINER_CLASS_ELITE_FOUR,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_MALE,
         .trainerPic = TRAINER_PIC_PIKE_QUEEN_LUCY,
         .trainerName = _("LUCY"),
-        .items = {},
+        .items = {ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,
         .partySize = ARRAY_COUNT(sParty_Lucy),
-        .party = {.NoItemDefaultMoves = sParty_Lucy},
+        .party = {.ItemCustomMoves = sParty_Lucy},
     },
 
     [TRAINER_BRANDON] =
     {
-        .partyFlags = 0,
-        .trainerClass = TRAINER_CLASS_PYRAMID_KING,
+        .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
+        .trainerClass = TRAINER_CLASS_ELITE_FOUR,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
         .trainerPic = TRAINER_PIC_PYRAMID_KING_BRANDON,
         .trainerName = _("BRANDON"),
-        .items = {},
+        .items = {ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,
         .partySize = ARRAY_COUNT(sParty_Brandon),
-        .party = {.NoItemDefaultMoves = sParty_Brandon},
+        .party = {.ItemCustomMoves = sParty_Brandon},
     },
 
     [TRAINER_ANDRES_2] =
