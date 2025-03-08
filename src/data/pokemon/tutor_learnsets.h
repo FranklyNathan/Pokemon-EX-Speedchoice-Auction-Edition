@@ -7486,6 +7486,7 @@ static const u32 sTutorLearnsets[] =
 
     [SPECIES_VENIPEDE]      = TUTOR_LEARNSET(TUTOR(MOVE_DEFENSE_CURL)
                                             | TUTOR(MOVE_DOUBLE_EDGE)
+                                            | TUTOR(MOVE_FURY_CUTTER)
                                             | TUTOR(MOVE_ROLLOUT)
                                             | TUTOR(MOVE_SLEEP_TALK)
                                             | TUTOR(MOVE_SNORE)
@@ -7494,6 +7495,7 @@ static const u32 sTutorLearnsets[] =
 
     [SPECIES_WHIRLIPEDE]    = TUTOR_LEARNSET(TUTOR(MOVE_DEFENSE_CURL)
                                             | TUTOR(MOVE_DOUBLE_EDGE)
+                                            | TUTOR(MOVE_FURY_CUTTER)
                                             | TUTOR(MOVE_ROLLOUT)
                                             | TUTOR(MOVE_SLEEP_TALK)
                                             | TUTOR(MOVE_SNORE)
@@ -7502,6 +7504,7 @@ static const u32 sTutorLearnsets[] =
 
     [SPECIES_SCOLIPEDE]     = TUTOR_LEARNSET(TUTOR(MOVE_DEFENSE_CURL)
                                             | TUTOR(MOVE_DOUBLE_EDGE)
+                                            | TUTOR(MOVE_FURY_CUTTER)
                                             | TUTOR(MOVE_ROCK_SLIDE)
                                             | TUTOR(MOVE_ROLLOUT)
                                             | TUTOR(MOVE_SLEEP_TALK)
@@ -9879,6 +9882,7 @@ static const u32 sTutorLearnsets[] =
                                             | TUTOR(MOVE_DOUBLE_EDGE)
                                             | TUTOR(MOVE_ENDURE)
                                             | TUTOR(MOVE_FIRE_PUNCH)
+                                            | TUTOR(MOVE_FURY_CUTTER)
                                             | TUTOR(MOVE_ICE_PUNCH)
                                             | TUTOR(MOVE_ICY_WIND)
                                             | TUTOR(MOVE_MEGA_KICK)
@@ -10368,6 +10372,7 @@ static const u32 sTutorLearnsets[] =
                                             | TUTOR(MOVE_COUNTER)
                                             | TUTOR(MOVE_DOUBLE_EDGE)
                                             | TUTOR(MOVE_ENDURE)
+                                            | TUTOR(MOVE_FURY_CUTTER)
                                             | TUTOR(MOVE_ICY_WIND)
                                             | TUTOR(MOVE_SLEEP_TALK)
                                             | TUTOR(MOVE_SNORE)
@@ -10379,6 +10384,7 @@ static const u32 sTutorLearnsets[] =
                                             | TUTOR(MOVE_COUNTER)
                                             | TUTOR(MOVE_DOUBLE_EDGE)
                                             | TUTOR(MOVE_ENDURE)
+                                            | TUTOR(MOVE_FURY_CUTTER)
                                             | TUTOR(MOVE_ICY_WIND)
                                             | TUTOR(MOVE_SLEEP_TALK)
                                             | TUTOR(MOVE_SNORE)

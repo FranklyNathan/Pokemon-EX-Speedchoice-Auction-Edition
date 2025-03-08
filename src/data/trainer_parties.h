@@ -12035,7 +12035,7 @@ static const struct TrainerMonItemCustomMoves sParty_Steven[] = {
     .nature = NATURE_ADAMANT,
     .heldItem = ITEM_NONE,
     .abilityNums = 1,
-    .moves = {MOVE_STEALTH_ROCK, MOVE_AERIAL_ACE, MOVE_NIGHT_SLASH, MOVE_STEEL_WING}
+    .moves = {MOVE_STEALTH_ROCK, MOVE_FLY, MOVE_NIGHT_SLASH, MOVE_STEEL_WING}
     },
     {
     .iv = 255,
