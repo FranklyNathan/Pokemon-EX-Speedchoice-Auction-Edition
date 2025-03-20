@@ -1,4 +1,7 @@
 <!-- title -->
+#This project has been moved to https://github.com/FranklyNathan/SpeedyEmerald
+This project now uses Pokemon Emerald Expansion as a base, with the relevant features from EX Speedchoice ported over.
+
 # Pokémon Emerald EX Speedchoice (Auction Edition)
 A Pokémon Emerald EX Speedchoice branch optimized for draft auction races
 
